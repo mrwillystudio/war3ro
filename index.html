@@ -120,6 +120,32 @@
 .region-counts{display:flex;align-items:center;gap:4px;font-size:8px;color:#8f9b84;white-space:nowrap}.region-counts i{width:7px;height:7px;border-radius:50%;display:inline-block;margin-left:4px}
 .grade-ring-normal{box-shadow:inset 0 0 0 2px #6f976755}.grade-ring-boss{box-shadow:inset 0 0 0 2px #c28d4e66}.grade-ring-mvp{box-shadow:inset 0 0 0 2px #8b5ca877}
 @media(max-width:760px){.detail-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.region-label{font-size:6px;padding:2px 4px}.region-card-list{max-height:260px;overflow:auto}}
+
+/* R6 · named regions, mode-aware MVP records, spacing */
+.catalog-grid{align-items:stretch}.monster-card{height:100%}
+.detail-section{margin:0 0 30px}.detail-section-gap{margin:30px 0}.detail-section-gap:empty{display:none}.detail-section-title{margin-top:34px!important;margin-bottom:16px!important}
+.readable-list{margin-bottom:0}.readable-row{display:grid;grid-template-columns:118px minmax(0,1fr);gap:22px;align-items:start}.readable-row>span:first-child{color:#87967a;font-size:10px;letter-spacing:.4px}.readable-row>span:last-child{color:#657754}.readable-row small{display:inline-block;margin-top:5px;line-height:1.75;color:#98a38d}
+.respawn-none{color:#9a665d;font-weight:600}.respawn-unknown{color:#9a927e}
+.skill-mode-group+.skill-mode-group{margin-top:24px}.mechanic-trigger{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;margin:11px 0;padding:9px 10px;border-radius:9px;background:#f2eef7;color:#6f6180;font-size:9px;line-height:1.65}.mechanic-trigger b{font-weight:700;color:#816b99}
+
+/* Replace A1-H8 grid with irregular named source regions. */
+.map-regions{position:absolute;inset:0;width:100%;height:100%;z-index:2;overflow:visible}
+.map-regions .region-shape{fill:rgba(111,151,103,.055);stroke:rgba(244,246,237,.74);stroke-width:.34;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:auto;transition:fill .18s,stroke .18s,stroke-width .18s}
+.map-regions .region-shape:hover{fill:rgba(117,101,172,.14);stroke:rgba(246,241,255,.96);stroke-width:.7}
+.map-regions .region-shape.active{fill:rgba(117,101,172,.18);stroke:rgba(255,255,255,.95);stroke-width:.8}
+.map-regions .region-label{font:2.05px/1.1 var(--font);font-weight:600;letter-spacing:.08px;fill:rgba(249,250,241,.9);stroke:rgba(29,45,32,.48);stroke-width:.14;paint-order:stroke;pointer-events:none;text-anchor:middle;dominant-baseline:central}
+.map-regions .region-label.active{font-size:2.45px;fill:#fff;stroke:rgba(89,65,116,.78);stroke-width:.18}
+.map-point{z-index:5;width:7px;height:7px;border:1.5px solid #fff;box-shadow:0 0 0 1px #26351d40,0 1px 5px #15211755}
+.map-point.grade-normal{background:#6f9767}.map-point.grade-boss{background:#cf9347;width:8px;height:8px}.map-point.grade-mvp{background:#8b5ca8;width:10px;height:10px}.map-point.grade-event{background:#c98297}
+.map-point:hover{background:#fff;transform:translate(-50%,-50%) scale(1.8)}
+.legend-dot,.grade-dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex:0 0 auto}.legend-dot.grade-normal,.grade-dot.grade-normal{background:#6f9767!important}.legend-dot.grade-boss,.grade-dot.grade-boss{background:#cf9347!important}.legend-dot.grade-mvp,.grade-dot.grade-mvp{background:#8b5ca8!important}.legend-dot.grade-event,.grade-dot.grade-event{background:#c98297!important}
+.world-monster small{display:flex;align-items:center;gap:6px}
+.world-area-detail{padding:4px 18px 18px}.subregion-list{display:flex;flex-direction:column;gap:12px}.subregion{border:1px solid var(--line);background:#fff;border-radius:13px;padding:13px}.subregion h4{font-size:11px;margin:0 0 9px;color:#667a57}.subregion>div,.area-monster-cloud{display:flex;flex-wrap:wrap;gap:6px}.area-monster-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid #e1e6da;border-radius:999px;background:#f7f8f3;padding:5px 9px;font-size:9px;color:#6f7f64}.area-monster-chip:hover{border-color:#d4c8e4;background:#f3eef8;color:#67547d}.area-monster-chip.muted{opacity:.72;cursor:default}
+.area-directory{margin-top:44px;padding-top:36px;border-top:1px solid var(--line)}.area-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.area-card{border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden}.area-card.active{border-color:#cfc2df;box-shadow:0 0 0 2px #eee7f7}.area-card>button{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto 18px;gap:12px;align-items:center;text-align:left;padding:14px}.area-card>button>span:first-child{min-width:0}.area-card small{display:block;font-size:7px;letter-spacing:1.1px;color:#a0aa96;margin-bottom:3px}.area-card b{display:block;font-size:12px;color:#566a4e}.area-card em{display:block;font-style:normal;font-size:9px;color:#8c9984;margin-top:3px}.area-card>button>.icon{width:15px;color:#a3ad9a}.area-grades{display:flex;align-items:center;gap:4px;color:#84927a;font-size:8px}.area-grades .grade-dot{width:7px;height:7px;margin-left:5px}.area-subhint{border-top:1px solid #edf0e8;padding:9px 14px;color:#9a8baa;background:#fbfafc;font-size:8px;line-height:1.7}
+.hidden-card small{line-height:1.55}
+
+@media(max-width:1120px){.area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.readable-row{grid-template-columns:105px minmax(0,1fr)}}
+@media(max-width:760px){.area-grid{grid-template-columns:1fr}.map-regions .region-label{font-size:2.5px}.map-regions .region-label.active{font-size:3px}.world-area-detail{padding:4px 12px 14px}.readable-row{grid-template-columns:82px minmax(0,1fr);gap:12px}.detail-section{margin-bottom:24px}.detail-section-gap{margin:24px 0}.mechanic-trigger{grid-template-columns:38px minmax(0,1fr);font-size:8px}.area-directory{margin-top:34px;padding-top:28px}}
 </style></head>
 <body>
 <noscript><div style="padding:30px;font-family:sans-serif">RO ATLAS 需要開啟 JavaScript 才能使用圖鑑搜尋、地圖與合成查詢。</div></noscript>
@@ -134,7 +160,7 @@
 <div class="shell">
  <header class="topbar"><button class="icon-button mobile-toggle" data-action="menu" aria-label="開啟導覽選單" aria-expanded="false"><span data-icon="menu"></span></button><div class="top-crumb"><span>ADVENTURER’S ARCHIVE</span><span class="crumb-divider">/</span><b id="crumb">魔物圖鑑</b></div><button id="search-open" class="global-search" data-action="search"><span data-icon="search"></span><span>想找什麼呢？魔物、裝備、卡片…</span><kbd>/</kbd></button><button class="top-save icon-button" data-action="go" data-route="saved" aria-label="我的收藏"><span data-icon="bookmark"></span><i id="saved-dot"></i></button><span class="avatar" title="本機冒險手帳">W<span></span></span></header>
  <main id="main" tabindex="-1"></main>
- <footer class="footer"><span><b>RO ATLAS</b> <i>A little guide to a bigger adventure.</i></span><a href="#about">原生資料補全 · 7.0a03 <span>↗</span></a></footer>
+ <footer class="footer"><span><b>RO ATLAS</b> <i>A little guide to a bigger adventure.</i></span><a href="#about">原生資料補全 · R6 <span>↗</span></a></footer>
 </div>
 <div id="compare-bar" class="compare-bar" hidden></div>
 <dialog id="detail" class="detail-dialog" aria-label="圖鑑詳細資訊"><div id="detail-inner"></div></dialog>
@@ -211,6 +237,7 @@ let favorites=new Set(cleanFavorites(readStore(savedKey,[])));
 let plan=readStore(planKey,{});if(!plan||Array.isArray(plan)||typeof plan!=='object')plan={};
 Object.keys(plan).forEach(k=>{if(!R.has(k))delete plan[k];else plan[k]=Math.min(99,Math.max(1,parseInt(plan[k])||1));});
 let compare=[],toastTimer,detailEntity=null,detailTab='overview',dropMode='all';
+let infiniteObserver=null,infiniteBusy=false,infiniteTick=false;
 const routes={monsters:['魔物圖鑑','monster',visibleMonsters.length],items:['物品倉庫','bag',displayItems.length],cards:['卡片圖鑑','cards',cards.length],sockets:['有洞裝備','gem',sockets.length],craft:['合成工坊','hammer',D.recipes.length],sets:['套裝收藏','layers',D.sets.filter(s=>s.groups?.length>=2).length],world:['世界地圖','map',D.areas.length],saved:['我的收藏','bookmark'],plan:['製作清單','checklist'],about:['版本與資料','info']};
 const defaultFilter=()=>({q:'',grade:'全部',armor:'全部',spawn:'全部',sort:'default',min:'',max:'',category:'全部',slot:'全部',effect:'全部',variant:false,limit:24,view:'grid'});
 const filters=Object.fromEntries(Object.keys(routes).map(k=>[k,defaultFilter()]));
@@ -275,7 +302,30 @@ function renderWorld(){const pool=worldPool(),listed=pool.filter(m=>m.placements
 function renderSaved(){const ms=[...favorites].filter(k=>k.startsWith('m:')).map(k=>M.get(k.slice(2))).filter(m=>m&&!m.catalogHidden),items=[...favorites].filter(k=>k.startsWith('i:')).map(k=>I.get(k.slice(2))).filter(i=>i&&!i.catalogHidden);return intro('我的收藏','Keep the little discoveries.','想再見的魔物、想帶走的裝備。替下一次冒險，留一張小小的書籤。')+(!ms.length&&!items.length?empty('點擊圖鑑卡片右上角的書籤，即可收藏。','browse','去逛逛魔物圖鑑'):'')+(ms.length?`<section class="bookmarked-section"><div class="section-head"><h2>魔物 <span>${ms.length} discoveries.</span></h2></div><div class="catalog-grid">${ms.map(monsterCard).join('')}</div></section>`:'')+(items.length?`<section class="bookmarked-section"><div class="section-head"><h2>物品與卡片 <span>${items.length} treasures.</span></h2></div><div class="items-grid">${items.map(itemCard).join('')}</div></section>`:'')+note('收藏只保存在目前瀏覽器，不會上傳，也不會自動同步到其他裝置。無痕模式或清除瀏覽資料可能使收藏消失。');}
 function renderPlan(){const targets=Object.entries(plan).filter(([k])=>R.has(k)),mat=new Map();targets.forEach(([key,n])=>R.get(key).materials.forEach(m=>mat.set(m.id,(mat.get(m.id)||0)+m.quantity*n)));return intro('製作清單','One ingredient at a time.','把目標放進手帳，把材料一件件準備好。清單會合計所選配方的直接材料。')+(!targets.length?empty('到合成工坊，點擊配方右側的 ＋ 加入製作目標。','craft-browse','前往合成工坊'):`<div class="section-head"><h2>這次的目標 <span>${targets.length} recipes.</span></h2><button class="btn" data-action="export-plan">${ic('download')} 匯出清單</button></div><div class="plan-targets">${targets.map(([key,n])=>{const r=R.get(key),i=I.get(r.result);return `<article class="plan-target">${itemArt(i)}<span><h3>${goBtn('i',i.id,esc(i.name))}</h3><small>${r.id.toUpperCase()}</small></span><div class="plan-qty"><button data-action="plan-qty" data-id="${key}" data-step="-1" aria-label="減少數量">−</button><input data-plan="${key}" aria-label="${esc(i.name)}製作數量" type="number" min="1" max="99" value="${n}"><button data-action="plan-qty" data-id="${key}" data-step="1" aria-label="增加數量">+</button></div><button class="icon-button" data-action="plan-remove" data-id="${key}" aria-label="移除${esc(i.name)}">${ic('x')}</button></article>`;}).join('')}</div><div class="section-head"><h2>材料總表 <span>The shopping list.</span></h2><a class="text-link" href="#craft">繼續加入目標 ↗</a></div><div class="material-list">${[...mat].map(([id,n])=>{const sources=[...new Set((byItem.get(id)||[]).map(d=>M.get(d.monster)?.name).filter(Boolean))];return `<div class="material-row">${goBtn('i',id,`${itemArt(I.get(id))}${esc(named(id))}`)}<span class="quantity">× ${num(n)}</span><span class="sources">${sources.length?'掉落：'+esc(sources.slice(0,3).join('、'))+(sources.length>3?` 等 ${sources.length} 種`:''):(recipeResult.get(id)||[]).length?'可繼續查看合成配方':'未解析到魔物掉落來源'}</span></div>`;}).join('')}</div>`)+note('材料數量為所選配方的直接需求，尚未扣除背包庫存，也不會遞迴拆成最基礎材料。替代配方獨立計算，請只加入實際要製作的版本。');}
 function renderAbout(){return intro('版本與資料','Honest about the details.','讓每一筆資料都能被理解，也讓未確認的地方保持清楚。','CUSTOM MAP · STATIC ARCHIVE')+`<div class="about-grid"><div><section class="about-box"><h2>這本圖鑑的來源</h2><dl><dt>地圖版本</dt><dd>${esc(D.meta.mapVersion||D.meta.version)}</dd><dt>資料建置</dt><dd>${esc(D.meta.mapBuild||'—')}</dd><dt>資料修訂</dt><dd>${esc(D.meta.dataRevision)}</dd><dt>本次補全</dt><dd>${D.meta.coverage.modelPreviewsRendered} 種模型縮圖、${D.meta.coverage.heroesCalculated} 種英雄血量、排除 ${D.meta.excludedItemCount} 筆服務／選單物件，另隱藏 ${D.meta.catalogHiddenItemCount||0} 筆未使用／未釋出物品</dd><dt>原始檔案</dt><dd>${esc(D.meta.file)}</dd><dt>解析方式</dt><dd>四個原生 MPQ、地圖物件覆寫、JASS 生成等級、STR 生命係數、MVP 觸發器、傳送區域說明與預放座標。沒有套用官方 RO 數值。</dd><dt>物件來源</dt><dd>war3map.w3u / .w3t / .w3a<br>war3map.wts / war3map.j</dd><dt>視覺素材</dt><dd>183 種魔物重新以 alpha-aware 流程渲染真實 MDX／BLP 模型縮圖，修正透明貼圖黑塊／黑邊；技能掛件與即時粒子仍不作靜態模擬。</dd><dt>SHA-256</dt><dd><code>${D.meta.sha256}</code></dd></dl></section><section class="about-box"><h2>資料概況</h2><div class="about-stats">${[[visibleMonsters.length,'目前顯示魔物'],[D.items.length,'玩家物品（含變體）'],[cards.length,'卡片'],[sockets.length,'未嵌卡有洞裝備'],[D.recipes.length,'合成配方'],[D.sets.length,'真正套裝'],[D.drops.length,'掉落關聯'],[zoneCount,'預放座標'],[D.areas.length,'命名地區']].map(([n,t])=>`<div class="about-stat"><b>${num(n)}</b><span>${t}</span></div>`).join('')}</div></section><section class="about-box"><h2>帶走你的冒險手帳</h2><p class="detail-source-meta">下載本機收藏與製作清單，不包含私人帳號資料。</p><button class="btn" data-action="export-notebook">${ic('download')} 匯出手帳 JSON</button><label class="btn" style="margin-top:10px;cursor:pointer">${ic('plus')} 匯入手帳<input id="import-notebook" type="file" accept="application/json,.json" class="sr-only"></label></section></div><section class="about-box"><h2>閱讀資料前，先知道這些。</h2>${D.meta.notes.map((n,i)=>`<div class="about-note"><span>${String(i+1).padStart(2,'0')}</span><p>${esc(n)}</p></div>`).join('')}<div class="about-note"><span>${D.meta.notes.length+1}</span><p>真正套裝只計入至少 2 個裝備判斷族群。單件唯一啟用效果只保留在該物品說明，不另外建立套裝卡片。</p></div><div class="about-note"><span>${D.meta.notes.length+2}</span><p>這是可離線使用的資料庫，不會連接遊戲伺服器。不收集資料，不含追蹤碼。收藏與製作清單保存在目前瀏覽器，重新部署或更換網址後不一定共用。</p></div></section></div>`;}
-function setupInfiniteScroll(){if(infiniteObserver)infiniteObserver.disconnect();const el=$('[data-infinite]');if(!el)return;infiniteObserver=new IntersectionObserver(entries=>{if(!entries.some(e=>e.isIntersecting))return;const f=filters[route];if(!f)return;infiniteObserver.disconnect();const y=window.scrollY;f.limit+=24;render();requestAnimationFrame(()=>window.scrollTo(0,y));},{rootMargin:'500px 0px'});infiniteObserver.observe(el);}
+function autoLoadMore(){
+ if(infiniteBusy)return;
+ const el=$('[data-infinite]'),f=filters[route];
+ if(!el||!f)return;
+ const rect=el.getBoundingClientRect();
+ if(rect.top>window.innerHeight+700||rect.bottom<-200)return;
+ infiniteBusy=true;
+ if(infiniteObserver)infiniteObserver.disconnect();
+ const y=window.scrollY;
+ f.limit+=24;
+ render();
+ requestAnimationFrame(()=>{window.scrollTo(0,y);infiniteBusy=false;requestAnimationFrame(autoLoadMore);});
+}
+function queueAutoLoad(){if(infiniteTick)return;infiniteTick=true;requestAnimationFrame(()=>{infiniteTick=false;autoLoadMore();});}
+function setupInfiniteScroll(){
+ if(infiniteObserver){infiniteObserver.disconnect();infiniteObserver=null;}
+ const el=$('[data-infinite]');
+ if(!el)return;
+ if('IntersectionObserver' in window){
+  infiniteObserver=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))autoLoadMore();},{rootMargin:'700px 0px'});
+  infiniteObserver.observe(el);
+ }
+ requestAnimationFrame(queueAutoLoad);
+}
 function render(){nav();const pages={monsters:renderMonsters,items:()=>renderItems('items'),cards:()=>renderItems('cards'),sockets:()=>renderItems('sockets'),craft:renderCraft,sets:renderSets,world:renderWorld,saved:renderSaved,plan:renderPlan,about:renderAbout};main.innerHTML=pages[route]();hydrate();renderCompareBar();setupInfiniteScroll();}
 function go(r){if(!routes[r])r='monsters';closeMenu();if(location.hash==='#'+r){render();closeDetail(false);}else location.hash=r;}
 function openEntity(type,id,tab='overview'){const map=type==='m'?M:type==='s'?S:I;if(!map.has(id)){toast('此物件尚未收錄。');return;}searchDialog.close();compareDialog.close();detailTab=tab;dropMode='all';const hash=`${route}/${type}/${encodeURIComponent(id)}`;if(location.hash==='#'+hash){showDetail(type,id);}else location.hash=hash;}
@@ -331,6 +381,8 @@ function downloadJSON(object,name){const blob=new Blob([JSON.stringify(object,nu
 const notebook=()=>({format:'ROATLAS-notebook-v1',mapVersion:D.meta.version,favorites:[...favorites],plan});
 function worldForMonster(id){const m=M.get(id);world={area:m?.zones?.[0]||'all',monster:id,cell:null,zoom:1};detailTab='overview';closeDetail(false);if(route==='world')render();go('world');}
 function respawnMarkup(m){const r=m.respawn;if(!r)return '<span class="respawn-unknown">未解析到固定復活規則</span>';if(r.type==='none')return `<strong class="respawn-none">不會復活</strong>${r.note?`<br><small>${esc(r.note)}</small>`:''}`;if(r.normal!=null)return `<strong>${num(r.normal)} 秒</strong>${r.chill!=null?' / 休閒模式 '+num(r.chill)+' 秒':''}${r.note?`<br><small>${esc(r.note)}</small>`:''}`;return `${esc(r.label||'復活規則待確認')}${r.note?`<br><small>${esc(r.note)}</small>`:''}`;}
+window.addEventListener('scroll',queueAutoLoad,{passive:true});
+window.addEventListener('resize',queueAutoLoad,{passive:true});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;const action=b.dataset.action,id=b.dataset.id,value=b.dataset.value;
  switch(action){
  case 'go':go(b.dataset.route);break;
