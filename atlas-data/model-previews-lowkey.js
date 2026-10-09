@@ -95,11 +95,89 @@
     }
     if (Array.isArray(area.monsters)) area.monsters=[...new Set(area.monsters)];
   }
-  d.meta.version='7.0a09 · v11 / R8.3';
-  d.meta.dataRevision='R8.3 · 2026-10-09';
+  // R8.4: User-verified locations, with fixed-spawn points removed when conflicting with the correction.
+  (function applyR84(d,byId,zonesById){
+  // User-corrected appearance areas. Preserve underlying v11 raw assets and map-source provenance.
+  const corrections=[
+    {id:'O00T',name:'闇●十字刺客 艾勒梅斯',zones:['zone-18']},
+    {id:'O00B',name:'虎王',zones:['zone-12'],label:'斐楊森林'},
+    {id:'O00A',name:'元靈武士',zones:['zone-13']},
+    {id:'Opgh',name:'阿特羅斯',zones:['zone-24']},
+    {id:'O003',name:'巴風特',zones:['zone-5']},
+    {id:'URgd',name:'巴基力 蘭特克利斯',zones:['zone-6']},
+    {id:'Uwar',name:'法老王',zones:['zone-18']},
+    {id:'O009',name:'死靈',zones:['zone-17']},
+    {id:'O00G',name:'墨蛇君',zones:['zone-4']},
+    {id:'Udea',name:'邪惡老公公',zones:[],label:'全圖隨機',globalRandom:true}
+  ];
+  if(corrections.length!==10||new Set(corrections.map(c=>c.id)).size!==10)throw new Error('Invalid R8.4 correction list');
+  for(const c of corrections){
+    const m=byId.get(c.id);
+    if(!m||m.name!==c.name||c.zones.some(z=>!zonesById.has(z)))throw new Error('R8.4 rawcode/zone mismatch: '+c.id);
+  }
+  const affected=new Set();
+  for(const c of corrections){
+    const m=byId.get(c.id);
+    for(const z of (m.zones||[]))affected.add(z);
+    for(const z of c.zones)affected.add(z);
+    // Do not keep wrong fixed-map pins or invent new coordinates.
+    const mismatchedPins=(m.placements||[]).filter(p=>!c.zones.includes(p.area));
+    if(mismatchedPins.length){
+      m.supersededPlacementSources=mismatchedPins.map(p=>({x:p.x,y:p.y,area:p.area,areaName:p.areaName,line:p.line}));
+      m.placements=(m.placements||[]).filter(p=>c.zones.includes(p.area));
+    }
+    m.zones=[...c.zones];
+    if(c.label)m.locationLabelOverride=c.label;
+    if(c.globalRandom){m.isGlobalRandomSpawn=true;m.locationStatus='全圖隨機';}
+    m.locationCorrectionSource='使用者校對地點 2026-10-09（不推定新的精確座標）';
+    for(const area of d.areas){
+      const belongs=c.zones.includes(area.id);
+      for(const field of ['monsters','visibleMonsters']){
+        if(!Array.isArray(area[field]))continue;
+        if(!belongs)area[field]=area[field].filter(id=>id!==c.id);
+        else if((field!=='visibleMonsters'||!m.catalogHidden)&&!area[field].includes(c.id))area[field].push(c.id);
+      }
+      for(const sr of (area.subregions||[])){
+        if(!Array.isArray(sr.monsters))continue;
+        if(!belongs){
+          for(let i=sr.monsters.length-1;i>=0;i--){
+            if(sr.monsters[i]===c.id){
+              sr.monsters.splice(i,1);
+              if(Array.isArray(sr.monsterNames))sr.monsterNames.splice(i,1);
+            }
+          }
+        }else if(m.grade==='MVP'&&sr.name==='MVP'&&!sr.monsters.includes(c.id)){
+          sr.monsters.push(c.id);
+          if(Array.isArray(sr.monsterNames))sr.monsterNames.push(m.name);
+        }
+      }
+    }
+  }
+  for(const id of affected){
+    const area=zonesById.get(id);
+    if(!area)continue;
+    for(const field of ['monsters','visibleMonsters']){
+      if(Array.isArray(area[field]))area[field]=[...new Set(area[field])].filter(id=>byId.has(id));
+    }
+    if(Array.isArray(area.visibleMonsters)){
+      area.gradeCounts={};
+      for(const mid of area.visibleMonsters){
+        const grade=byId.get(mid).grade;
+        area.gradeCounts[grade]=(area.gradeCounts[grade]||0)+1;
+      }
+    }
+    for(const sr of (area.subregions||[])){
+      if(sr.name==='MVP'&&Array.isArray(sr.monsters))sr.monsterNames=sr.monsters.map(mid=>byId.get(mid)?.name||mid);
+    }
+  }
+  return corrections;
+})(d,byId,zonesById);
+  d.meta.version='7.0a09 · v11 / R8.4';
+  d.meta.dataRevision='R8.4 · 2026-10-09';
   d.meta.lowKeyPreviewCount=expected.length;
   d.meta.lowKeyPreviewSource='已匯入.reduce.rar（26 MDX／32 BLP）';
   d.meta.notes=[
+    'R8.4：10 隻魔物地點依使用者校正：艾勒梅斯沙漠、虎王斐楊森林、元靈武士榻榻米、阿特羅斯妙勒尼、巴風特迷藏森林、巴基力蘭特克利斯奧丁神殿、法老王沙漠、死靈吉芬地下、墨蛇君崑崙密穴、邪惡老公公全圖隨機；舊座標與校正衝突時保留來源但不再顯示錯誤圖釘。',
     'R8.3：冰暴騎士（劍盾）與黑暗之王（斗篷黑底）靜態預覽已重產；條件魔物地區修正為冰暴騎士＝聖誕村、三頭龍＝無限塔、伊夫利特＝無限塔、死靈騎士 Lv.99＝尼芙菲姆。',
     'R8.2：依 2026-10-09 已匯入.reduce.rar 中 26 組 MDX（Stand）及原始 BLP，精確依 26 個 Rawcode 更新對應靜態模型預覽；不更動地圖資料、掉落數值與世界地圖。',
     'R8.2：靜態預覽不含 Warcraft III 原生特效／粒子。阿特羅斯所需的兩張遊戲原生特效 BLP 未包含於來源壓縮檔，已省略其特效面片，主要皮膚貼圖完整。',
