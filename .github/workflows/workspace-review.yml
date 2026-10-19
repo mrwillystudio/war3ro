@@ -1,0 +1,22 @@
+name: World workspace review
+on:
+  push:
+    branches: [feat/world-correction-workspace]
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-workspace-source
+          path: |
+            index.html
+            atlas-data/
+            wrangler.jsonc
+          retention-days: 1
