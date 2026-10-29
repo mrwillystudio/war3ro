@@ -1,0 +1,32 @@
+name: Atlas 7.0b07 refresh
+on:
+  push:
+    branches: [atlas/update-7.0b07-20261030]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh atlas when updater is present
+        run: |
+          if [ -f tools/update_atlas_70b07.py ]; then
+            python tools/update_atlas_70b07.py
+          fi
+      - name: Export review package
+        run: |
+          mkdir -p /tmp/atlas-review
+          cp index.html wrangler.jsonc /tmp/atlas-review/
+          cp -R atlas-data /tmp/atlas-review/
+          if [ -d tools ]; then cp -R tools /tmp/atlas-review/; fi
+          if [ -f atlas-update-report.json ]; then cp atlas-update-report.json /tmp/atlas-review/; fi
+          node --version
+          git rev-parse HEAD
+          du -sh /tmp/atlas-review
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-review
+          path: /tmp/atlas-review/
+          retention-days: 7
