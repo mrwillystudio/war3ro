@@ -4,27 +4,31 @@ on:
     branches: [atlas/update-7.0b07-20261030]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Refresh atlas when updater is present
+      - name: Build and validate release files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f tools/update_atlas_70b07.py ]; then
+          if [ -f tools/verify_live_70b07.py ]; then
+            python tools/verify_live_70b07.py
+          else
+            command -v zstd || (sudo apt-get update -qq && sudo apt-get install -y zstd)
             python tools/update_atlas_70b07.py
+            node --check atlas-data/update-70b07.js
           fi
       - name: Export review package
         run: |
           mkdir -p /tmp/atlas-review
           cp index.html wrangler.jsonc /tmp/atlas-review/
           cp -R atlas-data /tmp/atlas-review/
-          if [ -d tools ]; then cp -R tools /tmp/atlas-review/; fi
+          cp -R tools /tmp/atlas-review/
           if [ -f atlas-update-report.json ]; then cp atlas-update-report.json /tmp/atlas-review/; fi
-          node --version
-          git rev-parse HEAD
-          du -sh /tmp/atlas-review
+          if [ -f atlas-live-verification.json ]; then cp atlas-live-verification.json /tmp/atlas-review/; fi
       - uses: actions/upload-artifact@v4
         with:
           name: atlas-review
