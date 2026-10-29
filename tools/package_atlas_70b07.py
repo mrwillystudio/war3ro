@@ -21,7 +21,7 @@ s=s.replace("pane=`${calculationPanel(m)}", "pane=`${m.locationNote?note(m.locat
 s=s.replace("<summary>模型圖片與貼圖來源</summary><pre>","<summary>模型圖片與貼圖來源</summary>${m.previewReferenceNote?note(m.previewReferenceNote):''}<pre>")
 s=s.replace("<small>${esc(m.id)} · 原始模型預覽</small>","<small>${esc(m.id)} · ${m.portrait?'前版模型預覽':'模型預覽待補'}</small>")
 s=s.replace("${m.summonGuide?summonGuidePanel(m):`<p>","${m.summonGuide?summonGuidePanel(m):`${m.locationNote?note(m.locationNote):''}<p>")
-s=s.replace("function sourceBlock(record,file='war3map.j'){const code=", "function sourceBlock(record,file='war3map.j'){if(record.sourceVersion)return `<details class=\"source-block\"><summary>${ic('code')} ${esc(record.sourceVersion)}</summary><pre>${esc(record.function||'')}\n來源版本：${esc(record.sourceVersion)}；歷史行號 ${record.line||'—'}，不作為本版行號。</pre></details>`;const code=")
+s=s.replace("function sourceBlock(record,file='war3map.j'){const code=", "function sourceBlock(record,file='war3map.j'){if(record.sourceVersion)return `<details class=\"source-block\"><summary>${ic('code')} ${esc(record.sourceVersion)}</summary><pre>${esc(record.function||'')}"+chr(92)+"n來源版本：${esc(record.sourceVersion)}；歷史行號 ${record.line||'—'}，不作為本版行號。</pre></details>`;const code=")
 s=s.replace('在 ${triggers.length} 段正式觸發程式中找到建立或給予此物品的指令。','前版於 ${triggers.length} 段觸發程式中找到建立或給予此物品的指令；本次未逐條重驗任務條件。')
 s=s.replace('7.0a09-v11','7.0b07')
 assert '7.0a09-v11' not in s
