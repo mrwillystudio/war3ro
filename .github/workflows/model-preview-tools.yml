@@ -1,0 +1,25 @@
+name: Model preview tooling
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare renderer dependencies
+        run: |
+          mkdir -p /tmp/atlas-render-tools
+          cd /tmp/atlas-render-tools
+          npm init -y
+          npm install mdx-m3-viewer@5.13.0 --no-audit --no-fund
+          curl --fail -L https://raw.githubusercontent.com/eagleflo/mpyq/master/mpyq.py -o mpyq.py
+          find node_modules/mdx-m3-viewer/dist -maxdepth 2 -type f | head -20
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-render-tools
+          path: /tmp/atlas-render-tools/
+          retention-days: 7
