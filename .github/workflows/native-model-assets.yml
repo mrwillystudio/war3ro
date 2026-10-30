@@ -1,0 +1,74 @@
+name: Classic preview model dependencies
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/native-model-assets.yml']
+permissions:
+  contents: read
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read atlas model references
+        run: |
+          mkdir -p /tmp/native-preview/output
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');const c={window:{__atlasParts:[]},console};vm.createContext(c);
+          for(const f of fs.readdirSync('atlas-data').filter(x=>/^part-\d+\.js$/.test(x)).sort())vm.runInContext(fs.readFileSync('atlas-data/'+f,'utf8'),c);
+          c.window.RODB=JSON.parse(c.window.__atlasParts.join(''));
+          for(const f of ['model-previews-v11.js','model-previews-lowkey.js','map-corrections-r85.js','update-70b07.js'])vm.runInContext(fs.readFileSync('atlas-data/'+f,'utf8'),c);
+          const paths=[];for(const m of c.window.RODB.monsters){paths.push(m.modelPath);for(const a of m.portraitSource?.attachments||[])paths.push(a.source.split(':').pop());}
+          fs.writeFileSync('/tmp/native-preview/paths.json',JSON.stringify(paths.filter(p=>/^(units|buildings|abilities|doodads|environment)[\\/]/i.test(p)).map(p=>p.replace(/\.mdl$/i,'.mdx'))));
+          JS
+      - name: Fetch classic assets used by the viewer
+        run: |
+          cat > /tmp/native-preview/fetch.py <<'PY'
+          import pathlib,json,urllib.request,urllib.parse,hashlib,struct,concurrent.futures
+          R=pathlib.Path('/tmp/native-preview');O=R/'output';index={};fail=[]
+          def fetch(n):
+              key=n.replace('/','\\').lower()
+              urls=['https://www.hiveworkshop.com/data/static_assets/mpq/tft/'+urllib.parse.quote(key.replace('\\','/')),'https://www.hiveworkshop.com/casc-contents?'+urllib.parse.urlencode({'path':key})]
+              for url in urls:
+                  try:
+                      req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 MDX-Preview-Asset-Resolver'})
+                      with urllib.request.urlopen(req,timeout=25) as r:b=r.read()
+                      magic=b[:4]
+                      if key.endswith('.mdx'):
+                          assert magic==b'MDLX' and struct.unpack_from('<I',b,12)[0]==800,'Not a classic MDX'
+                      elif key.endswith('.blp'):assert magic in (b'BLP1',b'BLP2'),'Not a BLP'
+                      else:continue
+                      dest=hashlib.sha256(key.encode()).hexdigest()[:20]+pathlib.PureWindowsPath(key).suffix
+                      (O/dest).write_bytes(b)
+                      return key,{'file':dest,'source':url,'sha256':hashlib.sha256(b).hexdigest()},b
+                  except Exception as e:err=str(e)
+              return key,None,err
+          paths=set(json.loads((R/'paths.json').read_text()))
+          extras=r'''Buildings\NightElf\AncientOfWar\AncientOfWar1.blp|Buildings\Undead\TempleOfTheDamned\NewTempleOfTheDamned.blp|Buildings\Undead\TombOfRelics\TombOfRelics.blp|Environment\Sky\LordaeronSummerSky\LordaeronSummerSky.blp|ReplaceableTextures\Weather\Clouds8x8.blp|Textures\BloodWhiteSmall.blp|Textures\CampaignOrcaxe.blp|Textures\Clouds8x8.blp|Textures\Dust3.blp|Textures\Dust5A.blp|Textures\Goblinmerchant.blp|Textures\HeroCryptLord.blp|Textures\Purple_Glow.blp|Textures\Red_Glow3.blp|Textures\RibbonBlur1.blp|Textures\Rock01_04.blp|Textures\Sparkle_Anim.blp|Textures\Tornado2b.blp|Textures\WaterWake2.blp|Textures\WaterWake3.blp|Textures\Yellow_Glow3.blp|Textures\clouds_anim1.blp|Textures\gutz.blp|UI\Glues\BattleNet\BattlenetLoginGlue\Battlenet-Login-Ring-Eyes.blp|UI\Glues\SinglePlayer\OrcCampaign3D\spike.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrc.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcHelm.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcSash.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcShoulder.blp|UI\Glues\SinglePlayer\Orc_Exp\Stars3.blp|Units\Creeps\Magnataur\Magnataur.blp|Units\Critters\EasterChicken\EasterChicken.blp|Units\Naga\NagaRoyalGuard\NagaRoyalGuard.blp|Units\Other\DranaiWhite\DranaiWhite.blp|Units\Other\Dranai\Dranai.blp|units\Creeps\VoidWalker\Shade.blp|units\Creeps\VoidWalker\Voidwalker.blp|units\human\BloodElfDragonHawk\BloodElfDragonHawk.blp'''.split('|')
+          extras+=['Textures\\Lords%04d.blp'%i for i in range(8)]+['ReplaceableTextures\\TeamColor\\TeamColor00.blp','ReplaceableTextures\\TeamGlow\\TeamGlow00.blp']
+          paths.update(extras)
+          for wave in range(3):
+              nextpaths=set()
+              with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+                  for key,meta,data in pool.map(fetch,sorted(paths)):
+                      if not meta:fail.append({'path':key,'error':data});print('missing',key,data,flush=True);continue
+                      index[key]=meta;print('ok',key,len(data),flush=True)
+                      if data[:4]==b'MDLX':
+                          off=4
+                          while off+8<=len(data):
+                              tag=data[off:off+4];size=struct.unpack_from('<I',data,off+4)[0];v=data[off+8:off+8+size];off+=8+size
+                              if tag==b'TEXS':
+                                  for j in range(0,len(v),268):
+                                      n=v[j+4:j+264].split(b'\0')[0].decode('utf8','replace')
+                                      if n and n.replace('/','\\').lower() not in index:nextpaths.add(n)
+              paths={n for n in nextpaths if n.replace('/','\\').lower() not in index}
+              if not paths:break
+          (O/'native-index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2));(O/'missing.json').write_text(json.dumps(fail,ensure_ascii=False,indent=2))
+          print('TOTAL',len(index),'MISSING',len(fail))
+          PY
+          python /tmp/native-preview/fetch.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-model-preview-assets
+          path: /tmp/native-preview/output/
+          retention-days: 7
