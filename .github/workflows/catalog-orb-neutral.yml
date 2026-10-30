@@ -1,0 +1,181 @@
+name: Catalog orb and neutral labels
+on:
+  push:
+    branches: [atlas/catalog-orb-neutral-20261030]
+    paths: ['.github/workflows/catalog-orb-neutral.yml']
+permissions:
+  contents: write
+jobs:
+  catalog-labels:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply the approved display-only changes
+        run: |
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = 'e1b2113363baa1513b25db2bb3771c964d6f23fa'
+          git worktree add --detach /tmp/catalog-release e1b2113363baa1513b25db2bb3771c964d6f23fa
+          mkdir -p /tmp/catalog-qa
+          python - <<'PY'
+          from pathlib import Path
+          R=Path('/tmp/catalog-release');p=R/'tools/catalog/item-card-tags.js';old=p.read_text()
+          orb=r'''function itemHasOrbEffect(i) {
+            // Only explicit effect declarations count; names, icons and generic proc effects do not.
+            // Use the current description first so an obsolete original description cannot re-add a removed effect.
+            const description = typeof i.description === 'string' && i.description.trim() ? i.description : i.descriptionOriginal;
+            return [i.effect, description].filter(value=>typeof value==='string').some(value=>
+              value.replace(/\|c[0-9a-f]{8}/gi, '').replace(/\|r/gi, '').replace(/\|n/gi, '\n')
+                .split(/\r?\n/).some(line=>/^(?:獨立|輔助|被動)?法球效果[。.!！]?$/.test(line.trim()))
+            );
+          }
+          '''
+          assert old.count('function itemCardLabels(i) {')==1
+          new=old.replace('function itemCardLabels(i) {',orb+'function itemCardLabels(i) {',1)
+          needle="if (!missing(element)) labels.push"
+          assert new.count(needle)==1
+          new=new.replace(needle,"if (!missing(element) && !/^(?:無|無屬性)$/.test(element.replace(/\\s+/g, ''))) labels.push",1)
+          assert new.count('  return labels;')==1
+          new=new.replace('  return labels;',"  if (itemHasOrbEffect(i)) labels.push({kind:'orb', text:'法球效果'});\n  return labels;",1)
+          page=R/'index.html';s=page.read_text();assert s.count(old.rstrip())==1
+          s=s.replace(old.rstrip(),new.rstrip(),1)
+          s=s.replace('小標顯示屬性與限定職業；','小標顯示屬性、限定職業與法球效果（省略無屬性）；',1)
+          p.write_text(new);page.write_text(s)
+          test=R/'tools/catalog/test_catalog_tags.cjs';s=test.read_text()
+          s=s.replace("['無屬性','忍者專屬']","['忍者專屬']").replace("['無屬性','神槍手專屬']","['神槍手專屬']")
+          s=s.replace("c.itemCardLabels(byId.get('I06G')),x=>x.text),['水屬性']","c.itemCardLabels(byId.get('I06G')),x=>x.text),['水屬性','法球效果']")
+          more=r'''  [{element:'無屬性',job:'忍者'},['忍者專屬']],
+            [{element:' 無 屬性 ',job:'所有職業'},[]],
+            [{element:'無',description:'輔助法球效果'},['法球效果']],
+            [{element:'火',job:'刺客',description:'獨立法球效果'},['火屬性','刺客專屬','法球效果']],
+            [{description:'被動法球效果'},['法球效果']],
+            [{description:'法球效果'},['法球效果']],
+            [{description:'|cffffcc00輔助法球效果|r|n傷害 + 10'},['法球效果']],
+            [{effect:'獨立法球效果',description:'獨立法球效果'},['法球效果']],
+            [{descriptionOriginal:'被動法球效果'},['法球效果']],
+            [{description:'已移除法球效果',descriptionOriginal:'被動法球效果'},[]],
+            [{description:'無法球效果'},[]],
+            [{description:'不與其他法球效果疊加'},[]],
+            [{description:'法球效果：無'},[]],
+            [{name:'法球效果',iconPath:'OrbOfFire.blp',description:'25%觸發火球術'},[]],
+            [{description:'【合成】\n輔助法球效果材料 x2'},[]],
+          '''
+          assert s.count('const cases=[')==1;s=s.replace('const cases=[','const cases=[\n'+more,1)
+          s=s.replace('assert(!/ATK|DEF|武器|Lv\\./.test(h));','assert(!/ATK|DEF|武器|Lv\\.|無屬性/.test(h));')
+          extra=r'''assert.deepEqual(Array.from(c.itemCardLabels(byId.get('I01P')),x=>x.text),['法球效果']);
+          assert.deepEqual(Array.from(c.itemCardLabels(byId.get('I074')),x=>x.text),['刺客專屬','法球效果']);
+          const orbItems=d.items.filter(i=>c.itemHasOrbEffect(i)).map(i=>({id:i.id,name:i.name,labels:Array.from(c.itemCardLabels(i),x=>x.text)}));
+          '''
+          s=s.replace('const s=fs.readFileSync',extra+'const s=fs.readFileSync',1)
+          s=s.replace('allCardsNoNumericPills:true,','allCardsNoNumericPills:true,neutralPillsHidden:true,orbItemCount:orbItems.length,orbItems,',1)
+          test.write_text(s)
+          rules=R/'SITE_UPDATE_RULES.md';s=rules.read_text()
+          oldrule='- 明確的「無屬性」可顯示；缺值不等於無屬性。沒有資料就省略該標籤，不補造。'
+          assert oldrule in s
+          s=s.replace(oldrule,'- 「無」與「無屬性」不顯示小標；其他已確認屬性照常顯示。僅省略卡片標籤，不刪除原始屬性、詳情或篩選資料；缺值不補造。\n- 物品說明／效果明確標註「法球效果」「獨立法球效果」「輔助法球效果」或「被動法球效果」時，統一加上 `法球效果` 小標，一件物品只顯示一次；不要根據名稱、圖示、觸發技能或相容性警語猜測。優先使用當版說明，避免過期原始說明誤標。\n- 小標順序為已確認的非無屬性、限定職業、法球效果；後續新增物品及共用卡片一律沿用。')
+          rules.write_text(s)
+          agents=R/'AGENTS.md';agents.write_text(agents.read_text()+'Item-card labels omit neutral (無／無屬性) and add 法球效果 only for explicit orb-effect declarations. Preserve restriction labels and underlying item data.\n')
+          # Keep the reusable installer able to replace an already installed helper safely.
+          apply=R/'tools/catalog/apply_catalog_tags.py'
+          apply.write_text('''"""Embed the approved shared item-card helper without changing game data."""
+          from pathlib import Path
+          import sys,re
+          root=Path(sys.argv[1] if len(sys.argv)>1 else '.')
+          helper=(Path(__file__).parent/'item-card-tags.js').read_text(encoding='utf-8').rstrip()
+          page=root/'index.html';s=page.read_text(encoding='utf-8')
+          if helper not in s:
+              marker='/* Shared item-card labels. Keep raw stats and detail data unchanged. */'
+              if s.count(marker)==1:
+                  start=s.index(marker);end=s.index('function itemCard(i)',start)
+                  s=s[:start]+helper+'\\n'+s[end:]
+              else:
+                  matches=list(re.finditer(r'^function itemStatPills\\(i\\)\\{.*?\\}$',s,re.M))
+                  if len(matches)!=1:raise SystemExit('Expected one known helper; refusing ambiguous patch')
+                  start,end=matches[0].span();s=s[:start]+helper+s[end:]
+          s=s.replace('小標顯示屬性與限定職業；','小標顯示屬性、限定職業與法球效果（省略無屬性）；')
+          s=s.replace('可依名稱、價格、職業、屬性、攻擊、防禦與武器等級查找；NPC／商店名稱也可搜尋。預設價格由低到高。','小標顯示屬性、限定職業與法球效果（省略無屬性）；可依名稱、價格、職業或屬性查找，NPC／商店名稱也可搜尋。預設價格由低到高。')
+          s=s.replace(",['weaponLevel','武器等級：高 → 低']",'')
+          page.write_text(s,encoding='utf-8')
+          ''')
+          PY
+          cd /tmp/catalog-release
+          node tools/catalog/test_catalog_tags.cjs . | tee /tmp/catalog-qa/unit.json
+          cp index.html /tmp/catalog-qa/before-installer.html
+          python tools/catalog/apply_catalog_tags.py .
+          cmp index.html /tmp/catalog-qa/before-installer.html
+          rm /tmp/catalog-qa/before-installer.html
+          test -z "$(git diff --name-only -- atlas-data atlas-models wrangler.jsonc)"
+          git diff --check
+          git diff > /tmp/catalog-qa/change.diff
+      - name: Verify browser display on desktop and mobile
+        run: |
+          python -m pip install --quiet playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          cat > /tmp/catalog-qa/browser.py <<'PY'
+          import asyncio,json,threading,functools,http.server,os
+          from pathlib import Path
+          from playwright.async_api import async_playwright
+          O=Path(os.environ.get('QA_OUT','/tmp/catalog-qa'));O.mkdir(parents=True,exist_ok=True)
+          base=os.environ.get('SITE_URL');server=None
+          if not base:
+              class Quiet(http.server.SimpleHTTPRequestHandler):
+                  def log_message(self,*a):pass
+              server=http.server.ThreadingHTTPServer(('127.0.0.1',0),functools.partial(Quiet,directory='/tmp/catalog-release'))
+              threading.Thread(target=server.serve_forever,daemon=True).start();base=f'http://127.0.0.1:{server.server_port}/'
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True,args=['--no-sandbox']);page=await browser.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)));checks=[];examples={}
+                  await page.goto(base+'#items',wait_until='networkidle')
+                  async def check_card(name,id,expected):
+                      await page.locator('#local-q').fill(name)
+                      card=page.locator('.item-card').filter(has=page.locator('h3 [data-id="'+id+'"]'))
+                      await card.wait_for(state='visible')
+                      await page.wait_for_timeout(400)
+                      pills=await card.locator('.item-stat-pills span').all_inner_texts()
+                      assert pills==expected,(id,pills,expected)
+                      assert all(not any(t in x for t in ['無屬性','ATK','DEF','武器 Lv.']) for x in pills)
+                      examples[id]={'name':name,'labels':pills};checks.append('card:'+id)
+                  await check_card('風魔飛鏢','I063',['忍者專屬'])
+                  await check_card('水靈之刀','I06G',['水屬性','法球效果'])
+                  await check_card('雷神之鎚','I01P',['法球效果'])
+                  await check_card('血之淚','I074',['刺客專屬','法球效果'])
+                  await page.screenshot(path=str(O/'orb-desktop.png'))
+                  await page.goto(base+'#items/i/I063',wait_until='networkidle');await page.wait_for_selector('#detail[open]')
+                  assert await page.evaluate("RODB.items.find(i=>i.id==='I063').element==='無'");checks.append('neutral-source-retained')
+                  await page.goto(base+'#items',wait_until='networkidle');await page.locator('#local-q').fill('');await page.locator('select[data-filter="element"]').select_option('無');await page.wait_for_timeout(400)
+                  assert await page.locator('.item-card').count()>0
+                  assert all('無屬性' not in t for t in await page.locator('.item-stat-pills').all_inner_texts());checks.append('neutral-filter-retained')
+                  await page.locator('select[data-filter="element"]').select_option('全部');await check_card('血之淚','I074',['刺客專屬','法球效果'])
+                  await page.locator('.item-card').filter(has=page.locator('h3 [data-id="I074"]')).locator('[data-action="favorite"]').click()
+                  await page.goto(base+'#saved',wait_until='networkidle');assert await page.locator('.item-card .item-stat-pills').all_inner_texts()==['刺客專屬法球效果'] or await page.locator('.item-card .item-stat-pills span').all_inner_texts()==['刺客專屬','法球效果'];checks.append('saved-shared-labels')
+                  for route in ['sockets','cards','world?p=workspace','monsters','about']:
+                      await page.goto(base+'#'+route,wait_until='networkidle');assert await page.locator('main').inner_text();checks.append('route:'+route)
+                  await page.set_viewport_size({'width':390,'height':844});await page.goto(base+'#items',wait_until='networkidle');await check_card('血之淚','I074',['刺客專屬','法球效果'])
+                  assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');checks.append('mobile-no-overflow');await page.screenshot(path=str(O/'orb-mobile.png'))
+                  assert not errors,errors
+                  report={'passed':True,'version':await page.evaluate('RODB.meta.version'),'checks':checks,'examples':examples,'javascriptErrors':errors}
+                  (O/'browser.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False));await browser.close()
+          try:asyncio.run(main())
+          finally:
+              if server:server.shutdown()
+          PY
+          python /tmp/catalog-qa/browser.py
+      - name: Stage verified release without changing production
+        run: |
+          cd /tmp/catalog-release
+          git config user.name 'RO Atlas maintenance'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html SITE_UPDATE_RULES.md AGENTS.md tools/catalog
+          test "$(git diff --cached --name-only | wc -l)" = '6'
+          git commit -m 'fix(catalog): hide neutral pills and show explicit orb effects' -m 'Keep element data and filters unchanged. Apply shared labels to warehouse, sockets and saved items; record the policy and regression tests.'
+          git push origin HEAD:refs/heads/atlas/catalog-orb-neutral-ready-20261030
+          git rev-parse HEAD | tee /tmp/catalog-qa/release-commit.txt
+          git diff HEAD^ HEAD --stat > /tmp/catalog-qa/release-diff.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: catalog-orb-neutral-verification
+          path: /tmp/catalog-qa/
+          retention-days: 7
