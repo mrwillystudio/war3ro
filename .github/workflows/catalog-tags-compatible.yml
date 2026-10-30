@@ -1,0 +1,33 @@
+name: Catalog labels supported browser validation
+on:
+  push:
+    branches: [atlas/catalog-tags-20261030]
+    paths: ['.github/workflows/catalog-tags-compatible.yml']
+permissions:
+  contents: write
+jobs:
+  catalog-release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run committed patch, tests and staging steps
+        run: |
+          python -m pip install --quiet pyyaml
+          python - <<'PY'
+          from pathlib import Path
+          import yaml,subprocess
+          spec=yaml.safe_load(Path('.github/workflows/catalog-tags.yml').read_text())
+          for step in spec['jobs']['catalog-labels']['steps']:
+              if 'run' in step:
+                  print('Running:',step['name'],flush=True)
+                  subprocess.run(['bash','-eo','pipefail','-c',step['run']],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: catalog-labels-verification
+          path: /tmp/catalog-qa/
+          retention-days: 7
