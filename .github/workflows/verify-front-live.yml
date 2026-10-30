@@ -1,0 +1,73 @@
+name: Verify live front previews
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/verify-front-live.yml']
+permissions:
+  contents: read
+jobs:
+  live-previews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 71bad4de3b99a8edccbfac51761bd974d2da407f
+      - name: Verify public files against release bytes
+        run: |
+          mkdir -p /tmp/atlas-live
+          python - <<'PY'
+          import pathlib,urllib.request,hashlib,json,time,re,concurrent.futures,datetime
+          BASE='https://war3ro.mrwillytw.workers.dev/';R=pathlib.Path('.');O=pathlib.Path('/tmp/atlas-live')
+          def read(path):
+              req=urllib.request.Request(BASE+path,headers={'User-Agent':'Mozilla/5.0 Atlas-Preview-Verification','Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as resp:return resp.read(),resp.status
+          expected=hashlib.sha256((R/'index.html').read_bytes()).hexdigest()
+          for attempt in range(16):
+              b,status=read('?verify=front-71bad4de')
+              if hashlib.sha256(b).hexdigest()==expected:break
+              time.sleep(6)
+          else:raise RuntimeError('Production index differs from release')
+          scripts=[s.split('?')[0].removeprefix('./') for s in re.findall(r'<script src="([^"]+)"',b.decode())]
+          paths=scripts+[str(p) for p in sorted(R.glob('atlas-models/70b07-front/*.webp'))]
+          assert len([p for p in paths if p.endswith('.webp')])==186
+          def check(path):
+              for attempt in range(3):
+                  try:
+                      b,status=read(path);sha=hashlib.sha256(b).hexdigest();assert sha==hashlib.sha256((R/path).read_bytes()).hexdigest(),path
+                      return {'path':path,'status':status,'sha256':sha}
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(3)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(check,paths))
+          report={'passed':True,'commit':'71bad4de3b99a8edccbfac51761bd974d2da407f','version':'Ro-Online 7.0b07','checkedAtUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'indexSha256':expected,'imageCount':186,'scriptCount':len(scripts),'files':results}
+          (O/'live-files.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('LIVE FILES PASS',len(results)+1)
+          PY
+      - name: Verify actual visible new monster previews
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+          python - <<'PY'
+          import asyncio,json,pathlib
+          from playwright.async_api import async_playwright
+          O=pathlib.Path('/tmp/atlas-live');BASE='https://war3ro.mrwillytw.workers.dev/';errors=[]
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True,args=['--no-sandbox']);page=await browser.new_page(viewport={'width':1440,'height':1000});page.on('pageerror',lambda e:errors.append(str(e)));details=[]
+                  for id in ['UKrk','Udth','Uanb']:
+                      await page.goto(BASE+'?verify=front-71bad4de#monsters/m/'+id,wait_until='networkidle')
+                      await page.wait_for_function('''id=>{const i=document.querySelector('#detail[open] .detail-art img');if(!i)return false;const b=i.getBoundingClientRect();return i.src.includes('/'+id+'-')&&i.complete&&i.naturalWidth===512&&b.width>50&&b.height>50}''',arg=id)
+                      await page.locator('#detail .detail-art img').evaluate('(i)=>i.decode()');await page.wait_for_timeout(250)
+                      state=await page.locator('#detail .detail-art img').evaluate('(i)=>({src:i.src,width:i.naturalWidth,height:i.naturalHeight,opacity:getComputedStyle(i).opacity,display:getComputedStyle(i).display,box:i.getBoundingClientRect().toJSON()})');assert state['opacity']=='1' and state['display']!='none';details.append({'id':id,**state})
+                      await page.screenshot(path=str(O/(id+'-live-desktop.png')))
+                  await page.set_viewport_size({'width':390,'height':844});await page.goto(BASE+'?verify=front-71bad4de#monsters/m/UKrk',wait_until='networkidle');await page.wait_for_function("document.querySelector('#detail .detail-art img')?.src.includes('/UKrk-')");await page.locator('#detail .detail-art img').evaluate('(i)=>i.decode()');await page.wait_for_timeout(250);await page.screenshot(path=str(O/'UKrk-live-mobile.png'))
+                  assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');assert not errors,errors
+                  report={'passed':True,'version':await page.evaluate('RODB.meta.version'),'previewCount':await page.evaluate('RODB.meta.frontModelPreviewCount'),'details':details,'mobileNoHorizontalOverflow':True,'javascriptErrors':errors}
+                  (O/'live-browser.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False));await browser.close()
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atlas-front-live-verification
+          path: /tmp/atlas-live/
+          retention-days: 7
