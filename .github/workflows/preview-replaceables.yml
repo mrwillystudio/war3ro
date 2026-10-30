@@ -23,7 +23,8 @@ jobs:
               urls=['https://www.hiveworkshop.com/data/static_assets/mpq/tft/'+name.lower(),'https://www.hiveworkshop.com/casc-contents?'+urllib.parse.urlencode({'path':key})]
               for url in urls:
                   try:
-                      with urllib.request.urlopen(url,timeout=25) as r:b=r.read()
+                      req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 MDX-Preview-Asset-Resolver'})
+                      with urllib.request.urlopen(req,timeout=25) as r:b=r.read()
                       assert b[:4] in [b'BLP1',b'BLP2']
                       fn=hashlib.sha256(key.encode()).hexdigest()[:20]+'.blp';(O/fn).write_bytes(b)
                       idx[key]={'file':fn,'source':url,'sha256':hashlib.sha256(b).hexdigest()};break
