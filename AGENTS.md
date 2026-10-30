@@ -6,3 +6,4 @@ Item-card labels are defined in `tools/catalog/item-card-tags.js` and embedded i
 Run `node tools/catalog/test_catalog_tags.cjs .` after any item-label update.
 Model previews use individual 10–15 degree left offsets and hide only foot-level hero glow; follow the full policy for new models too.
 Never call a local artifact or staging branch a completed production deployment. Verify the deployed site first.
+Item-card labels omit neutral (無／無屬性) and add 法球效果 only for explicit orb-effect declarations. Preserve restriction labels and underlying item data.
