@@ -1,0 +1,59 @@
+name: Validate front preview release
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/front-preview-release.yml']
+permissions:
+  contents: write
+jobs:
+  preview-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download checksum-pinned preview release
+        env:
+          RELEASE_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-a6f8-820b-a7ad-dc3be9b3e299/raw?se=2026-10-30T05%3A17%3A06Z&sp=r&sv=2026-02-06&sr=b&scid=e19fe821-9878-5fde-88e4-9f1df4de5792&skoid=f5e14fda-2af7-44a3-9d18-d372ffcad871&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-29T23%3A16%3A07Z&ske=2026-10-30T23%3A16%3A07Z&sks=b&skv=2026-02-06&sig=sLLQF4h0l8BjakZUmAk5UO8IpoE7adFRgrQplFH24Pw%3D'
+        run: |
+          curl --fail --location --retry 2 "$RELEASE_URL" -o /tmp/front-preview-release.zip
+          echo 'c69156f489c4fca7cce2cf721575e086b9d2560387371eed7ff63bc0b0eaff6d  /tmp/front-preview-release.zip' | sha256sum --check
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = 'bc10d5e10c4b4d7d847acddabb00d599559c0916'
+          git worktree add --detach /tmp/atlas-release bc10d5e10c4b4d7d847acddabb00d599559c0916
+          python - <<'PY'
+          import pathlib,zipfile,json,hashlib,re
+          z=zipfile.ZipFile('/tmp/front-preview-release.zip');R=pathlib.Path('/tmp/atlas-release');Q=pathlib.Path('/tmp/atlas-qa');Q.mkdir()
+          audit=json.loads(z.read('preview-audit.json'));assert len(audit['files'])==188
+          for name,sha in audit['files'].items():
+              assert name in ['index.html','atlas-data/model-previews-front-70b07.js'] or re.fullmatch(r'atlas-models/70b07-front/[A-Za-z0-9]+-[0-9a-f]{12}\.webp',name),name
+              b=z.read(name);assert hashlib.sha256(b).hexdigest()==sha,name
+              p=R/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(b)
+          for name in ['validate_front.cjs','browser_front.py']:(Q/name).write_bytes(z.read('qa/'+name))
+          (Q/'preview-audit.json').write_bytes(z.read('preview-audit.json'))
+          PY
+      - name: Verify unchanged game data and complete image coverage
+        run: |
+          node /tmp/atlas-qa/validate_front.cjs /tmp/atlas-release "$GITHUB_WORKSPACE" | tee /tmp/atlas-qa/data-validation.json
+          node --check /tmp/atlas-release/atlas-data/model-previews-front-70b07.js
+      - name: Browser and responsive validation
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+          python /tmp/atlas-qa/browser_front.py /tmp/atlas-release /tmp/atlas-qa/browser
+      - name: Stage clean release without modifying main
+        run: |
+          cd /tmp/atlas-release
+          git config user.name 'RO Atlas preview renderer'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html atlas-data/model-previews-front-70b07.js atlas-models/70b07-front
+          test "$(git diff --cached --name-only | wc -l)" = '188'
+          git commit -m 'fix(atlas): render all 186 monster previews facing the camera' -m 'Use actual 7.0b07 MDX and BLP assets, add Time Holder and Kraken, correct alpha decoding and static attachments. Preserve all nonvisual monster data, items, drops, recipes and 40 manually corrected areas. Version remains Ro-Online 7.0b07. No generated replacement artwork; original map unchanged.'
+          git push origin HEAD:refs/heads/atlas/front-models-ready-20261030
+          git rev-parse HEAD | tee /tmp/atlas-qa/release-commit.txt
+          git rev-parse HEAD^{tree} | tee /tmp/atlas-qa/release-tree.txt
+          git diff HEAD^ HEAD --stat > /tmp/atlas-qa/release-diff.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: front-preview-release-validation
+          path: /tmp/atlas-qa/
+          retention-days: 7
