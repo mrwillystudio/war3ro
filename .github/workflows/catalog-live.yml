@@ -1,0 +1,69 @@
+name: Verify live catalog labels
+on:
+  push:
+    branches: [atlas/catalog-tags-20261030]
+    paths: ['.github/workflows/catalog-live.yml']
+permissions:
+  contents: read
+jobs:
+  live-catalog:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: e1b2113363baa1513b25db2bb3771c964d6f23fa
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify deployed files
+        run: |
+          mkdir -p /tmp/catalog-live
+          python - <<'PY'
+          import urllib.request,hashlib,pathlib,time,json
+          O=pathlib.Path('/tmp/catalog-live');base='https://war3ro.mrwillytw.workers.dev/'
+          def get(path):
+              req=urllib.request.Request(base+path,headers={'User-Agent':'Mozilla/5.0 RO-Atlas-Catalog-QA','Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=25) as r:return r.read()
+          expected=hashlib.sha256(pathlib.Path('index.html').read_bytes()).hexdigest()
+          for n in range(20):
+              try:
+                  b=get('?verify=catalog-e1b2113')
+                  if hashlib.sha256(b).hexdigest()==expected:break
+              except Exception:pass
+              time.sleep(5)
+          else:raise RuntimeError('Live index does not match the catalog release')
+          (O/'index.html').write_bytes(b)
+          report={'passed':True,'commit':'e1b2113363baa1513b25db2bb3771c964d6f23fa','indexSha256':expected,'files':{}}
+          for name in ['SITE_UPDATE_RULES.md','AGENTS.md']:
+              b=get(name);assert b==pathlib.Path(name).read_bytes(),name;(O/name).write_bytes(b);report['files'][name]=hashlib.sha256(b).hexdigest()
+          (O/'files.json').write_text(json.dumps(report,indent=2));print(json.dumps(report))
+          PY
+      - name: Verify live rendering
+        run: |
+          python -m pip install --quiet playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          python - <<'PY'
+          import asyncio,json,pathlib,datetime
+          from playwright.async_api import async_playwright
+          O=pathlib.Path('/tmp/catalog-live');base='https://war3ro.mrwillytw.workers.dev/?verify=catalog-e1b2113'
+          async def main():
+              async with async_playwright() as p:
+                  browser=await p.chromium.launch(headless=True,args=['--no-sandbox']);page=await browser.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                  await page.goto(base+'#items',wait_until='networkidle');await page.locator('#local-q').fill('風魔');await page.wait_for_function("[...document.querySelectorAll('.item-stat-pills')].some(e=>e.textContent.includes('忍者專屬'))");await page.wait_for_timeout(250)
+                  pills=await page.locator('.item-stat-pills').all_inner_texts();assert pills and all('忍者專屬' in t for t in pills);assert all(not any(n in t for n in ['ATK','DEF','武器','Lv.']) for t in pills)
+                  await page.screenshot(path=str(O/'warehouse-ninja-desktop.png'))
+                  modelRevision=await page.evaluate('RODB.meta.modelPreviewRevision');version=await page.evaluate('RODB.meta.version');count=await page.evaluate('RODB.items.length')
+                  await page.locator('#local-q').fill('狐狸面具');await page.wait_for_function("[...document.querySelectorAll('.item-card h3')].some(e=>e.textContent.includes('狐狸面具'))");await page.wait_for_timeout(200);fox=await page.locator('.item-stat-pills').all_inner_texts();assert any(t.strip()=='忍者專屬' for t in fox)
+                  await page.goto(base+'#items/i/I02I',wait_until='networkidle');await page.wait_for_selector('#detail[open]');detail=await page.locator('#detail').inner_text();assert '80' in detail and '拳刃' in detail
+                  await page.set_viewport_size({'width':390,'height':844});await page.goto(base+'#items',wait_until='networkidle');await page.locator('#local-q').fill('風魔');await page.wait_for_function("[...document.querySelectorAll('.item-stat-pills')].some(e=>e.textContent.includes('忍者專屬'))");await page.wait_for_timeout(250);assert await page.evaluate('document.documentElement.scrollWidth<=innerWidth+2');await page.screenshot(path=str(O/'warehouse-ninja-mobile.png'))
+                  assert not errors,errors
+                  report={'passed':True,'commit':'e1b2113363baa1513b25db2bb3771c964d6f23fa','checkedAtUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'version':version,'itemCount':count,'ninjaPills':pills,'foxMaskPills':fox,'detailStatsRetained':True,'mobileNoOverflow':True,'javascriptErrors':errors,'modelPreviewRevision':modelRevision,'leftNoGlowPublicationIncluded':False}
+                  (O/'live-catalog-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False));await browser.close()
+          asyncio.run(main())
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-catalog-labels-verification
+          path: /tmp/catalog-live/
+          retention-days: 7
