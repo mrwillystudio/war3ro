@@ -1,0 +1,29 @@
+name: Complete classic preview dependencies
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/native-model-complete.yml']
+permissions:
+  contents: read
+jobs:
+  complete-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve full classic paths
+        run: |
+          python -m pip install --quiet pyyaml
+          python - <<'PY'
+          import yaml,subprocess,json,pathlib
+          cfg=yaml.safe_load(pathlib.Path('.github/workflows/native-model-assets.yml').read_text())
+          steps=cfg['jobs']['assets']['steps']
+          subprocess.run(['bash','-e','-c',steps[1]['run']],check=True)
+          p=pathlib.Path('/tmp/native-preview/paths.json');paths=json.loads(p.read_text())
+          p.write_text(json.dumps([n if n.lower().endswith('.mdx') else n+'.mdx' for n in paths]))
+          subprocess.run(['bash','-e','-c',steps[2]['run']],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-model-preview-complete
+          path: /tmp/native-preview/output/
+          retention-days: 7
