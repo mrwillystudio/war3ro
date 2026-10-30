@@ -1,0 +1,37 @@
+name: Preview replaceable materials
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/preview-replaceables.yml']
+permissions:
+  contents: read
+jobs:
+  replaceables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Resolve referenced replaceable materials
+        run: |
+          mkdir -p /tmp/replaceables
+          python - <<'PY'
+          import pathlib,urllib.request,urllib.parse,hashlib,json
+          O=pathlib.Path('/tmp/replaceables');idx={}
+          paths=['ReplaceableTextures/LordaeronTree/LordaeronSummerTree.blp']
+          for id in [0,1,4,6,12]:
+              paths += ['ReplaceableTextures/TeamColor/TeamColor%02d.blp'%id,'ReplaceableTextures/TeamGlow/TeamGlow%02d.blp'%id]
+          for name in paths:
+              key=name.replace('/','\\').lower()
+              urls=['https://www.hiveworkshop.com/data/static_assets/mpq/tft/'+name.lower(),'https://www.hiveworkshop.com/casc-contents?'+urllib.parse.urlencode({'path':key})]
+              for url in urls:
+                  try:
+                      with urllib.request.urlopen(url,timeout=25) as r:b=r.read()
+                      assert b[:4] in [b'BLP1',b'BLP2']
+                      fn=hashlib.sha256(key.encode()).hexdigest()[:20]+'.blp';(O/fn).write_bytes(b)
+                      idx[key]={'file':fn,'source':url,'sha256':hashlib.sha256(b).hexdigest()};break
+                  except Exception as e:print(name,str(e))
+          (O/'native-index.json').write_text(json.dumps(idx,indent=2));print('MATERIALS',len(idx));assert len(idx)==11
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview-replaceable-textures
+          path: /tmp/replaceables/
+          retention-days: 7
