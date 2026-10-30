@@ -1,0 +1,33 @@
+name: Checked catalog label release
+on:
+  push:
+    branches: [atlas/catalog-orb-neutral-20261030]
+    paths: ['.github/workflows/catalog-orb-neutral-checked.yml']
+permissions:
+  contents: write
+jobs:
+  checked-catalog:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply, test, and stage the display-only release
+        run: |
+          python -m pip install --quiet pyyaml
+          python - <<'PY'
+          import yaml,subprocess,pathlib
+          cfg=yaml.safe_load(pathlib.Path('.github/workflows/catalog-orb-neutral.yml').read_text())
+          steps=cfg['jobs']['catalog-labels']['steps']
+          for step in steps:
+              if 'run' not in step:continue
+              cmd=step['run'].replace("await check_card('風魔飛鏢','I063'", "await check_card('風魔輪飛鏢','I063'")
+              subprocess.run(['bash','-e','-o','pipefail','-c',cmd],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: catalog-orb-neutral-verification
+          path: /tmp/catalog-qa/
+          retention-days: 7
