@@ -15,7 +15,7 @@ jobs:
           mkdir -p /tmp/atlas-render-tools
           cd /tmp/atlas-render-tools
           npm init -y
-          npm install mdx-m3-viewer@5.13.0 --no-audit --no-fund
+          npm install mdx-m3-viewer --no-audit --no-fund
           curl --fail -L https://raw.githubusercontent.com/eagleflo/mpyq/master/mpyq.py -o mpyq.py
           find node_modules/mdx-m3-viewer/dist -maxdepth 2 -type f | head -20
       - uses: actions/upload-artifact@v4
