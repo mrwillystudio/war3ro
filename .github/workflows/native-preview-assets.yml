@@ -1,0 +1,83 @@
+name: Native preview dependencies
+on:
+  push:
+    branches: [atlas/front-model-previews-20261030]
+    paths: ['.github/workflows/native-preview-assets.yml']
+permissions:
+  contents: read
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read supplied native archive
+        run: |
+          python -m pip install --quiet gdown
+          mkdir -p /tmp/native-preview
+          gdown '19OfoMp-pGT-NL4VAhjPns6Cuifb-B86f' -O /tmp/native-preview/MPQ.rar
+          7z l /tmp/native-preview/MPQ.rar | tail -20
+          7z x -y /tmp/native-preview/MPQ.rar -o/tmp/native-preview/mpq >/dev/null
+          sudo apt-get update -qq
+          sudo apt-get install -y libstorm-dev
+      - name: Extract needed native models and textures only
+        run: |
+          npm install --prefix /tmp/native-tools mdx-m3-viewer --no-audit --no-fund
+          node - <<'JS'
+          const fs=require('fs'),vm=require('vm');const c={window:{__atlasParts:[]},console};vm.createContext(c);
+          for(const f of fs.readdirSync('atlas-data').filter(x=>/^part-\d+\.js$/.test(x)).sort())vm.runInContext(fs.readFileSync('atlas-data/'+f,'utf8'),c);
+          c.window.RODB=JSON.parse(c.window.__atlasParts.join(''));
+          for(const f of ['model-previews-v11.js','model-previews-lowkey.js','map-corrections-r85.js','update-70b07.js'])vm.runInContext(fs.readFileSync('atlas-data/'+f,'utf8'),c);
+          fs.writeFileSync('/tmp/native-preview/models.json',JSON.stringify(c.window.RODB.monsters.map(m=>m.modelPath)));
+          JS
+          cat > /tmp/native-preview/extract.py <<'PY'
+          import ctypes as C,ctypes.util,json,pathlib,hashlib,subprocess
+          R=pathlib.Path('/tmp/native-preview');O=R/'output';O.mkdir(exist_ok=True)
+          lib=C.CDLL(ctypes.util.find_library('storm'))
+          lib.SFileOpenArchive.argtypes=[C.c_char_p,C.c_uint32,C.c_uint32,C.POINTER(C.c_void_p)]
+          lib.SFileExtractFile.argtypes=[C.c_void_p,C.c_char_p,C.c_char_p,C.c_uint32]
+          arcs=[]
+          priority={'war3patch.mpq':0,'war3xlocal.mpq':1,'war3x.mpq':2,'war3.mpq':3}
+          for p in sorted(R.rglob('*.mpq'),key=lambda p:priority.get(p.name.lower(),4)):
+              h=C.c_void_p()
+              if lib.SFileOpenArchive(str(p).encode(),0,0x100,C.byref(h)):arcs.append((p.name,h))
+          print('archives',[(n,str(h)) for n,h in arcs])
+          files={}
+          def extract(name):
+              name=name.replace('/','\\');key=name.lower()
+              if key in files:return files[key]
+              dest=O/(hashlib.sha256(key.encode()).hexdigest()[:20]+pathlib.PureWindowsPath(name).suffix)
+              for label,h in arcs:
+                  if lib.SFileExtractFile(h,name.encode(),str(dest).encode(),0):
+                      files[key]={'file':dest.name,'source':label,'sha256':hashlib.sha256(dest.read_bytes()).hexdigest()};return files[key]
+              return None
+          modelpaths=json.loads((R/'models.json').read_text())
+          for n in modelpaths:
+              if n:extract(n[:-4]+'.mdx' if n.lower().endswith('.mdl') else n)
+          extras=['Abilities\\Spells\\Other\\BreathOfFire\\BreathOfFireDamage.mdx','units\\creeps\\SkeletonArcher\\SkeletonArcher.mdx','Environment\\NightElfBuildingFire\\ElfLargeBuildingFire2.mdx','Doodads\\Dungeon\\Props\\Chain\\Chain0.mdx','Abilities\\Weapons\\SentinelMissile\\SentinelMissile.mdx','Environment\\SmallBuildingFire\\SmallBuildingFire2.mdx']
+          for n in extras:extract(n)
+          # All texture chunks of extracted classic MDX, including particle textures.
+          import struct
+          textures=set()
+          for p in list(O.glob('*.mdx')):
+              b=p.read_bytes();off=4
+              while off+8<=len(b):
+                  tag=b[off:off+4];size=struct.unpack_from('<I',b,off+4)[0];v=b[off+8:off+8+size];off+=8+size
+                  if tag==b'TEXS':
+                      for j in range(0,len(v),268):
+                          n=v[j+4:j+264].split(b'\0')[0].decode('utf8','replace')
+                          if n:textures.add(n)
+          for n in textures:extract(n)
+          # Custom imported models also reference these native body/FX textures.
+          extra_textures=r'''Buildings\NightElf\AncientOfWar\AncientOfWar1.blp|Buildings\Undead\TempleOfTheDamned\NewTempleOfTheDamned.blp|Buildings\Undead\TombOfRelics\TombOfRelics.blp|Environment\Sky\LordaeronSummerSky\LordaeronSummerSky.blp|ReplaceableTextures\Weather\Clouds8x8.blp|Textures\BloodWhiteSmall.blp|Textures\CampaignOrcaxe.blp|Textures\Clouds8x8.blp|Textures\Dust3.blp|Textures\Dust5A.blp|Textures\Goblinmerchant.blp|Textures\HeroCryptLord.blp|Textures\Purple_Glow.blp|Textures\Red_Glow3.blp|Textures\RibbonBlur1.blp|Textures\Rock01_04.blp|Textures\Sparkle_Anim.blp|Textures\Tornado2b.blp|Textures\WaterWake2.blp|Textures\WaterWake3.blp|Textures\Yellow_Glow3.blp|Textures\clouds_anim1.blp|Textures\gutz.blp|UI\Glues\BattleNet\BattlenetLoginGlue\Battlenet-Login-Ring-Eyes.blp|UI\Glues\SinglePlayer\OrcCampaign3D\spike.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrc.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcHelm.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcSash.blp|UI\Glues\SinglePlayer\OrcCampaign3D\CampaignOrcShoulder.blp|UI\Glues\SinglePlayer\Orc_Exp\Stars3.blp|Units\Creeps\Magnataur\Magnataur.blp|Units\Critters\EasterChicken\EasterChicken.blp|Units\Naga\NagaRoyalGuard\NagaRoyalGuard.blp|Units\Other\DranaiWhite\DranaiWhite.blp|Units\Other\Dranai\Dranai.blp|units\Creeps\VoidWalker\Shade.blp|units\Creeps\VoidWalker\Voidwalker.blp|units\human\BloodElfDragonHawk\BloodElfDragonHawk.blp'''.split('|')
+          extra_textures += ['Textures\\Lords%04d.blp'%i for i in range(8)]
+          extra_textures += ['ReplaceableTextures\\TeamColor\\TeamColor00.blp','ReplaceableTextures\\TeamGlow\\TeamGlow00.blp']
+          for n in extra_textures:extract(n)
+          (O/'native-index.json').write_text(json.dumps(files,ensure_ascii=False,indent=2))
+          print('extracted',len(files),'bytes',sum(p.stat().st_size for p in O.iterdir()))
+          PY
+          python /tmp/native-preview/extract.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-preview-dependencies
+          path: /tmp/native-preview/output/
+          retention-days: 7
