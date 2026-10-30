@@ -1,0 +1,73 @@
+name: Verify live orb and neutral labels
+on:
+  push:
+    branches: [atlas/catalog-orb-neutral-20261030]
+    paths: ['.github/workflows/catalog-orb-neutral-live.yml']
+permissions:
+  contents: read
+jobs:
+  live-catalog-labels:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify production bytes against the committed release
+        run: |
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = 'c614a0c62fcee07366b99701368a8e2165ff0099'
+          git worktree add --detach /tmp/catalog-release c614a0c62fcee07366b99701368a8e2165ff0099
+          mkdir -p /tmp/catalog-qa
+          python - <<'PY'
+          import pathlib,urllib.request,hashlib,json,time,re,datetime,concurrent.futures
+          R=pathlib.Path('/tmp/catalog-release');O=pathlib.Path('/tmp/catalog-qa');BASE='https://war3ro.mrwillytw.workers.dev/'
+          def get(path):
+              req=urllib.request.Request(BASE+path,headers={'User-Agent':'Mozilla/5.0 Atlas-Catalog-Verification','Cache-Control':'no-cache'})
+              with urllib.request.urlopen(req,timeout=30) as resp:return resp.read()
+          expected=(R/'index.html').read_bytes()
+          for attempt in range(16):
+              try:
+                  actual=get('?verify=c614a0c6')
+                  if actual==expected:break
+              except Exception as e:print(str(e),flush=True)
+              time.sleep(5)
+          else:raise RuntimeError('Production index did not match the release')
+          scripts=[s.split('?')[0].removeprefix('./') for s in re.findall(r'<script src="([^"]+)"',expected.decode())]
+          files=['SITE_UPDATE_RULES.md','AGENTS.md','tools/catalog/item-card-tags.js']+scripts
+          def check(path):
+              for attempt in range(3):
+                  try:
+                      data=get(path);assert data==(R/path).read_bytes(),path
+                      return {'path':path,'sha256':hashlib.sha256(data).hexdigest(),'matchesRelease':True}
+                  except Exception:
+                      if attempt==2:raise
+                      time.sleep(2)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:results=list(pool.map(check,files))
+          report={'passed':True,'commit':'c614a0c62fcee07366b99701368a8e2165ff0099','checkedAtUTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'indexSha256':hashlib.sha256(actual).hexdigest(),'scriptCount':len(scripts),'files':results}
+          (O/'live-files.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print(json.dumps(report,ensure_ascii=False))
+          PY
+          cd /tmp/catalog-release
+          node tools/catalog/test_catalog_tags.cjs . | tee /tmp/catalog-qa/unit.json
+      - name: Verify visible badges on the public website
+        env:
+          SITE_URL: 'https://war3ro.mrwillytw.workers.dev/?verify=c614a0c6'
+        run: |
+          python -m pip install --quiet pyyaml playwright==1.57.0
+          python -m playwright install --with-deps chromium
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          cfg=yaml.safe_load(Path('.github/workflows/catalog-orb-neutral.yml').read_text())
+          step=next(s for s in cfg['jobs']['catalog-labels']['steps'] if s.get('name')=='Verify browser display on desktop and mobile')
+          code=step['run'].split("cat > /tmp/catalog-qa/browser.py <<'PY'\n",1)[1].split('\nPY\n',1)[0]
+          code=code.replace("await check_card('風魔飛鏢','I063'", "await check_card('風魔輪飛鏢','I063'")
+          Path('/tmp/catalog-qa/browser.py').write_text(code)
+          PY
+          python /tmp/catalog-qa/browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-orb-neutral-verification
+          path: /tmp/catalog-qa/
+          retention-days: 7
