@@ -1,0 +1,34 @@
+{
+  "commit": "82916514a12b7edb15252d42225cd8cc8ce61cfd",
+  "game_data_version": "enUS-1.27.1",
+  "preset": "Custom",
+  "map_w3i_gameDataSet": 2,
+  "map_w3i_format": 25,
+  "map_w3i_editorVersion": 6059,
+  "sources": [
+    {
+      "kind": "item",
+      "source": "https://github.com/sumneko/w3x2lni/blob/82916514a12b7edb15252d42225cd8cc8ce61cfd/data/enUS-1.27.1/prebuilt/Custom/item.ini",
+      "sha256": "c95814fcb08e44f31d48e352c32ee4e26d71d485ae240f6e8c81a2dad52aa0d9",
+      "count": 273
+    },
+    {
+      "kind": "unit",
+      "source": "https://github.com/sumneko/w3x2lni/blob/82916514a12b7edb15252d42225cd8cc8ce61cfd/data/enUS-1.27.1/prebuilt/Custom/unit.ini",
+      "sha256": "5734d8fcbad3bf1a78a32e9b764d7838d16557c0606de6283ccb9b4c645e5e77",
+      "count": 836
+    },
+    {
+      "kind": "ability",
+      "source": "https://github.com/sumneko/w3x2lni/blob/82916514a12b7edb15252d42225cd8cc8ce61cfd/data/enUS-1.27.1/prebuilt/Custom/ability.ini",
+      "sha256": "6384cdc5334ac27b065174935d168665116ffcf7cc85677f24e5446e3b3eb5cc",
+      "count": 799
+    },
+    {
+      "kind": "misc",
+      "source": "https://github.com/sumneko/w3x2lni/blob/82916514a12b7edb15252d42225cd8cc8ce61cfd/data/enUS-1.27.1/prebuilt/Custom/misc.ini",
+      "sha256": "94944eb6660f8d41fb6e5f16a2fbf85c3ec5469a0de907bbbf7cfefe317cb900",
+      "count": 17
+    }
+  ]
+}

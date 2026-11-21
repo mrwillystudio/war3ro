@@ -1,0 +1,4682 @@
+{
+  "rows": {
+    "n001": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3723,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3723,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n001', 1417.8, 12722.3, 249.656 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "hmtm": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3665,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3665,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'hmtm', 9199.7, -2703.9, 164.880 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "e00F": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3555,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3555,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e00F', -538.4, 8576.9, 113.980 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "uobs": {
+      "status": "no_team_color_material",
+      "owner": null,
+      "colorIndex": 0,
+      "sourceLines": [],
+      "evidence": [],
+      "note": "The source model has no replaceable team-color material; this palette is a renderer reference only."
+    },
+    "n002": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3876,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3876,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n002', 10398.3, -1095.3, 64.334 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ucsB": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3942,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3942,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ucsB', 5103.6, -4447.4, 347.200 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n018": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3594,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3594,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n018', 8269.4, 7015.4, 36.854 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02C": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3552,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3552,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02C', 2068.8, 13894.0, 234.854 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "umtw": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        51869
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 51869,
+          "function": "Trig_Party_Timer_Christmas_Actions",
+          "text": "call CreateNUnitsAtLoc( 50, 'umtw', udg_NPC_PLAYER, udg_p_npcMVP[25], 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "n01C": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3753,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3753,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01C', 14608.1, -9804.6, 231.753 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01X": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3529,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3529,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01X', 4488.3, -3136.5, 115.216 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n000": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3557,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3557,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n000', -70.2, 7022.1, 91.017 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n017": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4036,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4036,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n017', 8899.7, 8690.4, 337.240 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01D": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3722,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3722,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01D', 5339.1, 1807.0, 137.144 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ucs2": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4284,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4284,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ucs2', -1832.5, -5543.3, 44.802 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00A": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3630,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3630,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00A', -505.8, -6763.3, 291.328 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02G": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4371,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4371,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02G', 5119.5, -16726.0, 234.180 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nanw": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4606,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4606,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nanw', -654.3, -9633.1, 354.740 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u007": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3853,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3853,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u007', -4219.0, -1939.3, 217.382 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00Z": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3729,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3729,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00Z', 1144.7, 7515.8, 251.490 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "e005": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3899,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3899,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e005', 10446.0, 7467.2, 281.973 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n010": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3715,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3715,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n010', 4717.4, 9187.6, 118.556 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n003": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3547,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3547,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n003', 13992.3, -4772.4, 259.556 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nzom": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3523,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3523,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nzom', -8820.0, -10326.5, 287.543 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u005": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3750,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3750,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u005', 16385.7, 11666.6, 217.248 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02K": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3691,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3691,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02K', 7532.6, 2787.9, 246.665 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00T": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3624,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3624,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00T', -13797.3, -4553.5, 269.986 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n027": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4298,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4298,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n027', -11074.2, 3336.9, 265.580 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02N": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3915,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3915,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02N', 2677.1, -4182.9, 269.740 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ucrm": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4279,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4279,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ucrm', -2958.3, -6874.7, 142.569 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u001": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3851,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3851,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u001', -2146.4, -1016.3, 320.387 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00A": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3575,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3575,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00A', -7656.8, 9119.4, 339.700 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00H": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3878,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3878,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00H', 12573.7, -311.8, 252.583 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "e001": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3759,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3759,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e001', 15491.7, -8556.8, 98.476 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01K": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3673,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3673,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01K', -4256.7, -10489.8, 93.276 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ugrm": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3765,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3765,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ugrm', 3105.0, -805.4, 142.730 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n009": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3601,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3601,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n009', -6825.9, 7856.8, 45.812 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ucs1": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4152,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4152,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ucs1', 9909.2, -7528.0, 58.150 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00D": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4160,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4160,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00D', 11266.2, -8684.8, 228.560 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u009": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3727,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3727,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u009', 12751.8, 11206.2, 180.190 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o000": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3649,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3649,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o000', 806.7, 5970.7, 231.770 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ugar": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        35758
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 35758,
+          "function": "Trig_EGT180s_Func003A",
+          "text": "call CreateNUnitsAtLoc( 1, 'ugar', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "n01E": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3755,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3755,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01E', 15627.5, 13776.0, 325.458 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u003": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3757,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3757,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u003', 18055.5, -5213.6, 248.565 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o005": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3810,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3810,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o005', 17557.3, 11625.2, 294.506 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01B": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3718,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3718,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01B', -10878.9, 5602.8, 246.381 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "etrp": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4373,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4373,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'etrp', 5376.4, -18206.0, 46.380 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "zhyd": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3884,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3884,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'zhyd', 2864.3, -13190.2, 303.611 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n007": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3521,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3521,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n007', 14053.1, 11783.5, 1.016 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u008": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3569,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3569,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u008', -608.5, -11911.6, 23.201 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n006": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3638,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3638,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n006', -13398.4, -12566.2, 144.537 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u006": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3574,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3574,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u006', -4302.9, 919.2, 29.485 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n011": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3576,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3576,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n011', -2368.3, 9747.1, 300.774 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o00P": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4337,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4337,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o00P', 253.1, -3026.1, 326.022 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01N": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3631,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3631,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01N', 6493.6, -5243.5, 316.272 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n008": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3635,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3635,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n008', -2048.4, 280.5, 186.502 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02F": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4340,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4340,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02F', 404.1, -3536.5, 124.832 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "hwt2": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4005,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4005,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'hwt2', 7725.7, -2940.0, 158.658 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01J": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3688,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3688,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01J', -9987.6, -15164.3, 300.199 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01R": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4237,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4237,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01R', -13411.9, -10438.5, 192.052 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ndtp": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        51645
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 51645,
+          "function": "Trig_Party_Unit_Revive_Actions",
+          "text": "call CreateUnit( udg_NPC_PLAYER, 'ndtp', ax, ay, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "n00Q": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3541,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3541,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00Q', -8430.6, -9942.6, 246.310 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nvdw": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3550,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3550,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nvdw', 16303.2, -15378.6, 250.666 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nftr": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4387,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4387,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nftr', 1196.1, 2038.4, 270.436 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o00S": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4099,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4099,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o00S', 12762.8, 7130.5, 177.842 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "uban": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4303,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4303,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'uban', -6399.7, -1827.9, 327.130 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00E": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3908,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3908,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00E', 6696.4, -10531.6, 38.208 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00B": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3653,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3653,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00B', 9714.6, 13349.7, 274.096 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ushd": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4308,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4308,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ushd', -6673.5, -2813.3, 69.050 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00C": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3565,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3565,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00C', 11038.7, 12009.0, 190.040 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nbal": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3889,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3889,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nbal', -3746.7, -12169.6, 23.315 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00H": {
+      "status": "verified_object_ability_summon",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "objectEvidence": [
+        {
+          "file": "war3map.w3a",
+          "id": "A02N",
+          "field": "Hwe1:1:0",
+          "value": "u00H"
+        },
+        {
+          "file": "war3map.w3u",
+          "id": "N00M",
+          "field": "uabi",
+          "contains": "A02N"
+        }
+      ],
+      "note": "AHwe-based summoned unit belongs to its NPC caster player; explicit caster-only unit color is not an owner-color override."
+    },
+    "z001": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3837,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3837,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'z001', -13189.0, -15824.5, 88.467 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nnsu": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4300,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4300,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nnsu', -12324.4, -8072.2, 205.345 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nfsp": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4388,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4388,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nfsp', 162.7, 671.2, 206.753 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00J": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4396,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4396,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00J', -2644.3, 12850.2, 132.342 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "h01J": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3642,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3642,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'h01J', -5234.0, -12980.2, 238.010 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n019": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3632,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3632,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n019', 594.4, 3063.6, 129.336 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00R": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3717,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3717,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00R', 13882.0, 13302.9, 20.400 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00G": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4124,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4124,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00G', -7568.0, -1622.1, 74.956 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "uplg": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        51643
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 51643,
+          "function": "Trig_Party_Unit_Revive_Actions",
+          "text": "call CreateUnit( udg_NPC_PLAYER, 'uplg', ax, ay, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "uskm": {
+      "status": "verified_event_owner_color",
+      "owner": "PLAYER_NEUTRAL_AGGRESSIVE",
+      "colorIndex": 12,
+      "sourceLines": [
+        54337,
+        36348
+      ],
+      "evidence": [
+        {
+          "line": 54337,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_EVENT_PLAYER = Player(PLAYER_NEUTRAL_AGGRESSIVE)"
+        },
+        {
+          "line": 36348,
+          "function": "Trig_EGT3000s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'uskm', udg_EVENT_PLAYER, udg_p_npcRandom, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Event enemy is created for classic neutral-aggressive player12; no player-color override appears in current script."
+    },
+    "nftt": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4390,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4390,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nftt', 63.6, 74.1, 94.340 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "e009": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3570,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3570,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e009', -2594.6, 14036.1, 235.769 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ngnw": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57860
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57860,
+          "function": "Trig_Boss_KoboldLeader_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'ngnw', udg_NPC_PLAYER, udg_Point, 135.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "o00L": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4127,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4127,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o00L', -9313.3, -13616.7, 26.713 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00G": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3546,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3546,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00G', -3668.7, 9713.0, 0.000 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00K": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4403,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4403,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00K', -3376.1, 11367.1, 338.650 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01O": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4190,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4190,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01O', -7821.5, -17316.2, 274.283 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o00H": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3816,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3816,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o00H', -10468.1, -15231.0, 259.878 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02H": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4090,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4090,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n02H', 5599.6, -17120.9, 119.654 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ngh2": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4054,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4054,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ngh2', -7609.9, -6970.5, 319.794 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ngsp": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4394,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4394,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ngsp', 932.3, 192.7, 57.680 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nfgo": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4294,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4294,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nfgo', -9408.0, 4800.0, 270.000 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00E": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3573,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3573,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00E', 9828.8, -13404.5, 152.763 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "e00D": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3848,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3848,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e00D', -6906.5, -6700.5, 320.819 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nanc": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3979,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3979,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nanc', 7347.3, -12624.2, 167.267 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u004": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3544,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3544,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u004', -12409.9, -4803.8, 267.080 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00B": {
+      "status": "verified_event_owner_color",
+      "owner": "PLAYER_NEUTRAL_AGGRESSIVE",
+      "colorIndex": 12,
+      "sourceLines": [
+        54337,
+        36366
+      ],
+      "evidence": [
+        {
+          "line": 54337,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_EVENT_PLAYER = Player(PLAYER_NEUTRAL_AGGRESSIVE)"
+        },
+        {
+          "line": 36366,
+          "function": "Trig_EGT3000s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'n00B', udg_EVENT_PLAYER, udg_p_npcRandom, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Event enemy is created for classic neutral-aggressive player12; no player-color override appears in current script."
+    },
+    "nsth": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3567,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3567,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nsth', -4131.1, 10859.1, 240.623 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n012": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4064,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4064,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n012', -4221.2, 5485.2, 9.835 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n016": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3633,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3633,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n016', -268.1, -17768.1, 30.522 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "hspt": {
+      "status": "no_team_color_material",
+      "owner": null,
+      "colorIndex": 0,
+      "sourceLines": [],
+      "evidence": [],
+      "note": "The source model has no replaceable team-color material; this palette is a renderer reference only."
+    },
+    "ndqn": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4412,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4412,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ndqn', -5640.6, -16647.4, 180.700 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "uabo": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        51875
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 51875,
+          "function": "Trig_Party_Timer_Christmas_Actions",
+          "text": "call CreateNUnitsAtLoc( 10, 'uabo', udg_NPC_PLAYER, udg_p_npcMVP[25], 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "n015": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3554,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3554,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n015', -1990.6, 7399.9, 127.213 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n01Q": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4186,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4186,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n01Q', -12696.2, -9796.7, 272.380 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02T": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36151
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36151,
+          "function": "Trig_EGT1800s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'n02T', udg_NPC_PLAYER, udg_p_npcRandom, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "hgyr": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4397,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4397,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'hgyr', -341.0, 1977.5, 261.750 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00D": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3733,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3733,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00D_0253 = CreateUnit( p, 'O00D', -1849.6, -1037.2, 223.830 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nslv": {
+      "status": "preview_reference_only",
+      "owner": null,
+      "colorIndex": 0,
+      "sourceLines": [],
+      "evidence": [],
+      "note": "Current spawn ownership is not established; retain the previous reference palette without claiming a verified in-game team color."
+    },
+    "O00B": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3944,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3944,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00B_0482 = CreateUnit( p, 'O00B', 9357.3, -13411.3, 58.090 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nrdk": {
+      "status": "preview_reference_only",
+      "owner": null,
+      "colorIndex": 0,
+      "sourceLines": [],
+      "evidence": [],
+      "note": "Current spawn ownership is not established; retain the previous reference palette without claiming a verified in-game team color."
+    },
+    "hdhw": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3950,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3950,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'hdhw', -5835.5, 636.8, 91.060 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nmyr": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57799
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57799,
+          "function": "Trig_Npc_Destructible_Merman_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nmyr', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "otau": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3699,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3699,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'otau', 10769.4, 10242.9, 223.470 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o00F": {
+      "status": "verified_event_owner_color",
+      "owner": "PLAYER_NEUTRAL_AGGRESSIVE",
+      "colorIndex": 12,
+      "sourceLines": [
+        54337,
+        36456
+      ],
+      "evidence": [
+        {
+          "line": 54337,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_EVENT_PLAYER = Player(PLAYER_NEUTRAL_AGGRESSIVE)"
+        },
+        {
+          "line": 36456,
+          "function": "Trig_EGT3600s_Actions",
+          "text": "call CreateNUnitsAtLoc( 4, 'o00F', udg_EVENT_PLAYER, udg_p_npcRandom, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Event enemy is created for classic neutral-aggressive player12; no player-color override appears in current script."
+    },
+    "O00U": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4529,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4529,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00U_1081 = CreateUnit( p, 'O00U', -6395.6, -2107.5, 267.800 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00U": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3558,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3558,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00U', -4414.2, 3648.6, 49.680 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "o00R": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4050,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4050,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'o00R', 13911.8, 8266.0, 241.110 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n014": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4095,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4095,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n014', -13728.4, -18252.4, 87.491 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nfbr": {
+      "status": "verified_dynamic_unit_pool",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        54422,
+        54807,
+        54830
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 54422,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_ut_npcMONSTER[5] = 'nfbr'"
+        },
+        {
+          "line": 54807,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "set udg_TypeUnit = udg_ut_npcMONSTER[GetRandomInt(1, 16)]"
+        },
+        {
+          "line": 54830,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "The selected rawcode belongs to pool1–16 created for udg_NPC_PLAYER."
+    },
+    "O00I": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4210,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4210,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00I_0769 = CreateUnit( p, 'O00I', 4039.8, -14689.4, 39.020 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nwen": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3680,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3680,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nwen', -5955.9, -8878.3, 253.014 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "Uvng": {
+      "status": "verified_runtime_owner_color",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36844
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36844,
+          "function": "Trig_Event_End_Quest_MS_Actions",
+          "text": "call RescueUnitBJ( udg_u_npcMVP[17], udg_NPC_PLAYER, true )"
+        }
+      ],
+      "note": "Encounter activation calls RescueUnitBJ(..., udg_NPC_PLAYER, true); Blizzard.j forwards changeColor=true to SetUnitOwner."
+    },
+    "n00V": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3844,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3844,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00V', -2077.0, 6103.0, 314.586 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O006": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3769,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3769,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O006_0278 = CreateUnit( p, 'O006', -8953.1, 5015.8, 274.070 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "uktg": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57968
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57968,
+          "function": "Trig_Boss_Elder_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'uktg', udg_NPC_PLAYER, udg_Point, 90.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "nhar": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4047,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4047,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nhar', -7183.3, 2132.2, 23.144 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00A": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4066,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4066,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00A_0601 = CreateUnit( p, 'O00A', -13964.3, -18050.4, 0.980 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ncat": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57814
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57814,
+          "function": "Trig_Npc_Destructible_Boss_Tirfing_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'ncat', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "uswb": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3548,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3548,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'uswb', 17018.6, -16520.2, 224.489 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n00W": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3562,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3562,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00W', -3821.5, 4785.7, 148.493 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nlps": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57917
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57917,
+          "function": "Trig_Boss_KingDramoh_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nlps', udg_NPC_PLAYER, udg_Point, 315.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O009": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        60057
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 60057,
+          "function": "Trig_MVP_27_Doppelganger_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O009', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "n00Y": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3560,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3560,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'n00Y', -2361.9, 4272.2, 1.488 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "u00F": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 4,
+      "sourceLines": [
+        3595,
+        97042,
+        3596
+      ],
+      "evidence": [
+        {
+          "line": 3595,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u00F', 3590.3, -16267.7, 271.040 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 3596,
+          "function": "CreateUnitsForPlayer10",
+          "text": "call SetUnitColor( u, ConvertPlayerColor(4) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02S": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        60104
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 60104,
+          "function": "Trig_MVP_28_StormyKnight_Func017A",
+          "text": "call CreateNUnitsAtLoc( 1, 'n02S', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O00C": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3603,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3603,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00C_0116 = CreateUnit( p, 'O00C', -12048.3, -4639.8, 216.060 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ngir": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        58028
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 58028,
+          "function": "Trig_Boss_Goblin_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'ngir', udg_NPC_PLAYER, udg_Point, 45.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O00G": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36805
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36805,
+          "function": "Trig_Event_End_Quest_MS_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O00G', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "u000": {
+      "status": "verified_dynamic_unit_pool",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        54424,
+        54807,
+        54830
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 54424,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_ut_npcMONSTER[7] = 'u000'"
+        },
+        {
+          "line": 54807,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "set udg_TypeUnit = udg_ut_npcMONSTER[GetRandomInt(1, 16)]"
+        },
+        {
+          "line": 54830,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "The selected rawcode belongs to pool1–16 created for udg_NPC_PLAYER."
+    },
+    "u002": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4292,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4292,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'u002', -9322.6, 5191.3, 319.499 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O002": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3952,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3952,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O002_0487 = CreateUnit( p, 'O002', 739.4, 3191.0, 136.750 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00Q": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4368,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4368,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00Q_0884 = CreateUnit( p, 'O00Q', 5439.3, -17186.1, 91.050 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nskg": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3764,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3764,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'nskg', -5779.8, -12475.3, 199.540 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nsll": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57264
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57264,
+          "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "e00A": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        59041
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 59041,
+          "function": "NMR_SpawnAnubis",
+          "text": "set u = CreateUnit(udg_NPC_PLAYER, 'e00A', x, y, 270.)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "e008": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3659,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3659,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'e008', -6632.7, -10436.2, 146.977 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "nrwm": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57420
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57420,
+          "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nrwm', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O00M": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36763
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36763,
+          "function": "Trig_Event_End_Quest_MS_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O00M', udg_NPC_PLAYER, udg_Point, 270.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "unec": {
+      "status": "verified_object_ability_summon",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "objectEvidence": [
+        {
+          "file": "war3map.w3a",
+          "id": "A02D",
+          "field": "Hwe1:1:0",
+          "value": "unec"
+        },
+        {
+          "file": "war3map.w3u",
+          "id": "Ubal",
+          "field": "uabi",
+          "contains": "A02D"
+        }
+      ],
+      "note": "AHwe-based summoned unit belongs to its NPC caster player; explicit caster-only unit color is not an owner-color override."
+    },
+    "h00U": {
+      "status": "verified_dynamic_unit_pool",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        54421,
+        54807,
+        54830
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 54421,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_ut_npcMONSTER[4] = 'h00U'"
+        },
+        {
+          "line": 54807,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "set udg_TypeUnit = udg_ut_npcMONSTER[GetRandomInt(1, 16)]"
+        },
+        {
+          "line": 54830,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "The selected rawcode belongs to pool1–16 created for udg_NPC_PLAYER."
+    },
+    "O00J": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 12,
+      "sourceLines": [
+        4245,
+        97042,
+        4248
+      ],
+      "evidence": [
+        {
+          "line": 4245,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O00J_0781 = CreateUnit( p, 'O00J', -12920.3, -9829.7, 271.850 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 4248,
+          "function": "CreateUnitsForPlayer10",
+          "text": "call SetUnitColor( gg_unit_O00J_0781, ConvertPlayerColor(12) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "hkni": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3938,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3938,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'hkni', -4023.3, -17546.2, 43.132 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ngrd": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57450
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57450,
+          "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'ngrd', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "nbzd": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57430
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57430,
+          "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nbzd', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "nbda": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36492
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36492,
+          "function": "Trig_EGT3600s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nbda', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "nhea": {
+      "status": "verified_dynamic_unit_pool",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        54433,
+        54807,
+        54830
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 54433,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_ut_npcMONSTER[16] = 'nhea'"
+        },
+        {
+          "line": 54807,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "set udg_TypeUnit = udg_ut_npcMONSTER[GetRandomInt(1, 16)]"
+        },
+        {
+          "line": 54830,
+          "function": "Trig_Npc_Society_Revive_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "The selected rawcode belongs to pool1–16 created for udg_NPC_PLAYER."
+    },
+    "nbwm": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57440
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57440,
+          "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'nbwm', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Ubal": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 12,
+      "sourceLines": [
+        3861,
+        97042,
+        3863
+      ],
+      "evidence": [
+        {
+          "line": 3861,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_Ubal_0373 = CreateUnit( p, 'Ubal', -3068.8, -12928.4, 273.180 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 3863,
+          "function": "CreateUnitsForPlayer10",
+          "text": "call SetUnitColor( gg_unit_Ubal_0373, ConvertPlayerColor(12) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "Uanb": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57413
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57413,
+          "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'Uanb', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O003": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3525,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3525,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O003_0012 = CreateUnit( p, 'O003', 14328.5, 13335.8, 267.630 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "n02U": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36144
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36144,
+          "function": "Trig_EGT1800s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'n02U', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O007": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3694,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3694,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O007_0214 = CreateUnit( p, 'O007', -2055.5, -10640.0, 74.430 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "ufro": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3681,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3681,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set u = CreateUnit( p, 'ufro', -3098.0, -17904.3, 88.860 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "hphx": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57522
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57522,
+          "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'hphx', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "N00M": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3577,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3577,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_N00M_0096 = CreateUnit( p, 'N00M', -4021.4, -6803.9, 5.350 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "Ulic": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        62322
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 62322,
+          "function": "Trig_Randgris_Final_Arrival_Actions",
+          "text": "set boss = CreateUnit(udg_NPC_PLAYER, 'Ulic', x, y, facing)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O00V": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        60124
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 60124,
+          "function": "Trig_MVP_28_StormyKnight_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O00V', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "nsqa": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        49326
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 49326,
+          "function": "ROSeal_Guardian",
+          "text": "set a = CreateUnit(udg_NPC_PLAYER, uid, ROSeal_X(i), ROSeal_Y(i), 270.00)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Ucrl": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36446
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36446,
+          "function": "Trig_EGT3600s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'Ucrl', udg_NPC_PLAYER, udg_Point2, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Uwar": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4492,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4492,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_Uwar_1036 = CreateUnit( p, 'Uwar', 7035.3, -2436.4, 270.000 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00N": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        36337
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 36337,
+          "function": "Trig_EGT3000s_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O00N', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "O004": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        3532,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 3532,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_O004_0021 = CreateUnit( p, 'O004', -3076.0, 5044.6, 270.000 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00O": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        59849
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 59849,
+          "function": "Trig_MVP_23_Ktullanux_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'O00O', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Nfir": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        57514
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 57514,
+          "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'Nfir', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "UNMR": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        59435
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 59435,
+          "function": "NMR_Summon",
+          "text": "set udg_NMR_Boss = CreateUnit(udg_NPC_PLAYER, 'UNMR', -3008., 1568., 270.)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Nklj": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        49030
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 49030,
+          "function": "Trig_Party_MVP_31_Actions",
+          "text": "call CreateNUnitsAtLoc( 1, 'Nklj', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Udea": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4260,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4260,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_Udea_0789 = CreateUnit( p, 'Udea', 12451.3, 9595.8, 271.290 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "O00T": {
+      "status": "verified_runtime_owner_color",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        58145
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 58145,
+          "function": "Trig_MVP_19_Eremes_Actions",
+          "text": "call RescueUnitBJ( udg_u_npcMVP[19], udg_NPC_PLAYER, true )"
+        }
+      ],
+      "note": "Encounter activation calls RescueUnitBJ(..., udg_NPC_PLAYER, true); Blizzard.j forwards changeColor=true to SetUnitOwner."
+    },
+    "Harf": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        49375
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 49375,
+          "function": "ROSeal_Summon",
+          "text": "set a = CreateUnit(udg_NPC_PLAYER, uid, ROSeal_X(0), ROSeal_Y(0), 270.00)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Opgh": {
+      "status": "verified_runtime_owner_color",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        58088
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 58088,
+          "function": "Trig_MVP_18_WolfMan_Actions",
+          "text": "call RescueUnitBJ( udg_u_npcMVP[18], udg_NPC_PLAYER, true )"
+        }
+      ],
+      "note": "Encounter activation calls RescueUnitBJ(..., udg_NPC_PLAYER, true); Blizzard.j forwards changeColor=true to SetUnitOwner."
+    },
+    "URgd": {
+      "status": "verified_main_map_instance",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        4422,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 4422,
+          "function": "CreateUnitsForPlayer10",
+          "text": "set gg_unit_URgd_0958 = CreateUnit( p, 'URgd', -5820.8, 1878.0, 242.930 )"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "Uses the main encounter placement, not passive display/template copies. Explicit SetUnitColor is preserved."
+    },
+    "UKrk": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        72049
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 72049,
+          "function": "ROKr_TrySummon",
+          "text": "set b = CreateUnit(udg_NPC_PLAYER,ROKr_Id(),-2176.,7552.,135.)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "Udth": {
+      "status": "verified_dynamic_spawn",
+      "owner": "Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        54336,
+        97042,
+        70756
+      ],
+      "evidence": [
+        {
+          "line": 54336,
+          "function": "Trig_Npc_Initialization_Actions",
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "function": "InitCustomPlayerSlots",
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        },
+        {
+          "line": 70756,
+          "function": "ROTm_TrySummon",
+          "text": "set boss = CreateUnit(udg_NPC_PLAYER,'Udth',ROTm_AnchorX(1),ROTm_AnchorY(1),270.)"
+        }
+      ],
+      "note": "Dynamic encounter creates the unit for udg_NPC_PLAYER."
+    },
+    "OKP1": {
+      "source": "war3map.j",
+      "owner": "udg_NPC_PLAYER / Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        36075,
+        54336,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 36075,
+          "text": "call CreateNUnitsAtLoc( 1, 'OKP1', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+        },
+        {
+          "line": 54336,
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "已核對建立單位的 owner 與玩家顏色；本版未對此單位覆寫 SetUnitColor。模型可見 geoset 未使用 replaceableId 1，色號修正不改變此預覽像素。"
+    },
+    "O0NT": {
+      "source": "war3map.j",
+      "owner": "udg_NPC_PLAYER / Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        56155,
+        56156,
+        56671,
+        54336,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 56155,
+          "text": "function RONT_Id takes nothing returns integer"
+        },
+        {
+          "line": 56156,
+          "text": "return 'O0NT'"
+        },
+        {
+          "line": 56671,
+          "text": "set b = CreateUnit(udg_NPC_PLAYER, RONT_Id(), GetLocationX(udg_p_npcMVP[8]), GetLocationY(udg_p_npcMVP[8]), 270.)"
+        },
+        {
+          "line": 54336,
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "已核對建立單位的 owner 與玩家顏色；本版未對此單位覆寫 SetUnitColor。模型可見 geoset 未使用 replaceableId 1，色號修正不改變此預覽像素。"
+    },
+    "n0DK": {
+      "source": "war3map.j",
+      "owner": "udg_NPC_PLAYER / Player(10)",
+      "colorIndex": 10,
+      "sourceLines": [
+        56235,
+        56246,
+        54336,
+        97042
+      ],
+      "evidence": [
+        {
+          "line": 56235,
+          "text": "if a == udg_u_npcMVP[8] and GetUnitTypeId(a) == RONT_Id() and GetOwningPlayer(a) == udg_NPC_PLAYER and GetUnitTypeId(b) == 'n0DK' and GetOwningPlayer(b) == udg_NPC_PLAYER then"
+        },
+        {
+          "line": 56246,
+          "text": "set c = CreateUnit(udg_NPC_PLAYER, 'n0DK', x + 112. * Cos(an), y + 112. * Sin(an), GetUnitFacing(a))"
+        },
+        {
+          "line": 54336,
+          "text": "set udg_NPC_PLAYER = Player(10)"
+        },
+        {
+          "line": 97042,
+          "text": "call SetPlayerColor( Player(10), ConvertPlayerColor(10) )"
+        }
+      ],
+      "note": "已核對建立單位的 owner 與玩家顏色；本版未對此單位覆寫 SetUnitColor。模型可見 geoset 未使用 replaceableId 1，色號修正不改變此預覽像素。"
+    }
+  },
+  "changed": [
+    "n001",
+    "hmtm",
+    "e00F",
+    "n002",
+    "ucsB",
+    "n018",
+    "n02C",
+    "umtw",
+    "n01C",
+    "n01X",
+    "n000",
+    "n017",
+    "n01D",
+    "ucs2",
+    "u00A",
+    "n02G",
+    "nanw",
+    "u007",
+    "n00Z",
+    "e005",
+    "n010",
+    "n003",
+    "nzom",
+    "u005",
+    "n02K",
+    "n00T",
+    "n027",
+    "n02N",
+    "ucrm",
+    "u001",
+    "n00A",
+    "n00H",
+    "e001",
+    "n01K",
+    "ugrm",
+    "n009",
+    "ucs1",
+    "u00D",
+    "u009",
+    "o000",
+    "ugar",
+    "n01E",
+    "u003",
+    "o005",
+    "n01B",
+    "etrp",
+    "zhyd",
+    "n007",
+    "u008",
+    "n006",
+    "u006",
+    "n011",
+    "o00P",
+    "n01N",
+    "n008",
+    "n02F",
+    "hwt2",
+    "n01J",
+    "n01R",
+    "ndtp",
+    "n00Q",
+    "nvdw",
+    "nftr",
+    "o00S",
+    "uban",
+    "u00E",
+    "u00B",
+    "ushd",
+    "u00C",
+    "nbal",
+    "u00H",
+    "z001",
+    "nnsu",
+    "nfsp",
+    "u00J",
+    "h01J",
+    "n019",
+    "n00R",
+    "u00G",
+    "uplg",
+    "uskm",
+    "nftt",
+    "e009",
+    "ngnw",
+    "o00L",
+    "n00G",
+    "u00K",
+    "n01O",
+    "o00H",
+    "n02H",
+    "ngh2",
+    "ngsp",
+    "nfgo",
+    "n00E",
+    "e00D",
+    "nanc",
+    "u004",
+    "n00B",
+    "nsth",
+    "n012",
+    "n016",
+    "ndqn",
+    "uabo",
+    "n015",
+    "n01Q",
+    "n02T",
+    "hgyr",
+    "O00D",
+    "O00B",
+    "hdhw",
+    "nmyr",
+    "otau",
+    "o00F",
+    "O00U",
+    "n00U",
+    "o00R",
+    "n014",
+    "nfbr",
+    "O00I",
+    "nwen",
+    "Uvng",
+    "n00V",
+    "O006",
+    "uktg",
+    "nhar",
+    "O00A",
+    "ncat",
+    "uswb",
+    "n00W",
+    "nlps",
+    "O009",
+    "n00Y",
+    "n02S",
+    "O00C",
+    "ngir",
+    "O00G",
+    "u000",
+    "u002",
+    "O002",
+    "O00Q",
+    "nskg",
+    "nsll",
+    "e00A",
+    "e008",
+    "nrwm",
+    "O00M",
+    "unec",
+    "h00U",
+    "hkni",
+    "ngrd",
+    "nbzd",
+    "nbda",
+    "nhea",
+    "nbwm",
+    "Uanb",
+    "O003",
+    "n02U",
+    "O007",
+    "ufro",
+    "hphx",
+    "N00M",
+    "Ulic",
+    "O00V",
+    "nsqa",
+    "Ucrl",
+    "Uwar",
+    "O00N",
+    "O004",
+    "O00O",
+    "Nfir",
+    "UNMR",
+    "Nklj",
+    "Udea",
+    "O00T",
+    "Harf",
+    "Opgh",
+    "URgd",
+    "UKrk",
+    "Udth"
+  ],
+  "referenceOnlyTeamColor": [
+    "nslv",
+    "nrdk"
+  ],
+  "sourceMapSha256": "0be2938f1e367bd8d560799d925694adda359421eecb08f77805dbb506683cf4",
+  "imageCount": 189,
+  "sourceNote": "Current JASS line evidence, object summon evidence, and documented unresolved reference palettes. Images are all freshly rendered."
+}

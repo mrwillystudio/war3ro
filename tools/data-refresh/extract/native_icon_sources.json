@@ -1,0 +1,50 @@
+{
+  "commit": "842b1f155a4a0869783ac4bfc551b588ff9e8368",
+  "files": [
+    {
+      "path": "replaceabletextures/commandbuttons/btncrystalball.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btncrystalball.blp",
+      "sha256": "895ea76e7742482c3adc9e6678ad0c0858c1ad6c03dddc1e8906db51e0b593a5"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnscrollofprotection.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnscrollofprotection.blp",
+      "sha256": "1e2233551d9c9c27c0afef01b1e826a3a79f4495aa45a1bab4a2a3652399917b"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnlesserrejuvscroll.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnlesserrejuvscroll.blp",
+      "sha256": "8936e6757a26fec0dd157382d58e46e990fcb7e571a3c3e200bfa76383f6d202"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnsnazzyscrollpurple.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnsnazzyscrollpurple.blp",
+      "sha256": "c6264c1ad0249b7ca70bc682ebb10ad363e95269a8396b8872975254feccc795"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnbansheeadept.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnbansheeadept.blp",
+      "sha256": "1138aa731a2b5c2aecf9d31892794da578f0b911252d31d8da668efe9ae6453d"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnnagaweaponup3.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnnagaweaponup3.blp",
+      "sha256": "93b75209d70486f0486eb5a515237284e51ec1a88a0fe3422cb275a6e1b286a3"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnpebble.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnpebble.blp",
+      "sha256": "d05ff8ccdecb34ff9adc40fd856afb54aaad64b26111b55952398484a2eea98d"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnseagiant.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnseagiant.blp",
+      "sha256": "5eb53efed17b5cd3a676de83354c368cb92005fdeb3f382a5f4edb5666fec959"
+    },
+    {
+      "path": "replaceabletextures/commandbuttons/btnevasion.blp",
+      "sourceUrl": "https://raw.githubusercontent.com/WarRaft/War3.mpq/842b1f155a4a0869783ac4bfc551b588ff9e8368/lowercase/replaceabletextures/commandbuttons/btnevasion.blp",
+      "sha256": "91c74aa049c5e841d3af875d2e71903b47017e5599135634fdf4caa6ff32c99e"
+    }
+  ]
+}

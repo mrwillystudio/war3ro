@@ -39,11 +39,17 @@ const cases=[
 ];
 for(const [item,expected] of cases){assert.deepEqual(Array.from(c.itemCardLabels(item),x=>x.text),expected);assert(!/ATK|DEF|武器|Lv\./.test(c.itemStatPills(item)));}
 const html=c.itemStatPills({element:'<script>alert(1)</script>',job:'<img onerror=1>'});assert(!html.includes('<script>'));assert(!html.includes('<img'));
-const root=process.argv[2]||'.';const ctx={window:{__atlasParts:[]},console};vm.createContext(ctx);
-for(const f of fs.readdirSync(path.join(root,'atlas-data')).filter(f=>/^part-\d+\.js$/.test(f)).sort())vm.runInContext(fs.readFileSync(path.join(root,'atlas-data',f),'utf8'),ctx);
-ctx.window.RODB=JSON.parse(ctx.window.__atlasParts.join(''));
-for(const f of ['model-previews-v11.js','model-previews-lowkey.js','map-corrections-r85.js','update-70b07.js','model-previews-front-70b07.js'])vm.runInContext(fs.readFileSync(path.join(root,'atlas-data',f),'utf8'),ctx);
-const d=ctx.window.RODB;assert.equal(d.meta.version,'Ro-Online 7.0b07');
+const root=process.argv[2]||'.';const ctx={window:{},console};vm.createContext(ctx);
+const siteHtml=fs.readFileSync(path.join(root,'index.html'),'utf8');
+// Follow the production load order, including future data overlays. A fixed
+// filename list silently tested the old dataset after a map refresh.
+for(const m of siteHtml.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)){
+  const src=m[1].match(/src=["']([^"']+)["']/i);
+  const code=src?fs.readFileSync(path.join(root,src[1].split('?')[0]),'utf8'):m[2];
+  if(!src&&code.includes('document.getElementById'))break;
+  vm.runInContext(code,ctx,{filename:src?.[1]||'inline',timeout:10000});
+}
+const d=ctx.window.RODB;assert(d?.items?.length);assert(siteHtml.includes(d.meta.version));
 for(const i of d.items){const before=JSON.stringify(i);const h=c.itemStatPills(i);assert(!/ATK|DEF|武器|Lv\.|無屬性/.test(h));assert.equal(JSON.stringify(i),before);}
 const byId=new Map(d.items.map(i=>[i.id,i]));
 assert.deepEqual(Array.from(c.itemCardLabels(byId.get('I063')),x=>x.text),['忍者專屬']);

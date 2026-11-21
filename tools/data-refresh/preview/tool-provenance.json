@@ -1,0 +1,165 @@
+{
+  "sourceMapSha256": "0be2938f1e367bd8d560799d925694adda359421eecb08f77805dbb506683cf4",
+  "nativeAssets": {
+    "repository": "https://github.com/WarRaft/War3.mpq",
+    "commit": "842b1f155a4a0869783ac4bfc551b588ff9e8368"
+  },
+  "nativeDefaults": {
+    "repository": "https://github.com/sumneko/w3x2lni",
+    "commit": "82916514a12b7edb15252d42225cd8cc8ce61cfd",
+    "preset": "enUS-1.27.1/prebuilt/Custom"
+  },
+  "parserBundle": {
+    "file": "viewer_parser.cjs",
+    "sha256": "90bc64581a8cfaee4e13c99349701f0682cb4cf18f7735e867199281ae53a54d",
+    "knownPriorToolCommit": "21a59211e9ca8adcd1fbfcdc739ce6fffb43387c",
+    "originalBuildRepository": null,
+    "originalPackageVersion": null,
+    "identifiedModules": [
+      "flowtsohg/mdx-m3-viewer (MIT)",
+      "gl-matrix (MIT)"
+    ],
+    "note": "Prior commit belongs to an unresolved tool source; it is not claimed as an official upstream parser commit."
+  },
+  "mpyq": {
+    "version": "0.2.5",
+    "repository": "https://github.com/eagleflo/mpyq",
+    "license": "BSD-2-Clause",
+    "localCorrections": [
+      "sector count ceiling division",
+      "compressed sector expected length uses min(sector_size, remaining)"
+    ]
+  },
+  "files": {
+    "preview/sample_render.cjs": {
+      "sha256": "a84a8e27cc6b47c419c50ccc3e1d7e4a5ba78d3dfd530cb2697c0fb24242f11e",
+      "size": 7631
+    },
+    "preview/validate_previews.py": {
+      "sha256": "0df9af7432bc1c3914913685865f1f22dec8ccda8724b27fbb1a925344062fe0",
+      "size": 1911
+    },
+    "preview/viewer_parser.cjs": {
+      "sha256": "90bc64581a8cfaee4e13c99349701f0682cb4cf18f7735e867199281ae53a54d",
+      "size": 296409
+    },
+    "preview/requirements.txt": {
+      "sha256": "172e9ac1e2fee27cbad9a1ac0d62b903960e8c86e287f1c8f9851def49c70afd",
+      "size": 28
+    },
+    "preview/blp_decode.py": {
+      "sha256": "47aa92e2faef667b5a2f8261a5d5ee3d1731affb7e063ee8e520998e867737f3",
+      "size": 1384
+    },
+    "preview/rebuild_previews.py": {
+      "sha256": "03955315ea8fb92410df75d04d87b1986bb776aff3bf0893049b41b18fe5c620",
+      "size": 8085
+    },
+    "preview/build_raster.py": {
+      "sha256": "bb602982d4699101913acbd9adcdad4ff6497f4b1331b6dde2a189eeff8ea932",
+      "size": 509
+    },
+    "preview/raster_rgba.c": {
+      "sha256": "bfd30174d0784447f9fecabd92809a27c7a9af341bdd31aee3af56029c893fd5",
+      "size": 2882
+    },
+    "preview/render_static.py": {
+      "sha256": "a8f0c5659808fbc8645ba5280c39849b0a7daad17909a8914e670718a39f426a",
+      "size": 7592
+    },
+    "extract/fetch_native_defaults.py": {
+      "sha256": "c13e816d99f91c47d409802c25d9bf34beb427991d323fbcf47be4f4482118d4",
+      "size": 1361
+    },
+    "extract/mpyq.py": {
+      "sha256": "bfe251185d619e1946a5f8a7e7ef4dd383e6c3d464ed2fcca20a4c471fabaabf",
+      "size": 14471
+    },
+    "extract/mpq_read.py": {
+      "sha256": "37fdab70bcfc0f99fb3d525ea15702a6616a4eb3d7864f95f74cdf198c86827b",
+      "size": 1988
+    },
+    "extract/extract_map.py": {
+      "sha256": "731979fecca6ad377b034be1e0c25f318ed4c94f85032f23e770de8e90f67d7e",
+      "size": 1907
+    },
+    "extract/parse_objects.py": {
+      "sha256": "b8bc395f0c0eabc3ceda85d66eb9816b5a0e3984850464327c8c8a1c3d9f8207",
+      "size": 1719
+    },
+    "extract/parse_native.py": {
+      "sha256": "b194403c2107fd7bacb6c9bf69837f7144ec69fffdb15a0c3a15e6d14ac278e7",
+      "size": 471
+    }
+  },
+  "portableValidation": {
+    "sourceDataTablesCompared": 7,
+    "sourceDataMatches": true,
+    "coverage": [
+      "runtime alpha",
+      "native model and textures",
+      "trigger-driven attachment",
+      "ability-driven attachment",
+      "hidden footglow",
+      "special camera framing"
+    ],
+    "priorImageHashMatches": [
+      "O00C",
+      "UNMR",
+      "O0NT",
+      "Ulic",
+      "Uwar"
+    ],
+    "currentImageHashMatches": [
+      "n01C",
+      "ushd",
+      "uktg",
+      "O00T",
+      "UNMR",
+      "O00C",
+      "O0NT"
+    ],
+    "currentReproductionStatus": "passed",
+    "currentCoverage": [
+      "current native palette",
+      "additive ghost transparency",
+      "encounter ownership color transfer",
+      "runtime RGBA and alpha",
+      "trigger attachment"
+    ],
+    "assembledCatalogImages": {
+      "count": 189,
+      "allPassed": true,
+      "file": "verification-70c08-all.json"
+    }
+  },
+  "releasePreviewCounts": {
+    "existing": 186,
+    "new": 3,
+    "fresh": 189,
+    "retained": 0
+  },
+  "releaseImageBytes": 18260866,
+  "releaseManifestFiles": {
+    "render-plan-70c08.json": {
+      "sha256": "5d650ee92a3e10aeb0770e7bdf8ed2d04396826b3e8f2e1e0d407d6cf920fe32",
+      "size": 638150
+    },
+    "preview-records-70c08.json": {
+      "sha256": "927ab3df5b69bdedde7f2788b8499fcc4e1e353f00f2f0703361393ffdaee880",
+      "size": 513270
+    },
+    "team-color-evidence-70c08.json": {
+      "sha256": "5a66bfb52b7ae18850ee80de2d556ef7f9c43736e33aff1549dc960cb8d1a4b6",
+      "size": 138998
+    },
+    "verification-70c08-existing.json": {
+      "sha256": "99eedc8173687f5a23db3eed82214be4c771b984ed60e7ef0e911ce369f3b38d",
+      "size": 82076
+    },
+    "verification-70c08-all.json": {
+      "sha256": "f9bf031c22ac8164e5301de3f61d72e4c7f1bad937963586823d0eb9d6e50dbd",
+      "size": 52481
+    }
+  }
+}

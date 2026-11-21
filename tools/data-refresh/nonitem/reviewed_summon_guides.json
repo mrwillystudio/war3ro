@@ -1,0 +1,5360 @@
+{
+  "version": "Ro-Online 7.0c08",
+  "jassSha256": "49cdccc71973a8dac12fc4170ca5e5bf2f186c96c773669c15a21111482acdaf",
+  "reviewedMonsterCount": 25,
+  "monsters": {
+    "ngnw": {
+      "summonGuide": {
+        "kind": "擊殺累積",
+        "title": "犬妖首領",
+        "summary": "全場累積擊殺指定族群 50 隻後首次生成。",
+        "steps": [
+          "擊殺敵對 NPC 陣營的「刺錘犬妖」「犬妖弓箭手」，上述種類共用累積計數。",
+          "全場累積達 50 隻時，於指定 BOSS 區域生成；首次觸發只執行一次。",
+          "首次生成後，該 BOSS 死亡會由通用 NPC 系統在 45 秒後於死亡座標重生，不必重新累積 50 隻。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Boss_KoboldLeader_Actions / InitTrig_Boss_KoboldLeader / Trig_Npc_Initialization_Actions / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54330,
+          54339,
+          54480,
+          54551,
+          54566,
+          54568,
+          54570,
+          54572,
+          54574,
+          54576,
+          54592,
+          54594,
+          54617,
+          54618,
+          54631,
+          57830,
+          57831,
+          57834,
+          57840,
+          57847,
+          57848,
+          57854,
+          57855,
+          57860,
+          57865,
+          57871,
+          57873
+        ],
+        "evidence": [
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54339,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcReviewTime = 45.00"
+          },
+          {
+            "line": 54480,
+            "function": "Trig_Npc_Unit_Revive_Conditions",
+            "text": "function Trig_Npc_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54566,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond0 = not UnitHasCode(a, 'AIrn')"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54572,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond3 = not IsUnitType(a, UNIT_TYPE_HERO)"
+          },
+          {
+            "line": 54574,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond4 = GetUnitAbilityLevelSwapped('AIfe', a) == 0"
+          },
+          {
+            "line": 54576,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    if( cond3 and cond4 )then"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54594,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 25 )then"
+          },
+          {
+            "line": 54617,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    call PolledWait( udg_const_r_npcReviewTime )"
+          },
+          {
+            "line": 54618,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        set c = CreateUnit( ap, ai, ax, ay, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 54631,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 75  )then"
+          },
+          {
+            "line": 57830,
+            "function": "Trig_Boss_KoboldLeader_Func003C",
+            "text": "function Trig_Boss_KoboldLeader_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 57831,
+            "function": "Trig_Boss_KoboldLeader_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'o00P' ) ) then"
+          },
+          {
+            "line": 57834,
+            "function": "Trig_Boss_KoboldLeader_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'n02F' ) ) then"
+          },
+          {
+            "line": 57840,
+            "function": "Trig_Boss_KoboldLeader_Conditions",
+            "text": "function Trig_Boss_KoboldLeader_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 57847,
+            "function": "Trig_Boss_KoboldLeader_Func002C",
+            "text": "function Trig_Boss_KoboldLeader_Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 57848,
+            "function": "Trig_Boss_KoboldLeader_Func002C",
+            "text": "    if ( not ( udg_i_npcKillerTrigger[3] >= 50 ) ) then"
+          },
+          {
+            "line": 57854,
+            "function": "Trig_Boss_KoboldLeader_Actions",
+            "text": "function Trig_Boss_KoboldLeader_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57855,
+            "function": "Trig_Boss_KoboldLeader_Actions",
+            "text": "    set udg_i_npcKillerTrigger[3] = ( udg_i_npcKillerTrigger[3] + 1 )"
+          },
+          {
+            "line": 57860,
+            "function": "Trig_Boss_KoboldLeader_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'ngnw', udg_NPC_PLAYER, udg_Point, 135.00 )"
+          },
+          {
+            "line": 57865,
+            "function": "Trig_Boss_KoboldLeader_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 57871,
+            "function": "InitTrig_Boss_KoboldLeader",
+            "text": "function InitTrig_Boss_KoboldLeader takes nothing returns nothing"
+          },
+          {
+            "line": 57873,
+            "function": "InitTrig_Boss_KoboldLeader",
+            "text": "    call TriggerRegisterPlayerUnitEventSimple( gg_trg_Boss_KoboldLeader, Player(10), EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "uktg": {
+      "summonGuide": {
+        "kind": "擊殺累積",
+        "title": "邪靈魔導士",
+        "summary": "全場累積擊殺指定族群 50 隻後首次生成。",
+        "steps": [
+          "擊殺敵對 NPC 陣營的「鐘怪」「白幽靈」，上述種類共用累積計數。",
+          "全場累積達 50 隻時，於指定 BOSS 區域生成；首次觸發只執行一次。",
+          "首次生成後，該 BOSS 死亡會由通用 NPC 系統在 45 秒後於死亡座標重生，不必重新累積 50 隻。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Boss_Elder_Actions / InitTrig_Boss_Elder / Trig_Npc_Initialization_Actions / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54330,
+          54339,
+          54480,
+          54551,
+          54566,
+          54568,
+          54570,
+          54572,
+          54574,
+          54576,
+          54592,
+          54594,
+          54617,
+          54618,
+          54631,
+          57938,
+          57939,
+          57942,
+          57948,
+          57955,
+          57956,
+          57962,
+          57963,
+          57968,
+          57973,
+          57979,
+          57981
+        ],
+        "evidence": [
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54339,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcReviewTime = 45.00"
+          },
+          {
+            "line": 54480,
+            "function": "Trig_Npc_Unit_Revive_Conditions",
+            "text": "function Trig_Npc_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54566,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond0 = not UnitHasCode(a, 'AIrn')"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54572,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond3 = not IsUnitType(a, UNIT_TYPE_HERO)"
+          },
+          {
+            "line": 54574,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond4 = GetUnitAbilityLevelSwapped('AIfe', a) == 0"
+          },
+          {
+            "line": 54576,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    if( cond3 and cond4 )then"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54594,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 25 )then"
+          },
+          {
+            "line": 54617,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    call PolledWait( udg_const_r_npcReviewTime )"
+          },
+          {
+            "line": 54618,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        set c = CreateUnit( ap, ai, ax, ay, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 54631,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 75  )then"
+          },
+          {
+            "line": 57938,
+            "function": "Trig_Boss_Elder_Func003C",
+            "text": "function Trig_Boss_Elder_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 57939,
+            "function": "Trig_Boss_Elder_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'e00D' ) ) then"
+          },
+          {
+            "line": 57942,
+            "function": "Trig_Boss_Elder_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'ngh2' ) ) then"
+          },
+          {
+            "line": 57948,
+            "function": "Trig_Boss_Elder_Conditions",
+            "text": "function Trig_Boss_Elder_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 57955,
+            "function": "Trig_Boss_Elder_Func002C",
+            "text": "function Trig_Boss_Elder_Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 57956,
+            "function": "Trig_Boss_Elder_Func002C",
+            "text": "    if ( not ( udg_i_npcKillerTrigger[5] >= 50 ) ) then"
+          },
+          {
+            "line": 57962,
+            "function": "Trig_Boss_Elder_Actions",
+            "text": "function Trig_Boss_Elder_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57963,
+            "function": "Trig_Boss_Elder_Actions",
+            "text": "    set udg_i_npcKillerTrigger[5] = ( udg_i_npcKillerTrigger[5] + 1 )"
+          },
+          {
+            "line": 57968,
+            "function": "Trig_Boss_Elder_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'uktg', udg_NPC_PLAYER, udg_Point, 90.00 )"
+          },
+          {
+            "line": 57973,
+            "function": "Trig_Boss_Elder_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 57979,
+            "function": "InitTrig_Boss_Elder",
+            "text": "function InitTrig_Boss_Elder takes nothing returns nothing"
+          },
+          {
+            "line": 57981,
+            "function": "InitTrig_Boss_Elder",
+            "text": "    call TriggerRegisterPlayerUnitEventSimple( gg_trg_Boss_Elder, Player(10), EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "nlps": {
+      "summonGuide": {
+        "kind": "擊殺累積",
+        "title": "大腳龍蝦",
+        "summary": "全場累積擊殺指定族群 50 隻後首次生成。",
+        "steps": [
+          "擊殺敵對 NPC 陣營的「人魚」「人魚士兵」「人魚弓箭手」「深海人魚士兵」，上述種類共用累積計數。",
+          "全場累積達 50 隻時，於指定 BOSS 區域生成；首次觸發只執行一次。",
+          "首次生成後，該 BOSS 死亡會由通用 NPC 系統在 45 秒後於死亡座標重生，不必重新累積 50 隻。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Boss_KingDramoh_Actions / InitTrig_Boss_KingDramoh / Trig_Npc_Initialization_Actions / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54330,
+          54339,
+          54480,
+          54551,
+          54566,
+          54568,
+          54570,
+          54572,
+          54574,
+          54576,
+          54592,
+          54594,
+          54617,
+          54618,
+          54631,
+          57881,
+          57882,
+          57885,
+          57888,
+          57891,
+          57897,
+          57904,
+          57905,
+          57911,
+          57912,
+          57917,
+          57922,
+          57928,
+          57930
+        ],
+        "evidence": [
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54339,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcReviewTime = 45.00"
+          },
+          {
+            "line": 54480,
+            "function": "Trig_Npc_Unit_Revive_Conditions",
+            "text": "function Trig_Npc_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54566,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond0 = not UnitHasCode(a, 'AIrn')"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54572,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond3 = not IsUnitType(a, UNIT_TYPE_HERO)"
+          },
+          {
+            "line": 54574,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond4 = GetUnitAbilityLevelSwapped('AIfe', a) == 0"
+          },
+          {
+            "line": 54576,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    if( cond3 and cond4 )then"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54594,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 25 )then"
+          },
+          {
+            "line": 54617,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    call PolledWait( udg_const_r_npcReviewTime )"
+          },
+          {
+            "line": 54618,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        set c = CreateUnit( ap, ai, ax, ay, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 54631,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 75  )then"
+          },
+          {
+            "line": 57881,
+            "function": "Trig_Boss_KingDramoh_Func003C",
+            "text": "function Trig_Boss_KingDramoh_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 57882,
+            "function": "Trig_Boss_KingDramoh_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'n011' ) ) then"
+          },
+          {
+            "line": 57885,
+            "function": "Trig_Boss_KingDramoh_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'n00G' ) ) then"
+          },
+          {
+            "line": 57888,
+            "function": "Trig_Boss_KingDramoh_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'n015' ) ) then"
+          },
+          {
+            "line": 57891,
+            "function": "Trig_Boss_KingDramoh_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'nmyr' ) ) then"
+          },
+          {
+            "line": 57897,
+            "function": "Trig_Boss_KingDramoh_Conditions",
+            "text": "function Trig_Boss_KingDramoh_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 57904,
+            "function": "Trig_Boss_KingDramoh_Func002C",
+            "text": "function Trig_Boss_KingDramoh_Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 57905,
+            "function": "Trig_Boss_KingDramoh_Func002C",
+            "text": "    if ( not ( udg_i_npcKillerTrigger[4] >= 50 ) ) then"
+          },
+          {
+            "line": 57911,
+            "function": "Trig_Boss_KingDramoh_Actions",
+            "text": "function Trig_Boss_KingDramoh_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57912,
+            "function": "Trig_Boss_KingDramoh_Actions",
+            "text": "    set udg_i_npcKillerTrigger[4] = ( udg_i_npcKillerTrigger[4] + 1 )"
+          },
+          {
+            "line": 57917,
+            "function": "Trig_Boss_KingDramoh_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'nlps', udg_NPC_PLAYER, udg_Point, 315.00 )"
+          },
+          {
+            "line": 57922,
+            "function": "Trig_Boss_KingDramoh_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 57928,
+            "function": "InitTrig_Boss_KingDramoh",
+            "text": "function InitTrig_Boss_KingDramoh takes nothing returns nothing"
+          },
+          {
+            "line": 57930,
+            "function": "InitTrig_Boss_KingDramoh",
+            "text": "    call TriggerRegisterPlayerUnitEventSimple( gg_trg_Boss_KingDramoh, Player(10), EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "ngir": {
+      "summonGuide": {
+        "kind": "擊殺累積",
+        "title": "哥布靈首領",
+        "summary": "全場累積擊殺指定族群 50 隻後首次生成。",
+        "steps": [
+          "擊殺敵對 NPC 陣營的「大斧哥布靈」「榔頭哥布靈」「刺錘哥布靈」「噴射哥布靈」「直升機哥布靈」，上述種類共用累積計數。",
+          "全場累積達 50 隻時，於指定 BOSS 區域生成；首次觸發只執行一次。",
+          "首次生成後，該 BOSS 死亡會由通用 NPC 系統在 45 秒後於死亡座標重生，不必重新累積 50 隻。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Boss_Goblin_Actions / InitTrig_Boss_Goblin / Trig_Npc_Initialization_Actions / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54330,
+          54339,
+          54480,
+          54551,
+          54566,
+          54568,
+          54570,
+          54572,
+          54574,
+          54576,
+          54592,
+          54594,
+          54617,
+          54618,
+          54631,
+          57989,
+          57990,
+          57993,
+          57996,
+          57999,
+          58002,
+          58008,
+          58015,
+          58016,
+          58022,
+          58023,
+          58028,
+          58033,
+          58039,
+          58041
+        ],
+        "evidence": [
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54339,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcReviewTime = 45.00"
+          },
+          {
+            "line": 54480,
+            "function": "Trig_Npc_Unit_Revive_Conditions",
+            "text": "function Trig_Npc_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54566,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond0 = not UnitHasCode(a, 'AIrn')"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54572,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond3 = not IsUnitType(a, UNIT_TYPE_HERO)"
+          },
+          {
+            "line": 54574,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond4 = GetUnitAbilityLevelSwapped('AIfe', a) == 0"
+          },
+          {
+            "line": 54576,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    if( cond3 and cond4 )then"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54594,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 25 )then"
+          },
+          {
+            "line": 54617,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    call PolledWait( udg_const_r_npcReviewTime )"
+          },
+          {
+            "line": 54618,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        set c = CreateUnit( ap, ai, ax, ay, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 54631,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 75  )then"
+          },
+          {
+            "line": 57989,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "function Trig_Boss_Goblin_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 57990,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'nftr' ) ) then"
+          },
+          {
+            "line": 57993,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'nfsp' ) ) then"
+          },
+          {
+            "line": 57996,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'nftt' ) ) then"
+          },
+          {
+            "line": 57999,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'ngsp' ) ) then"
+          },
+          {
+            "line": 58002,
+            "function": "Trig_Boss_Goblin_Func003C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'hgyr' ) ) then"
+          },
+          {
+            "line": 58008,
+            "function": "Trig_Boss_Goblin_Conditions",
+            "text": "function Trig_Boss_Goblin_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 58015,
+            "function": "Trig_Boss_Goblin_Func002C",
+            "text": "function Trig_Boss_Goblin_Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 58016,
+            "function": "Trig_Boss_Goblin_Func002C",
+            "text": "    if ( not ( udg_i_npcKillerTrigger[6] >= 50 ) ) then"
+          },
+          {
+            "line": 58022,
+            "function": "Trig_Boss_Goblin_Actions",
+            "text": "function Trig_Boss_Goblin_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 58023,
+            "function": "Trig_Boss_Goblin_Actions",
+            "text": "    set udg_i_npcKillerTrigger[6] = ( udg_i_npcKillerTrigger[6] + 1 )"
+          },
+          {
+            "line": 58028,
+            "function": "Trig_Boss_Goblin_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'ngir', udg_NPC_PLAYER, udg_Point, 45.00 )"
+          },
+          {
+            "line": 58033,
+            "function": "Trig_Boss_Goblin_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 58039,
+            "function": "InitTrig_Boss_Goblin",
+            "text": "function InitTrig_Boss_Goblin takes nothing returns nothing"
+          },
+          {
+            "line": 58041,
+            "function": "InitTrig_Boss_Goblin",
+            "text": "    call TriggerRegisterPlayerUnitEventSimple( gg_trg_Boss_Goblin, Player(10), EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "ncat": {
+      "summonGuide": {
+        "kind": "破壞物召喚",
+        "title": "瑞比歐",
+        "summary": "破壞「邪惡箱」後，在箱子死亡位置生成瑞比歐。",
+        "steps": [
+          "破壞地圖中指定種類的「邪惡箱」（物件 B00U）。",
+          "箱子死亡時，在其位置生成一隻瑞比歐。",
+          "生成的瑞比歐死亡後，由通用 NPC 系統等待 45 秒，在死亡座標重生。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Destructible_Boss_Tirfing_Actions / InitTrig_Npc_Destructible_Boss_Tirfing / Trig_Npc_Initialization_Actions / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54330,
+          54339,
+          54480,
+          54551,
+          54566,
+          54568,
+          54570,
+          54572,
+          54574,
+          54576,
+          54592,
+          54594,
+          54617,
+          54618,
+          54631,
+          57812,
+          57814,
+          57822,
+          72366,
+          72367,
+          72387,
+          72413,
+          72414
+        ],
+        "evidence": [
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54339,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcReviewTime = 45.00"
+          },
+          {
+            "line": 54480,
+            "function": "Trig_Npc_Unit_Revive_Conditions",
+            "text": "function Trig_Npc_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54566,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond0 = not UnitHasCode(a, 'AIrn')"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54572,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond3 = not IsUnitType(a, UNIT_TYPE_HERO)"
+          },
+          {
+            "line": 54574,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond4 = GetUnitAbilityLevelSwapped('AIfe', a) == 0"
+          },
+          {
+            "line": 54576,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    if( cond3 and cond4 )then"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54594,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 25 )then"
+          },
+          {
+            "line": 54617,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    call PolledWait( udg_const_r_npcReviewTime )"
+          },
+          {
+            "line": 54618,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        set c = CreateUnit( ap, ai, ax, ay, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 54631,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "        if( cond0 and r > 75  )then"
+          },
+          {
+            "line": 57812,
+            "function": "Trig_Npc_Destructible_Boss_Tirfing_Actions",
+            "text": "function Trig_Npc_Destructible_Boss_Tirfing_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57814,
+            "function": "Trig_Npc_Destructible_Boss_Tirfing_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'ncat', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 57822,
+            "function": "InitTrig_Npc_Destructible_Boss_Tirfing",
+            "text": "function InitTrig_Npc_Destructible_Boss_Tirfing takes nothing returns nothing"
+          },
+          {
+            "line": 72366,
+            "function": "Trig_Destructible_Initialization_Func008Func008C",
+            "text": "function Trig_Destructible_Initialization_Func008Func008C takes nothing returns boolean"
+          },
+          {
+            "line": 72367,
+            "function": "Trig_Destructible_Initialization_Func008Func008C",
+            "text": "    if ( not ( GetDestructableTypeId(udg_TempDestructible) == 'B00U' ) ) then"
+          },
+          {
+            "line": 72387,
+            "function": "Trig_Destructible_Initialization_Func008A",
+            "text": "function Trig_Destructible_Initialization_Func008A takes nothing returns nothing"
+          },
+          {
+            "line": 72413,
+            "function": "Trig_Destructible_Initialization_Func008A",
+            "text": "    if ( Trig_Destructible_Initialization_Func008Func008C() ) then"
+          },
+          {
+            "line": 72414,
+            "function": "Trig_Destructible_Initialization_Func008A",
+            "text": "        call TriggerRegisterDeathEvent( gg_trg_Npc_Destructible_Boss_Tirfing, udg_TempDestructible )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "nsll": {
+      "summonGuide": {
+        "kind": "無限塔樓層",
+        "title": "火蜥蜴",
+        "summary": "無限塔單一路線推進到第 5、10、15… 層時，該層 BOSS 固定選為火蜥蜴。",
+        "steps": [
+          "攻擊該路線的樓層閘門，讓該路線層數增加。",
+          "該路線層數可被 5 整除時，在閘門位置生成火蜥蜴作為樓層 BOSS；這項判定使用單一路線的層數。",
+          "塔內這批個體加上不可復活能力，死亡後不走一般魔物的 45 秒重生。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Tower_Gate_Trigger_Actions / InitTrig_Npc_Tower_Gate_Trigger / Trig_Npc_Unit_Revive_Actions",
+        "lines": [
+          54551,
+          54570,
+          54592,
+          57130,
+          57131,
+          57137,
+          57144,
+          57145,
+          57151,
+          57152,
+          57155,
+          57161,
+          57162,
+          57165,
+          57171,
+          57172,
+          57178,
+          57179,
+          57185,
+          57186,
+          57192,
+          57204,
+          57212,
+          57219,
+          57225,
+          57230,
+          57237,
+          57245,
+          57248,
+          57260,
+          57264,
+          57269,
+          57284,
+          57286
+        ],
+        "evidence": [
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54570,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond2 = GetUnitAbilityLevelSwapped('AIx3', a) == 0"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 57130,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Conditions",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 57131,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Conditions",
+            "text": "    if ( not ( GetUnitTypeId(GetAttackedUnitBJ()) == 'hgry' ) ) then"
+          },
+          {
+            "line": 57137,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func015C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func015C takes nothing returns boolean"
+          },
+          {
+            "line": 57144,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func017C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func017C takes nothing returns boolean"
+          },
+          {
+            "line": 57145,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func017C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) >= 5 ) ) then"
+          },
+          {
+            "line": 57151,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func018C takes nothing returns boolean"
+          },
+          {
+            "line": 57152,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 10 ) ) then"
+          },
+          {
+            "line": 57155,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57161,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func019C takes nothing returns boolean"
+          },
+          {
+            "line": 57162,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 15 ) ) then"
+          },
+          {
+            "line": 57165,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57171,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func021C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func021C takes nothing returns boolean"
+          },
+          {
+            "line": 57172,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func021C",
+            "text": "    if ( not ( udg_i_npcMONSTER_TOWER_GATE_Layer[udg_a] < 10 ) ) then"
+          },
+          {
+            "line": 57178,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func045C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func045C takes nothing returns boolean"
+          },
+          {
+            "line": 57179,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func045C",
+            "text": "    if ( not ( ModuloInteger(udg_i_npcMONSTER_TOWER_GATE_Layer[udg_a], 5) == 0 ) ) then"
+          },
+          {
+            "line": 57185,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func057C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func057C takes nothing returns boolean"
+          },
+          {
+            "line": 57186,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func057C",
+            "text": "    if ( not ( GetRandomInt(1, 100) > 95 ) ) then"
+          },
+          {
+            "line": 57192,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57204,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    set udg_u_attacked = GetAttackedUnitBJ()"
+          },
+          {
+            "line": 57212,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    set udg_i_npcMONSTER_TOWER_GATE_Layer[udg_a] = ( udg_i_npcMONSTER_TOWER_GATE_Layer[udg_a] + 1 )"
+          },
+          {
+            "line": 57219,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 57225,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 57230,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        set udg_b = udg_i_npcMONSTER_TOWER_GATE_Layer[udg_a]"
+          },
+          {
+            "line": 57237,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "      set r = GetRandomInt(1, 15)"
+          },
+          {
+            "line": 57245,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        set c = CreateUnit( udg_NPC_PLAYER, ui, rx, ry, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 57248,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call UnitAddAbilityBJ( 'AIx3', c )"
+          },
+          {
+            "line": 57260,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        set udg_TypeUnit = udg_ut_npcMONSTER[GetRandomInt(21, 34)]"
+          },
+          {
+            "line": 57264,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, udg_TypeUnit, udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57269,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    call UnitAddAbilityBJ( 'AIx3', udg_u_created )"
+          },
+          {
+            "line": 57284,
+            "function": "InitTrig_Npc_Tower_Gate_Trigger",
+            "text": "function InitTrig_Npc_Tower_Gate_Trigger takes nothing returns nothing"
+          },
+          {
+            "line": 57286,
+            "function": "InitTrig_Npc_Tower_Gate_Trigger",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Npc_Tower_Gate_Trigger, EVENT_PLAYER_UNIT_ATTACKED )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "Uanb": {
+      "summonGuide": {
+        "kind": "無限塔 MVP",
+        "title": "三頭龍",
+        "summary": "一般模式兩條路線合計達第 10 層時，觸發三頭龍事件。",
+        "steps": [
+          "一般模式：兩條路線的累積層數總和到達 10，事件公告後等待 20 秒。",
+          "在無限塔 MVP 區生成 Lv.99 三頭龍，並同時生成事件配置的守衛。",
+          "休閒模式：遊戲時間超過 30 分鐘時自動執行此事件，略過前述層數要求與 20 秒等待。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Tower_Gate_Trigger_Actions / Trig_Npc_Tower_MVP_29_Hydrolancer_Actions / InitTrig_Npc_Tower_MVP_29_Hydrolancer / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s",
+        "lines": [
+          35534,
+          35578,
+          35592,
+          36113,
+          36114,
+          36138,
+          36160,
+          36170,
+          36201,
+          36203,
+          57151,
+          57152,
+          57155,
+          57161,
+          57162,
+          57165,
+          57192,
+          57218,
+          57219,
+          57224,
+          57225,
+          57380,
+          57381,
+          57387,
+          57407,
+          57413,
+          57415,
+          57420,
+          57430,
+          57440,
+          57450,
+          57461,
+          57469,
+          57472,
+          57480,
+          57484
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36170,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 57151,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func018C takes nothing returns boolean"
+          },
+          {
+            "line": 57152,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 10 ) ) then"
+          },
+          {
+            "line": 57155,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57161,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func019C takes nothing returns boolean"
+          },
+          {
+            "line": 57162,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 15 ) ) then"
+          },
+          {
+            "line": 57165,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57192,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57218,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func018C() ) then"
+          },
+          {
+            "line": 57219,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 57224,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func019C() ) then"
+          },
+          {
+            "line": 57225,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 57380,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Func012C",
+            "text": "function Trig_Npc_Tower_MVP_29_Hydrolancer_Func012C takes nothing returns boolean"
+          },
+          {
+            "line": 57381,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Func012C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 57387,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "function Trig_Npc_Tower_MVP_29_Hydrolancer_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57407,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "        call PolledWait( 20.00 )"
+          },
+          {
+            "line": 57413,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'Uanb', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57415,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[29], 99, true )"
+          },
+          {
+            "line": 57420,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'nrwm', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57430,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'nbzd', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57440,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'nbwm', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57450,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'ngrd', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57461,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "      set r = GetRandomInt(1, 15)"
+          },
+          {
+            "line": 57469,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "        set c = CreateUnit( udg_NPC_PLAYER, ui, rx, ry, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 57472,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "        call UnitAddAbilityBJ( 'AIx3', c )"
+          },
+          {
+            "line": 57480,
+            "function": "Trig_Npc_Tower_MVP_29_Hydrolancer_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 57484,
+            "function": "InitTrig_Npc_Tower_MVP_29_Hydrolancer",
+            "text": "function InitTrig_Npc_Tower_MVP_29_Hydrolancer takes nothing returns nothing"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "Nfir": {
+      "summonGuide": {
+        "kind": "無限塔事件",
+        "title": "伊夫利特",
+        "summary": "伊夫利特事件會同時生成一隻伊夫利特與兩隻不死鳥。",
+        "steps": [
+          "一般模式：無限塔兩條路線的累積層數總和到達 15，觸發伊夫利特事件。",
+          "休閒模式：擊敗三頭龍後，由 MVP 結算流程接續執行伊夫利特事件。",
+          "事件公告後等待 20 秒，在無限塔 MVP 區生成 Lv.99 伊夫利特，並於兩處指定區域各生成一隻不死鳥。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Tower_Gate_Trigger_Actions / Trig_Npc_Tower_MVP_30_Ifrit_Actions / Trig_Mvp_treasure_Item_ChillMode_Actions",
+        "lines": [
+          54240,
+          54266,
+          54267,
+          54273,
+          57151,
+          57152,
+          57155,
+          57161,
+          57162,
+          57165,
+          57192,
+          57218,
+          57219,
+          57224,
+          57225,
+          57495,
+          57509,
+          57514,
+          57516,
+          57522,
+          57532,
+          57543,
+          57551,
+          57554,
+          57562
+        ],
+        "evidence": [
+          {
+            "line": 54240,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "function Trig_Mvp_treasure_Item_ChillMode_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54266,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    elseif uid == 'Uanb' then"
+          },
+          {
+            "line": 54267,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    call TriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 54273,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    call DisableTrigger( gg_trg_Npc_Tower_MVP_30_Ifrit_Timer_AIjass )"
+          },
+          {
+            "line": 57151,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func018C takes nothing returns boolean"
+          },
+          {
+            "line": 57152,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 10 ) ) then"
+          },
+          {
+            "line": 57155,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57161,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func019C takes nothing returns boolean"
+          },
+          {
+            "line": 57162,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 15 ) ) then"
+          },
+          {
+            "line": 57165,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57192,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57218,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func018C() ) then"
+          },
+          {
+            "line": 57219,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 57224,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func019C() ) then"
+          },
+          {
+            "line": 57225,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 57495,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "function Trig_Npc_Tower_MVP_30_Ifrit_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57509,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call PolledWait( 20.00 )"
+          },
+          {
+            "line": 57514,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'Nfir', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57516,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[30], 99, true )"
+          },
+          {
+            "line": 57522,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'hphx', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57532,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'hphx', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57543,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "      set r = GetRandomInt(1, 15)"
+          },
+          {
+            "line": 57551,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "        set c = CreateUnit( udg_NPC_PLAYER, ui, rx, ry, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 57554,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "        call UnitAddAbilityBJ( 'AIx3', c )"
+          },
+          {
+            "line": 57562,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "hphx": {
+      "summonGuide": {
+        "kind": "無限塔事件",
+        "title": "不死鳥",
+        "summary": "伊夫利特事件會同時生成一隻伊夫利特與兩隻不死鳥。",
+        "steps": [
+          "一般模式：無限塔兩條路線的累積層數總和到達 15，觸發伊夫利特事件。",
+          "休閒模式：擊敗三頭龍後，由 MVP 結算流程接續執行伊夫利特事件。",
+          "事件公告後等待 20 秒，在無限塔 MVP 區生成 Lv.99 伊夫利特，另在兩個指定隨機區域各生成一隻不死鳥。",
+          "不死鳥本身具有不可復活能力，不會在 45 秒後自行重生。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Tower_Gate_Trigger_Actions / Trig_Npc_Tower_MVP_30_Ifrit_Actions / Trig_Mvp_treasure_Item_ChillMode_Actions",
+        "lines": [
+          54240,
+          54266,
+          54267,
+          54273,
+          57151,
+          57152,
+          57155,
+          57161,
+          57162,
+          57165,
+          57192,
+          57218,
+          57219,
+          57224,
+          57225,
+          57495,
+          57509,
+          57514,
+          57516,
+          57522,
+          57532,
+          57543,
+          57551,
+          57554,
+          57562
+        ],
+        "evidence": [
+          {
+            "line": 54240,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "function Trig_Mvp_treasure_Item_ChillMode_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54266,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    elseif uid == 'Uanb' then"
+          },
+          {
+            "line": 54267,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    call TriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 54273,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    call DisableTrigger( gg_trg_Npc_Tower_MVP_30_Ifrit_Timer_AIjass )"
+          },
+          {
+            "line": 57151,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func018C takes nothing returns boolean"
+          },
+          {
+            "line": 57152,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 10 ) ) then"
+          },
+          {
+            "line": 57155,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func018C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57161,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Func019C takes nothing returns boolean"
+          },
+          {
+            "line": 57162,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( ( udg_i_npcMONSTER_TOWER_GATE_Layer[1] + udg_i_npcMONSTER_TOWER_GATE_Layer[2] ) == 15 ) ) then"
+          },
+          {
+            "line": 57165,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Func019C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 57192,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "function Trig_Npc_Tower_Gate_Trigger_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57218,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func018C() ) then"
+          },
+          {
+            "line": 57219,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 57224,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "    if ( Trig_Npc_Tower_Gate_Trigger_Func019C() ) then"
+          },
+          {
+            "line": 57225,
+            "function": "Trig_Npc_Tower_Gate_Trigger_Actions",
+            "text": "        call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit )"
+          },
+          {
+            "line": 57495,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "function Trig_Npc_Tower_MVP_30_Ifrit_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 57509,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call PolledWait( 20.00 )"
+          },
+          {
+            "line": 57514,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'Nfir', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57516,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[30], 99, true )"
+          },
+          {
+            "line": 57522,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'hphx', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57532,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'hphx', udg_NPC_PLAYER, udg_p_npcReview, 0.00 )"
+          },
+          {
+            "line": 57543,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "      set r = GetRandomInt(1, 15)"
+          },
+          {
+            "line": 57551,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "        set c = CreateUnit( udg_NPC_PLAYER, ui, rx, ry, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 57554,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "        call UnitAddAbilityBJ( 'AIx3', c )"
+          },
+          {
+            "line": 57562,
+            "function": "Trig_Npc_Tower_MVP_30_Ifrit_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "nbda": {
+      "summonGuide": {
+        "kind": "時間隨機事件",
+        "title": "半龍人",
+        "summary": "遊戲時間 60 分鐘後，未啟用 MVP 劇情分支時可能抽到半龍人事件。",
+        "steps": [
+          "遊戲時間達 3600 秒（60 分鐘），且未啟用 MVP 劇情分支。",
+          "一般事件從兩個等機率分支中抽取，半龍人分支機率為 1/2；萬聖模式改從三個分支抽取，機率為 1/3。",
+          "抽中龍族分支後，在龍族事件區域生成一隻半龍人並顯示小地圖標記；本次定時事件只執行一次。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_EGT3600s_Actions / InitTrig_EGT3600s",
+        "lines": [
+          36404,
+          36411,
+          36418,
+          36425,
+          36432,
+          36433,
+          36439,
+          36446,
+          36449,
+          36452,
+          36456,
+          36467,
+          36469,
+          36478,
+          36481,
+          36492,
+          36499,
+          36503,
+          36507,
+          36509
+        ],
+        "evidence": [
+          {
+            "line": 36404,
+            "function": "Trig_EGT3600s_Func001Func001C",
+            "text": "function Trig_EGT3600s_Func001Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 36411,
+            "function": "Trig_EGT3600s_Func001Func017C",
+            "text": "function Trig_EGT3600s_Func001Func017C takes nothing returns boolean"
+          },
+          {
+            "line": 36418,
+            "function": "Trig_EGT3600s_Func001Func018C",
+            "text": "function Trig_EGT3600s_Func001Func018C takes nothing returns boolean"
+          },
+          {
+            "line": 36425,
+            "function": "Trig_EGT3600s_Func001Func019C",
+            "text": "function Trig_EGT3600s_Func001Func019C takes nothing returns boolean"
+          },
+          {
+            "line": 36432,
+            "function": "Trig_EGT3600s_Func001C",
+            "text": "function Trig_EGT3600s_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 36433,
+            "function": "Trig_EGT3600s_Func001C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 36439,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "function Trig_EGT3600s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36446,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'Ucrl', udg_NPC_PLAYER, udg_Point2, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36449,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 36452,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 5"
+          },
+          {
+            "line": 36456,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 4, 'o00F', udg_EVENT_PLAYER, udg_p_npcRandom, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36467,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            set udg_Rnd_1to2 = GetRandomInt(1, 3)"
+          },
+          {
+            "line": 36469,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            set udg_Rnd_1to2 = GetRandomInt(1, 2)"
+          },
+          {
+            "line": 36478,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            set bj_forLoopAIndexEnd = 4"
+          },
+          {
+            "line": 36481,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "                call CreateNUnitsAtLoc( 3, 'o00F', udg_EVENT_PLAYER, udg_Point_Event[GetForLoopIndexA()], bj_UNIT_FACING )"
+          },
+          {
+            "line": 36492,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 1, 'nbda', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36499,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "            call ConditionalTriggerExecute( gg_trg_Party_MVP_32 )"
+          },
+          {
+            "line": 36503,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 36507,
+            "function": "InitTrig_EGT3600s",
+            "text": "function InitTrig_EGT3600s takes nothing returns nothing"
+          },
+          {
+            "line": 36509,
+            "function": "InitTrig_EGT3600s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT3600s, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 3600.00 )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "n02U": {
+      "summonGuide": {
+        "kind": "劇情時間事件",
+        "title": "狂暴蟻后",
+        "summary": "MVP 劇情模式中，遊戲時間超過 30 分鐘後出現狂暴蟻后。",
+        "steps": [
+          "需啟用 MVP 劇情分支。",
+          "遊戲時間超過 1800 秒（30 分鐘）時，在指定公會事件區域生成一隻狂暴蟻后，同時在公會區域隨機生成 30 隻事件魔物。",
+          "此時間事件只執行一次；狂暴蟻后本身具有不可復活能力。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_EGT1800s_Actions / InitTrig_EGT1800s",
+        "lines": [
+          36106,
+          36107,
+          36113,
+          36114,
+          36120,
+          36121,
+          36124,
+          36130,
+          36138,
+          36144,
+          36147,
+          36151,
+          36161,
+          36162,
+          36163,
+          36164,
+          36165,
+          36166,
+          36167,
+          36168,
+          36169,
+          36170,
+          36176,
+          36187,
+          36197,
+          36201,
+          36203
+        ],
+        "evidence": [
+          {
+            "line": 36106,
+            "function": "Trig_EGT1800s_Func004C",
+            "text": "function Trig_EGT1800s_Func004C takes nothing returns boolean"
+          },
+          {
+            "line": 36107,
+            "function": "Trig_EGT1800s_Func004C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36120,
+            "function": "Trig_EGT1800s_Func009Func001C",
+            "text": "function Trig_EGT1800s_Func009Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 36121,
+            "function": "Trig_EGT1800s_Func009Func001C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_npcMVP[GetForLoopIndexA()]) == true ) ) then"
+          },
+          {
+            "line": 36124,
+            "function": "Trig_EGT1800s_Func009Func001C",
+            "text": "    if ( not ( IsUnitInGroup(udg_u_npcMVP[GetForLoopIndexA()], udg_ug_npcReviver) == false ) ) then"
+          },
+          {
+            "line": 36130,
+            "function": "Trig_EGT1800s_Func016A",
+            "text": "function Trig_EGT1800s_Func016A takes nothing returns nothing"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36144,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'n02U', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36147,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 30"
+          },
+          {
+            "line": 36151,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 1, 'n02T', udg_NPC_PLAYER, udg_p_npcRandom, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 36161,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_18_WolfMan )"
+          },
+          {
+            "line": 36162,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_19_Eremes )"
+          },
+          {
+            "line": 36163,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 36164,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_22_OrcHero )"
+          },
+          {
+            "line": 36165,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_23_Ktullanux )"
+          },
+          {
+            "line": 36166,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_24_EvilSnakeLord )"
+          },
+          {
+            "line": 36167,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_26_LordOfKnight )"
+          },
+          {
+            "line": 36168,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_27_Doppelganger )"
+          },
+          {
+            "line": 36169,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_28_StormyKnight )"
+          },
+          {
+            "line": 36170,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_Npc_Tower_MVP_29_Hydrolancer )"
+          },
+          {
+            "line": 36176,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    set bj_forLoopAIndexEnd = 17"
+          },
+          {
+            "line": 36187,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "      call GroupAddUnit(udg_TempGroup, udg_u_npcMVP[GetRandomInt(2, 17)])"
+          },
+          {
+            "line": 36197,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O009": {
+      "summonGuide": {
+        "kind": "擊敗首領／時間事件",
+        "title": "死靈",
+        "summary": "擊敗德古拉伯爵後，觸發死靈登場；休閒模式也會在 30 分鐘後自動觸發。",
+        "steps": [
+          "一般模式：擊敗德古拉伯爵，MVP 結算流程啟動死靈事件，公告後等待 20 秒。",
+          "休閒模式：遊戲時間超過 30 分鐘時自動啟動；若先擊敗德古拉伯爵也會呼叫同一登場流程，略過 20 秒等待。",
+          "事件破壞封鎖門、開啟區域視野，並在死靈 MVP 區生成 Lv.99 死靈；登場觸發執行後移除。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_27_Doppelganger_Actions / InitTrig_MVP_27_Doppelganger / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / Trig_Mvp_treasure_Item_Actions / Trig_Mvp_treasure_Item_ChillMode_Actions",
+        "lines": [
+          35534,
+          35578,
+          35592,
+          35605,
+          36113,
+          36114,
+          36138,
+          36160,
+          36168,
+          36201,
+          36203,
+          53824,
+          53850,
+          53853,
+          54240,
+          54262,
+          54265,
+          54330,
+          54342,
+          60030,
+          60031,
+          60037,
+          60041,
+          60047,
+          60057,
+          60059,
+          60064,
+          60068
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35605,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_27_Doppelganger )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36168,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_27_Doppelganger )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 53824,
+            "function": "Trig_Mvp_treasure_Item_Actions",
+            "text": "function Trig_Mvp_treasure_Item_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 53850,
+            "function": "Trig_Mvp_treasure_Item_Actions",
+            "text": "    if uid == 'N00M' then"
+          },
+          {
+            "line": 53853,
+            "function": "Trig_Mvp_treasure_Item_Actions",
+            "text": "    call TriggerExecute( gg_trg_MVP_27_Doppelganger )"
+          },
+          {
+            "line": 54240,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "function Trig_Mvp_treasure_Item_ChillMode_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54262,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    if uid == 'N00M' then"
+          },
+          {
+            "line": 54265,
+            "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+            "text": "    call TriggerExecute( gg_trg_MVP_27_Doppelganger )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 60030,
+            "function": "Trig_MVP_27_Doppelganger_Func004C",
+            "text": "function Trig_MVP_27_Doppelganger_Func004C takes nothing returns boolean"
+          },
+          {
+            "line": 60031,
+            "function": "Trig_MVP_27_Doppelganger_Func004C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 60037,
+            "function": "Trig_MVP_27_Doppelganger_Func007002",
+            "text": "function Trig_MVP_27_Doppelganger_Func007002 takes nothing returns nothing"
+          },
+          {
+            "line": 60041,
+            "function": "Trig_MVP_27_Doppelganger_Actions",
+            "text": "function Trig_MVP_27_Doppelganger_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 60047,
+            "function": "Trig_MVP_27_Doppelganger_Actions",
+            "text": "        call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 60057,
+            "function": "Trig_MVP_27_Doppelganger_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'O009', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 60059,
+            "function": "Trig_MVP_27_Doppelganger_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 60064,
+            "function": "Trig_MVP_27_Doppelganger_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 60068,
+            "function": "InitTrig_MVP_27_Doppelganger",
+            "text": "function InitTrig_MVP_27_Doppelganger takes nothing returns nothing"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O00M": {
+      "summonGuide": {
+        "kind": "火狩區域條件",
+        "title": "獸人英雄",
+        "summary": "一般模式需要在五個任務區域登記仍存活的火狩／火狩結界。",
+        "steps": [
+          "一般模式：讓「火狩」或「火狩結界」進入五個指定任務區域；程式登記的是這兩種單位，不是玩家英雄本身。",
+          "五個區域登記的單位必須同時仍存活，條件成立後公告並等待 20 秒，生成 Lv.99 獸人英雄。",
+          "事件同時在五個任務區域各生成 3 隻獸人弓箭手；手動任務觸發只執行一次。",
+          "休閒模式停用手動區域入口，改在遊戲時間超過 30 分鐘後自動生成，略過等待。",
+          "MVP 劇情模式停用手動入口；清空 10 分鐘事件在四處生成的共 20 隻獸人戰士後，由進階劇本生成獸人英雄。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_22_OrcHero_Actions / InitTrig_MVP_22_OrcHero / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / Trig_EGT600s_Actions / InitTrig_EGT600s / Trig_Event_End_Quest_MS_Actions",
+        "lines": [
+          35534,
+          35578,
+          35585,
+          35592,
+          35601,
+          35830,
+          35831,
+          35837,
+          35846,
+          35849,
+          35850,
+          35861,
+          35862,
+          35868,
+          35896,
+          35898,
+          36113,
+          36114,
+          36138,
+          36160,
+          36164,
+          36201,
+          36203,
+          36731,
+          36747,
+          36750,
+          36763,
+          36765,
+          36792,
+          36807,
+          36830,
+          36857,
+          36875,
+          36888,
+          36891,
+          54330,
+          54342,
+          59612,
+          59613,
+          59616,
+          59622,
+          59629,
+          59630,
+          59636,
+          59637,
+          59643,
+          59644,
+          59647,
+          59650,
+          59653,
+          59656,
+          59662,
+          59663,
+          59672,
+          59673,
+          59679,
+          59686,
+          59688,
+          59690,
+          59694,
+          59711,
+          59716,
+          59718,
+          59724,
+          59728,
+          59734,
+          59740,
+          59742,
+          59743,
+          59744,
+          59745,
+          59746
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35585,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_22_OrcHero )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35601,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_22_OrcHero )"
+          },
+          {
+            "line": 35830,
+            "function": "Trig_EGT600s_Func001C",
+            "text": "function Trig_EGT600s_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 35831,
+            "function": "Trig_EGT600s_Func001C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 35837,
+            "function": "Trig_EGT600s_Actions",
+            "text": "function Trig_EGT600s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35846,
+            "function": "Trig_EGT600s_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 3"
+          },
+          {
+            "line": 35849,
+            "function": "Trig_EGT600s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 5, 'o000', udg_EVENT_PLAYER, udg_Point_Event[GetForLoopIndexA()], bj_UNIT_FACING )"
+          },
+          {
+            "line": 35850,
+            "function": "Trig_EGT600s_Actions",
+            "text": "            call MergeLastCreatedGroupOwned(udg_EventGroup[1])"
+          },
+          {
+            "line": 35861,
+            "function": "Trig_EGT600s_Actions",
+            "text": "            call MergeLastCreatedGroupOwned(udg_EventGroup[1])"
+          },
+          {
+            "line": 35862,
+            "function": "Trig_EGT600s_Actions",
+            "text": "            call ForGroupBJ( udg_EventGroup[1], function Trig_EGT600s_Func001Func009Func012A )"
+          },
+          {
+            "line": 35868,
+            "function": "Trig_EGT600s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 5, 'o000', udg_EVENT_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 35896,
+            "function": "InitTrig_EGT600s",
+            "text": "function InitTrig_EGT600s takes nothing returns nothing"
+          },
+          {
+            "line": 35898,
+            "function": "InitTrig_EGT600s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT600s, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 600.00 )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36164,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_22_OrcHero )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 36731,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "function Trig_Event_End_Quest_MS_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36747,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    set i = 1"
+          },
+          {
+            "line": 36750,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36763,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'O00M', udg_NPC_PLAYER, udg_Point, 270.00 )"
+          },
+          {
+            "line": 36765,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 36792,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36807,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[24], 99, true )"
+          },
+          {
+            "line": 36830,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36857,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36875,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36888,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    set i = 11"
+          },
+          {
+            "line": 36891,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59612,
+            "function": "Trig_MVP_22_OrcHero_Func004C",
+            "text": "function Trig_MVP_22_OrcHero_Func004C takes nothing returns boolean"
+          },
+          {
+            "line": 59613,
+            "function": "Trig_MVP_22_OrcHero_Func004C",
+            "text": "    if ( ( GetUnitTypeId(GetEnteringUnit()) == 'hpxe' ) ) then"
+          },
+          {
+            "line": 59616,
+            "function": "Trig_MVP_22_OrcHero_Func004C",
+            "text": "    if ( ( GetUnitTypeId(GetEnteringUnit()) == 'oeye' ) ) then"
+          },
+          {
+            "line": 59622,
+            "function": "Trig_MVP_22_OrcHero_Conditions",
+            "text": "function Trig_MVP_22_OrcHero_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59629,
+            "function": "Trig_MVP_22_OrcHero_Func001Func003Func001C",
+            "text": "function Trig_MVP_22_OrcHero_Func001Func003Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59630,
+            "function": "Trig_MVP_22_OrcHero_Func001Func003Func001C",
+            "text": "    if ( not ( RectContainsLoc(udg_rct_missionOctHero[GetForLoopIndexA()], udg_Point) == true ) ) then"
+          },
+          {
+            "line": 59636,
+            "function": "Trig_MVP_22_OrcHero_Func001C",
+            "text": "function Trig_MVP_22_OrcHero_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59637,
+            "function": "Trig_MVP_22_OrcHero_Func001C",
+            "text": "    if ( not ( GetEnteringUnit() != null ) ) then"
+          },
+          {
+            "line": 59643,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "function Trig_MVP_22_OrcHero_Func003Func001Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 59644,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_missionOctHero[1]) == true ) ) then"
+          },
+          {
+            "line": 59647,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_missionOctHero[2]) == true ) ) then"
+          },
+          {
+            "line": 59650,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_missionOctHero[3]) == true ) ) then"
+          },
+          {
+            "line": 59653,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_missionOctHero[4]) == true ) ) then"
+          },
+          {
+            "line": 59656,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001Func002C",
+            "text": "    if ( not ( IsUnitAliveBJ(udg_u_missionOctHero[5]) == true ) ) then"
+          },
+          {
+            "line": 59662,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001C",
+            "text": "function Trig_MVP_22_OrcHero_Func003Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59663,
+            "function": "Trig_MVP_22_OrcHero_Func003Func001C",
+            "text": "    if ( ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 59672,
+            "function": "Trig_MVP_22_OrcHero_Func003Func007C",
+            "text": "function Trig_MVP_22_OrcHero_Func003Func007C takes nothing returns boolean"
+          },
+          {
+            "line": 59673,
+            "function": "Trig_MVP_22_OrcHero_Func003Func007C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59679,
+            "function": "Trig_MVP_22_OrcHero_Func003C",
+            "text": "function Trig_MVP_22_OrcHero_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 59686,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "function Trig_MVP_22_OrcHero_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59688,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        set udg_Point = GetUnitLoc(GetEnteringUnit())"
+          },
+          {
+            "line": 59690,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 5"
+          },
+          {
+            "line": 59694,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "                set udg_u_missionOctHero[GetForLoopIndexA()] = GetEnteringUnit()"
+          },
+          {
+            "line": 59711,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "            call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 59716,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'O00M', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59718,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 59724,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 5"
+          },
+          {
+            "line": 59728,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "            call CreateNUnitsAtLoc( 3, 'n019', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59734,
+            "function": "Trig_MVP_22_OrcHero_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59740,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "function InitTrig_MVP_22_OrcHero takes nothing returns nothing"
+          },
+          {
+            "line": 59742,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_22_OrcHero, gg_rct________160 )"
+          },
+          {
+            "line": 59743,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_22_OrcHero, gg_rct________161 )"
+          },
+          {
+            "line": 59744,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_22_OrcHero, gg_rct________315 )"
+          },
+          {
+            "line": 59745,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_22_OrcHero, gg_rct________264 )"
+          },
+          {
+            "line": 59746,
+            "function": "InitTrig_MVP_22_OrcHero",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_22_OrcHero, gg_rct________350 )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O00G": {
+      "summonGuide": {
+        "kind": "擊殺累積／劇情事件",
+        "title": "墨蛇君",
+        "summary": "一般模式累積擊殺拉鏈熊或惡雲仙人 50 隻後出現。",
+        "steps": [
+          "一般模式：全場累積擊殺「拉鏈熊」或「惡雲仙人」，兩種合計達 50 隻時觸發。",
+          "條件成立後公告並等待 20 秒，在墨蛇君 MVP 區生成 Lv.99 墨蛇君；首次觸發只執行一次。",
+          "休閒模式停用手動擊殺入口，改在遊戲時間超過 30 分鐘後自動生成，略過 50 隻門檻與 20 秒等待。",
+          "MVP 劇情模式改走進階劇本：清空 20 分鐘事件在六處生成的拉鏈熊與惡雲仙人後生成墨蛇君。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_24_EvilSnakeLord_Actions / InitTrig_MVP_24_EvilSnakeLord / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / Trig_EGT1200s_Actions / InitTrig_EGT1200s / Trig_Event_End_Quest_MS_Actions",
+        "lines": [
+          35534,
+          35578,
+          35586,
+          35592,
+          35603,
+          35986,
+          35987,
+          35993,
+          36005,
+          36008,
+          36009,
+          36010,
+          36011,
+          36022,
+          36023,
+          36024,
+          36025,
+          36026,
+          36027,
+          36033,
+          36097,
+          36099,
+          36113,
+          36114,
+          36138,
+          36160,
+          36166,
+          36201,
+          36203,
+          36731,
+          36750,
+          36765,
+          36789,
+          36792,
+          36805,
+          36807,
+          36830,
+          36857,
+          36875,
+          36891,
+          54330,
+          54342,
+          59874,
+          59875,
+          59878,
+          59884,
+          59891,
+          59892,
+          59898,
+          59899,
+          59902,
+          59908,
+          59915,
+          59916,
+          59926,
+          59931,
+          59933,
+          59938,
+          59944,
+          59946
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35586,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_24_EvilSnakeLord )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35603,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_24_EvilSnakeLord )"
+          },
+          {
+            "line": 35986,
+            "function": "Trig_EGT1200s_Func003C",
+            "text": "function Trig_EGT1200s_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 35987,
+            "function": "Trig_EGT1200s_Func003C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 35993,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "function Trig_EGT1200s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36005,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "        set bj_forLoopAIndexEnd = 6"
+          },
+          {
+            "line": 36008,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 3, 'n01J', udg_EVENT_PLAYER, udg_Point_Event[GetForLoopIndexA()], bj_UNIT_FACING )"
+          },
+          {
+            "line": 36009,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call MergeLastCreatedGroupOwned(udg_EventGroup[2])"
+          },
+          {
+            "line": 36010,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call CreateNUnitsAtLoc( 1, 'o00H', udg_EVENT_PLAYER, udg_Point_Event[GetForLoopIndexA()], bj_UNIT_FACING )"
+          },
+          {
+            "line": 36011,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call MergeLastCreatedGroupOwned(udg_EventGroup[2])"
+          },
+          {
+            "line": 36022,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call GroupAddUnitSimple( gg_unit_H000_0984, udg_EventGroup[2] )"
+          },
+          {
+            "line": 36023,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call GroupAddUnitSimple( gg_unit_H004_0979, udg_EventGroup[2] )"
+          },
+          {
+            "line": 36024,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call GroupAddUnitSimple( gg_unit_E000_0981, udg_EventGroup[2] )"
+          },
+          {
+            "line": 36025,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call GroupAddUnitSimple( gg_unit_H005_0982, udg_EventGroup[2] )"
+          },
+          {
+            "line": 36026,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call GroupAddUnitSimple( gg_unit_H008_0980, udg_EventGroup[2] )"
+          },
+          {
+            "line": 36027,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "            call ForGroupBJ( udg_EventGroup[2], function Trig_EGT1200s_Func003Func011Func009A )"
+          },
+          {
+            "line": 36033,
+            "function": "Trig_EGT1200s_Actions",
+            "text": "                call CreateNUnitsAtLoc( 5, 'n01J', udg_EVENT_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36097,
+            "function": "InitTrig_EGT1200s",
+            "text": "function InitTrig_EGT1200s takes nothing returns nothing"
+          },
+          {
+            "line": 36099,
+            "function": "InitTrig_EGT1200s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1200s, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 1200.00 )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36166,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_24_EvilSnakeLord )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 36731,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "function Trig_Event_End_Quest_MS_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36750,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36765,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 36789,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    set i = 2"
+          },
+          {
+            "line": 36792,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36805,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'O00G', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36807,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[24], 99, true )"
+          },
+          {
+            "line": 36830,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36857,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36875,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 36891,
+            "function": "Trig_Event_End_Quest_MS_Actions",
+            "text": "      if( IsUnitGroupEmptyBJ(udg_EventGroup[i]) and bpn > 0 )then"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59874,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func001C",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59875,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func001C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'n01J' ) ) then"
+          },
+          {
+            "line": 59878,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func001C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'o00H' ) ) then"
+          },
+          {
+            "line": 59884,
+            "function": "Trig_MVP_24_EvilSnakeLord_Conditions",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59891,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003Func006C",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Func003Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 59892,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59898,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003Func017C",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Func003Func017C takes nothing returns boolean"
+          },
+          {
+            "line": 59899,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003Func017C",
+            "text": "    if ( ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 59902,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003Func017C",
+            "text": "    if ( ( udg_i_npcKillerTrigger[2] >= 50 ) ) then"
+          },
+          {
+            "line": 59908,
+            "function": "Trig_MVP_24_EvilSnakeLord_Func003C",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 59915,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "function Trig_MVP_24_EvilSnakeLord_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59916,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "    set udg_i_npcKillerTrigger[2] = ( udg_i_npcKillerTrigger[2] + 1 )"
+          },
+          {
+            "line": 59926,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "            call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 59931,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'O00G', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59933,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "        call SetHeroLevelBJ( udg_u_npcMVP[24], 99, true )"
+          },
+          {
+            "line": 59938,
+            "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59944,
+            "function": "InitTrig_MVP_24_EvilSnakeLord",
+            "text": "function InitTrig_MVP_24_EvilSnakeLord takes nothing returns nothing"
+          },
+          {
+            "line": 59946,
+            "function": "InitTrig_MVP_24_EvilSnakeLord",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_24_EvilSnakeLord, EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O00O": {
+      "summonGuide": {
+        "kind": "擊殺累積與道具",
+        "title": "水晶龍",
+        "summary": "一般模式累積擊殺冰原指定魔物至少 50 隻，且有效擊殺者持有冰雕玫瑰時觸發。",
+        "steps": [
+          "擊殺「寒冰巨人」或「雪獸」累積計數；無限塔主事件、兩條塔路線與公會副本群組中的個體不計入。",
+          "一般模式：累積至少 50 隻後，某次有效擊殺的擊殺者持有「冰雕玫瑰」，才會觸發；不要求剛好第 50 隻時達成。",
+          "觸發時扣除 1 次數冰雕玫瑰，剩餘次數不足 1 時移除物品；公告後等待 20 秒生成 Lv.99 水晶龍。",
+          "休閒模式停用手動擊殺入口，改在遊戲時間超過 30 分鐘後自動生成，不需要 50 隻或冰雕玫瑰，並略過等待。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_23_Ktullanux_Actions / InitTrig_MVP_23_Ktullanux / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s",
+        "lines": [
+          35534,
+          35578,
+          35592,
+          35602,
+          36113,
+          36114,
+          36138,
+          36160,
+          36165,
+          36201,
+          36203,
+          54330,
+          54342,
+          59756,
+          59757,
+          59760,
+          59766,
+          59770,
+          59773,
+          59776,
+          59779,
+          59785,
+          59786,
+          59789,
+          59795,
+          59796,
+          59805,
+          59809,
+          59810,
+          59816,
+          59823,
+          59824,
+          59828,
+          59830,
+          59832,
+          59844,
+          59849,
+          59851,
+          59856,
+          59862,
+          59864
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35602,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_23_Ktullanux )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36165,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_23_Ktullanux )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59756,
+            "function": "Trig_MVP_23_Ktullanux_Func001C",
+            "text": "function Trig_MVP_23_Ktullanux_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59757,
+            "function": "Trig_MVP_23_Ktullanux_Func001C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'e008' ) ) then"
+          },
+          {
+            "line": 59760,
+            "function": "Trig_MVP_23_Ktullanux_Func001C",
+            "text": "    if ( ( GetUnitTypeId(GetDyingUnit()) == 'nwen' ) ) then"
+          },
+          {
+            "line": 59766,
+            "function": "Trig_MVP_23_Ktullanux_Conditions",
+            "text": "function Trig_MVP_23_Ktullanux_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59770,
+            "function": "Trig_MVP_23_Ktullanux_Conditions",
+            "text": "    if ( not ( IsUnitInGroup(GetDyingUnit(), udg_ug_npcMONSTER_TOWER) != true ) ) then"
+          },
+          {
+            "line": 59773,
+            "function": "Trig_MVP_23_Ktullanux_Conditions",
+            "text": "    if ( not ( IsUnitInGroup(GetDyingUnit(), udg_ug_npcMONSTER_TOWER_GATE[1]) != true ) ) then"
+          },
+          {
+            "line": 59776,
+            "function": "Trig_MVP_23_Ktullanux_Conditions",
+            "text": "    if ( not ( IsUnitInGroup(GetDyingUnit(), udg_ug_npcMONSTER_TOWER_GATE[2]) != true ) ) then"
+          },
+          {
+            "line": 59779,
+            "function": "Trig_MVP_23_Ktullanux_Conditions",
+            "text": "    if ( not ( IsUnitInGroup(GetDyingUnit(), udg_ug_npcMONSTER_SOCIETY) != true ) ) then"
+          },
+          {
+            "line": 59785,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func001Func002C",
+            "text": "function Trig_MVP_23_Ktullanux_Func008Func001Func002C takes nothing returns boolean"
+          },
+          {
+            "line": 59786,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func001Func002C",
+            "text": "    if ( not ( udg_i_npcKillerTrigger[1] >= 50 ) ) then"
+          },
+          {
+            "line": 59789,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func001Func002C",
+            "text": "    if ( not ( UnitHasItemOfTypeBJ(GetKillingUnitBJ(), 'I0IE') == true ) ) then"
+          },
+          {
+            "line": 59795,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func001C",
+            "text": "function Trig_MVP_23_Ktullanux_Func008Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 59796,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func001C",
+            "text": "    if ( ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 59805,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func007001",
+            "text": "function Trig_MVP_23_Ktullanux_Func008Func007001 takes nothing returns boolean"
+          },
+          {
+            "line": 59809,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func013C",
+            "text": "function Trig_MVP_23_Ktullanux_Func008Func013C takes nothing returns boolean"
+          },
+          {
+            "line": 59810,
+            "function": "Trig_MVP_23_Ktullanux_Func008Func013C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59816,
+            "function": "Trig_MVP_23_Ktullanux_Func008C",
+            "text": "function Trig_MVP_23_Ktullanux_Func008C takes nothing returns boolean"
+          },
+          {
+            "line": 59823,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "function Trig_MVP_23_Ktullanux_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59824,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "    set udg_i_npcKillerTrigger[1] = ( udg_i_npcKillerTrigger[1] + 1 )"
+          },
+          {
+            "line": 59828,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "        set udg_TempItem = GetItemOfTypeFromUnitBJ(GetKillingUnitBJ(), 'I0IE')"
+          },
+          {
+            "line": 59830,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "        call SetItemCharges( udg_TempItem, ( udg_Integer - 1 ) )"
+          },
+          {
+            "line": 59832,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "            call RemoveItem( udg_TempItem )"
+          },
+          {
+            "line": 59844,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "            call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 59849,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'O00O', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59851,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "        call SetHeroLevelBJ( udg_u_npcMVP[23], 99, true )"
+          },
+          {
+            "line": 59856,
+            "function": "Trig_MVP_23_Ktullanux_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59862,
+            "function": "InitTrig_MVP_23_Ktullanux",
+            "text": "function InitTrig_MVP_23_Ktullanux takes nothing returns nothing"
+          },
+          {
+            "line": 59864,
+            "function": "InitTrig_MVP_23_Ktullanux",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_23_Ktullanux, EVENT_PLAYER_UNIT_DEATH )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O00N": {
+      "summonGuide": {
+        "kind": "道具入場／時間事件",
+        "title": "死靈騎士",
+        "summary": "一般模式由持有斷柄之刀的非幻象單位進入死靈騎士區域召喚。",
+        "steps": [
+          "一般模式：由非幻象單位攜帶「斷柄之刀」進入死靈騎士 MVP 區域。",
+          "觸發時扣除 1 次數斷柄之刀，剩餘次數不足 1 時移除物品；公告後等待 20 秒生成 Lv.99 死靈騎士。",
+          "休閒模式停用此手動入口，改在遊戲時間超過 30 分鐘後自動生成，不需要斷柄之刀並略過等待。",
+          "MVP 劇情模式停用此手動入口，改在 50 分鐘事件於劇情指定區域生成 Lv.99 死靈騎士。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_26_LordOfKnight_Actions / InitTrig_MVP_26_LordOfKnight / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / Trig_EGT3000s_Actions / InitTrig_EGT3000s",
+        "lines": [
+          35534,
+          35578,
+          35587,
+          35592,
+          35604,
+          36113,
+          36114,
+          36138,
+          36160,
+          36167,
+          36201,
+          36203,
+          36325,
+          36326,
+          36332,
+          36336,
+          36337,
+          36339,
+          36395,
+          36397,
+          54330,
+          54342,
+          59956,
+          59957,
+          59960,
+          59966,
+          59970,
+          59971,
+          59977,
+          59978,
+          59984,
+          59988,
+          59990,
+          59992,
+          60005,
+          60010,
+          60012,
+          60016,
+          60020,
+          60022
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35587,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_26_LordOfKnight )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35604,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_26_LordOfKnight )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36167,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_26_LordOfKnight )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 36325,
+            "function": "Trig_EGT3000s_Func001C",
+            "text": "function Trig_EGT3000s_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 36326,
+            "function": "Trig_EGT3000s_Func001C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 36332,
+            "function": "Trig_EGT3000s_Actions",
+            "text": "function Trig_EGT3000s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36336,
+            "function": "Trig_EGT3000s_Actions",
+            "text": "        set udg_Point = GetRectCenter(gg_rct_Event_MvpStory4of1_Spawn)"
+          },
+          {
+            "line": 36337,
+            "function": "Trig_EGT3000s_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'O00N', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36339,
+            "function": "Trig_EGT3000s_Actions",
+            "text": "        call SetHeroLevelBJ( udg_u_npcMVP[26], 99, true )"
+          },
+          {
+            "line": 36395,
+            "function": "InitTrig_EGT3000s",
+            "text": "function InitTrig_EGT3000s takes nothing returns nothing"
+          },
+          {
+            "line": 36397,
+            "function": "InitTrig_EGT3000s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT3000s, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 3000.00 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59956,
+            "function": "Trig_MVP_26_LordOfKnight_Conditions",
+            "text": "function Trig_MVP_26_LordOfKnight_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59957,
+            "function": "Trig_MVP_26_LordOfKnight_Conditions",
+            "text": "    if ( not ( UnitHasItemOfTypeBJ(GetEnteringUnit(), 'I07E') == true ) ) then"
+          },
+          {
+            "line": 59960,
+            "function": "Trig_MVP_26_LordOfKnight_Conditions",
+            "text": "    if ( not ( IsUnitIllusionBJ(GetEnteringUnit()) != true ) ) then"
+          },
+          {
+            "line": 59966,
+            "function": "Trig_MVP_26_LordOfKnight_Func003Func005001",
+            "text": "function Trig_MVP_26_LordOfKnight_Func003Func005001 takes nothing returns boolean"
+          },
+          {
+            "line": 59970,
+            "function": "Trig_MVP_26_LordOfKnight_Func003C",
+            "text": "function Trig_MVP_26_LordOfKnight_Func003C takes nothing returns boolean"
+          },
+          {
+            "line": 59971,
+            "function": "Trig_MVP_26_LordOfKnight_Func003C",
+            "text": "    if ( not ( GetEnteringUnit() != null ) ) then"
+          },
+          {
+            "line": 59977,
+            "function": "Trig_MVP_26_LordOfKnight_Func008C",
+            "text": "function Trig_MVP_26_LordOfKnight_Func008C takes nothing returns boolean"
+          },
+          {
+            "line": 59978,
+            "function": "Trig_MVP_26_LordOfKnight_Func008C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59984,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "function Trig_MVP_26_LordOfKnight_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59988,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "        set udg_TempItem = GetItemOfTypeFromUnitBJ(GetEnteringUnit(), 'I07E')"
+          },
+          {
+            "line": 59990,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "        call SetItemCharges( udg_TempItem, ( udg_Integer - 1 ) )"
+          },
+          {
+            "line": 59992,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "            call RemoveItem( udg_TempItem )"
+          },
+          {
+            "line": 60005,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "        call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 60010,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'O00N', udg_NPC_PLAYER, udg_p_npcMVP[26], bj_UNIT_FACING )"
+          },
+          {
+            "line": 60012,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "    call SetHeroLevelBJ( udg_u_npcMVP[26], 99, true )"
+          },
+          {
+            "line": 60016,
+            "function": "Trig_MVP_26_LordOfKnight_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 60020,
+            "function": "InitTrig_MVP_26_LordOfKnight",
+            "text": "function InitTrig_MVP_26_LordOfKnight takes nothing returns nothing"
+          },
+          {
+            "line": 60022,
+            "function": "InitTrig_MVP_26_LordOfKnight",
+            "text": "    call TriggerRegisterEnterRectSimple( gg_trg_MVP_26_LordOfKnight, gg_rct_MVP_Lord_Of_Knight )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "O00V": {
+      "summonGuide": {
+        "kind": "出售道具／時間事件",
+        "title": "冰暴騎士",
+        "summary": "一般模式在指定冰原區域出售卡崙之牙，觸發冰暴騎士。",
+        "steps": [
+          "一般模式：持有「卡崙之牙」並出售給商店，出售事件的觸發單位必須位於指定冰原區域。",
+          "條件成立後公告並等待 20 秒，在冰暴騎士 MVP 區生成 Lv.99 冰暴騎士；指定區域內的部分冰系魔物也會被替換。",
+          "休閒模式停用手動出售入口，改在遊戲時間超過 30 分鐘後自動生成，不需要出售卡崙之牙並略過等待。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_28_StormyKnight_Actions / InitTrig_MVP_28_StormyKnight / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s",
+        "lines": [
+          35534,
+          35578,
+          35592,
+          35599,
+          36113,
+          36114,
+          36138,
+          36160,
+          36169,
+          36201,
+          36203,
+          54330,
+          54342,
+          60076,
+          60077,
+          60080,
+          60086,
+          60087,
+          60093,
+          60094,
+          60100,
+          60104,
+          60106,
+          60112,
+          60119,
+          60124,
+          60126,
+          60133,
+          60137,
+          60139
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35599,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_28_StormyKnight )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36169,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_28_StormyKnight )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 60076,
+            "function": "Trig_MVP_28_StormyKnight_Conditions",
+            "text": "function Trig_MVP_28_StormyKnight_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 60077,
+            "function": "Trig_MVP_28_StormyKnight_Conditions",
+            "text": "    if ( not ( GetItemTypeId(GetSoldItem()) == 'I05N' ) ) then"
+          },
+          {
+            "line": 60080,
+            "function": "Trig_MVP_28_StormyKnight_Conditions",
+            "text": "    if ( not ( RectContainsUnit(gg_rct________198, GetTriggerUnit()) == true ) ) then"
+          },
+          {
+            "line": 60086,
+            "function": "Trig_MVP_28_StormyKnight_Func005C",
+            "text": "function Trig_MVP_28_StormyKnight_Func005C takes nothing returns boolean"
+          },
+          {
+            "line": 60087,
+            "function": "Trig_MVP_28_StormyKnight_Func005C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 60093,
+            "function": "Trig_MVP_28_StormyKnight_Func017Func001C",
+            "text": "function Trig_MVP_28_StormyKnight_Func017Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 60094,
+            "function": "Trig_MVP_28_StormyKnight_Func017Func001C",
+            "text": "    if ( not ( GetUnitTypeId(GetEnumUnit()) == 'n00T' ) ) then"
+          },
+          {
+            "line": 60100,
+            "function": "Trig_MVP_28_StormyKnight_Func017A",
+            "text": "function Trig_MVP_28_StormyKnight_Func017A takes nothing returns nothing"
+          },
+          {
+            "line": 60104,
+            "function": "Trig_MVP_28_StormyKnight_Func017A",
+            "text": "        call CreateNUnitsAtLoc( 1, 'n02S', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 60106,
+            "function": "Trig_MVP_28_StormyKnight_Func017A",
+            "text": "        call CreateNUnitsAtLoc( 1, 'u004', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 60112,
+            "function": "Trig_MVP_28_StormyKnight_Actions",
+            "text": "function Trig_MVP_28_StormyKnight_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 60119,
+            "function": "Trig_MVP_28_StormyKnight_Actions",
+            "text": "        call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 60124,
+            "function": "Trig_MVP_28_StormyKnight_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'O00V', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 60126,
+            "function": "Trig_MVP_28_StormyKnight_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 60133,
+            "function": "Trig_MVP_28_StormyKnight_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 60137,
+            "function": "InitTrig_MVP_28_StormyKnight",
+            "text": "function InitTrig_MVP_28_StormyKnight takes nothing returns nothing"
+          },
+          {
+            "line": 60139,
+            "function": "InitTrig_MVP_28_StormyKnight",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_28_StormyKnight, EVENT_PLAYER_UNIT_PAWN_ITEM )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "Ucrl": {
+      "summonGuide": {
+        "kind": "神器封印／時間事件",
+        "title": "古埃及王",
+        "summary": "一般模式由持有四組神器的非幻象單位攻擊金字塔封印；不同模式另有定時事件入口。",
+        "steps": [
+          "一般模式：由非幻象的攻擊者同時攜帶雷神腰帶、女神頸鍊、雷神之鎚、史雷普尼爾之靴四組神器，各組原版或強化版擇一，攻擊指定金字塔封印。",
+          "四件全為強化版本時走夢魘分支；其他有效組合生成普通古埃及王。四件神器不會因召喚而被消耗。",
+          "一般封印事件移除封印後等待 20 秒，在古埃及王 MVP 區生成 Lv.99 古埃及王，觸發只執行一次。",
+          "休閒模式停用手動封印入口，改在遊戲時間超過 30 分鐘後自動生成普通古埃及王，不需要四組神器。",
+          "MVP 劇情模式停用手動封印入口；遊戲時間達 60 分鐘時，由劇情事件在指定區域生成普通古埃及王。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_21_AmonRa_Actions / InitTrig_MVP_21_AmonRa / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / Trig_EGT3600s_Actions / InitTrig_EGT3600s",
+        "lines": [
+          35534,
+          35578,
+          35584,
+          35592,
+          35600,
+          36113,
+          36114,
+          36138,
+          36160,
+          36163,
+          36201,
+          36203,
+          36432,
+          36433,
+          36439,
+          36444,
+          36446,
+          36449,
+          36507,
+          36509,
+          54330,
+          54342,
+          59499,
+          59500,
+          59503,
+          59509,
+          59510,
+          59513,
+          59519,
+          59520,
+          59523,
+          59529,
+          59530,
+          59533,
+          59539,
+          59540,
+          59543,
+          59561,
+          59562,
+          59568,
+          59570,
+          59572,
+          59587,
+          59592,
+          59594,
+          59597,
+          59601,
+          59603
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35584,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35600,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36163,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 36432,
+            "function": "Trig_EGT3600s_Func001C",
+            "text": "function Trig_EGT3600s_Func001C takes nothing returns boolean"
+          },
+          {
+            "line": 36433,
+            "function": "Trig_EGT3600s_Func001C",
+            "text": "    if ( not ( udg_MVPStory == true ) ) then"
+          },
+          {
+            "line": 36439,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "function Trig_EGT3600s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36444,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        set udg_Point2 = GetRectCenter(gg_rct________258)"
+          },
+          {
+            "line": 36446,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        call CreateNUnitsAtLoc( 1, 'Ucrl', udg_NPC_PLAYER, udg_Point2, bj_UNIT_FACING )"
+          },
+          {
+            "line": 36449,
+            "function": "Trig_EGT3600s_Actions",
+            "text": "        call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 36507,
+            "function": "InitTrig_EGT3600s",
+            "text": "function InitTrig_EGT3600s takes nothing returns nothing"
+          },
+          {
+            "line": 36509,
+            "function": "InitTrig_EGT3600s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT3600s, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 3600.00 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59499,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "function Trig_MVP_21_AmonRa_Func022C takes nothing returns boolean"
+          },
+          {
+            "line": 59500,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I04Y') == true ) ) then"
+          },
+          {
+            "line": 59503,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0EK') == true ) ) then"
+          },
+          {
+            "line": 59509,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "function Trig_MVP_21_AmonRa_Func023C takes nothing returns boolean"
+          },
+          {
+            "line": 59510,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I04Z') == true ) ) then"
+          },
+          {
+            "line": 59513,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0EL') == true ) ) then"
+          },
+          {
+            "line": 59519,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "function Trig_MVP_21_AmonRa_Func024C takes nothing returns boolean"
+          },
+          {
+            "line": 59520,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I01P') == true ) ) then"
+          },
+          {
+            "line": 59523,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0FE') == true ) ) then"
+          },
+          {
+            "line": 59529,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "function Trig_MVP_21_AmonRa_Func025C takes nothing returns boolean"
+          },
+          {
+            "line": 59530,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I01C') == true ) ) then"
+          },
+          {
+            "line": 59533,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0GZ') == true ) ) then"
+          },
+          {
+            "line": 59539,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "function Trig_MVP_21_AmonRa_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59540,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "    if ( not ( GetAttackedUnitBJ() == gg_unit_nico_0456 ) ) then"
+          },
+          {
+            "line": 59543,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "    if ( not ( IsUnitIllusionBJ(GetAttacker()) != true ) ) then"
+          },
+          {
+            "line": 59561,
+            "function": "Trig_MVP_21_AmonRa_Func011C",
+            "text": "function Trig_MVP_21_AmonRa_Func011C takes nothing returns boolean"
+          },
+          {
+            "line": 59562,
+            "function": "Trig_MVP_21_AmonRa_Func011C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59568,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "function Trig_MVP_21_AmonRa_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59570,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    if UnitHasItemOfTypeBJ(GetAttacker(), 'I0EK') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0EL') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0FE') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0GZ') then"
+          },
+          {
+            "line": 59572,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59587,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "        call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 59592,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'Ucrl', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59594,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 59597,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59601,
+            "function": "InitTrig_MVP_21_AmonRa",
+            "text": "function InitTrig_MVP_21_AmonRa takes nothing returns nothing"
+          },
+          {
+            "line": 59603,
+            "function": "InitTrig_MVP_21_AmonRa",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_21_AmonRa, EVENT_PLAYER_UNIT_ATTACKED )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "UNMR": {
+      "summonGuide": {
+        "kind": "神器隱藏分支",
+        "title": "古埃及王﹡夢魘",
+        "summary": "非休閒且未啟用 MVP 劇情分支時，攜帶四件強化神器攻擊金字塔封印。",
+        "steps": [
+          "同一名非幻象攻擊者需同時持有「鍛爐．雷神腰帶」「加冕．女神頸鍊」「諸神．雷神之鎚」「加護．史雷普尼爾之靴」。",
+          "使用該角色攻擊金字塔內的封印目標；四件強化神器保留，不會因召喚而被消耗。",
+          "封印移除後等待 20 秒，在 (-3008, 1568) 生成 Lv.99 古埃及王﹡夢魘。此封印召喚只執行一次。",
+          "本版在休閒模式與 MVP 劇情模式會停用這個手動封印入口；休閒模式 30 分鐘後的自動事件生成普通古埃及王。夢魘生成函數內雖有略過休閒等待的分支，並不代表上述停用入口可手動觸發。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_21_AmonRa_Actions / InitTrig_MVP_21_AmonRa / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s_Actions / InitTrig_EGT1800s / NMR_Summon",
+        "lines": [
+          35534,
+          35578,
+          35584,
+          35592,
+          35600,
+          36113,
+          36114,
+          36138,
+          36160,
+          36163,
+          36201,
+          36203,
+          54330,
+          54342,
+          59424,
+          59428,
+          59431,
+          59432,
+          59435,
+          59437,
+          59442,
+          59499,
+          59500,
+          59503,
+          59509,
+          59510,
+          59513,
+          59519,
+          59520,
+          59523,
+          59529,
+          59530,
+          59533,
+          59539,
+          59540,
+          59543,
+          59561,
+          59562,
+          59568,
+          59570,
+          59572,
+          59587,
+          59592,
+          59594,
+          59597,
+          59601,
+          59603
+        ],
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35578,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_MVPStory = true"
+          },
+          {
+            "line": 35584,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35600,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "        call DisableTrigger( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "    if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36160,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "    if ( Trig_EGT1800s_Func006C() ) then"
+          },
+          {
+            "line": 36163,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "        call TriggerExecute( gg_trg_MVP_21_AmonRa )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "    call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 59424,
+            "function": "NMR_Summon",
+            "text": "function NMR_Summon takes nothing returns nothing"
+          },
+          {
+            "line": 59428,
+            "function": "NMR_Summon",
+            "text": "    call RemoveUnit(gg_unit_nico_0456)"
+          },
+          {
+            "line": 59431,
+            "function": "NMR_Summon",
+            "text": "    if not udg_const_b_ChillMode then"
+          },
+          {
+            "line": 59432,
+            "function": "NMR_Summon",
+            "text": "        call PolledWait(udg_const_r_npcMVPTime)"
+          },
+          {
+            "line": 59435,
+            "function": "NMR_Summon",
+            "text": "    set udg_NMR_Boss = CreateUnit(udg_NPC_PLAYER, 'UNMR', -3008., 1568., 270.)"
+          },
+          {
+            "line": 59437,
+            "function": "NMR_Summon",
+            "text": "    call SetHeroLevel(udg_NMR_Boss, 99, false)"
+          },
+          {
+            "line": 59442,
+            "function": "NMR_Summon",
+            "text": "    call SetUnitVertexColor(udg_NMR_Boss, 85, 110, 230, 217)"
+          },
+          {
+            "line": 59499,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "function Trig_MVP_21_AmonRa_Func022C takes nothing returns boolean"
+          },
+          {
+            "line": 59500,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I04Y') == true ) ) then"
+          },
+          {
+            "line": 59503,
+            "function": "Trig_MVP_21_AmonRa_Func022C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0EK') == true ) ) then"
+          },
+          {
+            "line": 59509,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "function Trig_MVP_21_AmonRa_Func023C takes nothing returns boolean"
+          },
+          {
+            "line": 59510,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I04Z') == true ) ) then"
+          },
+          {
+            "line": 59513,
+            "function": "Trig_MVP_21_AmonRa_Func023C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0EL') == true ) ) then"
+          },
+          {
+            "line": 59519,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "function Trig_MVP_21_AmonRa_Func024C takes nothing returns boolean"
+          },
+          {
+            "line": 59520,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I01P') == true ) ) then"
+          },
+          {
+            "line": 59523,
+            "function": "Trig_MVP_21_AmonRa_Func024C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0FE') == true ) ) then"
+          },
+          {
+            "line": 59529,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "function Trig_MVP_21_AmonRa_Func025C takes nothing returns boolean"
+          },
+          {
+            "line": 59530,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I01C') == true ) ) then"
+          },
+          {
+            "line": 59533,
+            "function": "Trig_MVP_21_AmonRa_Func025C",
+            "text": "    if ( ( UnitHasItemOfTypeBJ(GetAttacker(), 'I0GZ') == true ) ) then"
+          },
+          {
+            "line": 59539,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "function Trig_MVP_21_AmonRa_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 59540,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "    if ( not ( GetAttackedUnitBJ() == gg_unit_nico_0456 ) ) then"
+          },
+          {
+            "line": 59543,
+            "function": "Trig_MVP_21_AmonRa_Conditions",
+            "text": "    if ( not ( IsUnitIllusionBJ(GetAttacker()) != true ) ) then"
+          },
+          {
+            "line": 59561,
+            "function": "Trig_MVP_21_AmonRa_Func011C",
+            "text": "function Trig_MVP_21_AmonRa_Func011C takes nothing returns boolean"
+          },
+          {
+            "line": 59562,
+            "function": "Trig_MVP_21_AmonRa_Func011C",
+            "text": "    if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 59568,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "function Trig_MVP_21_AmonRa_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 59570,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    if UnitHasItemOfTypeBJ(GetAttacker(), 'I0EK') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0EL') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0FE') and UnitHasItemOfTypeBJ(GetAttacker(), 'I0GZ') then"
+          },
+          {
+            "line": 59572,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "        call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59587,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "        call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 59592,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call CreateNUnitsAtLoc( 1, 'Ucrl', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+          },
+          {
+            "line": 59594,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call SetHeroLevelBJ( GetLastCreatedUnit(), 99, true )"
+          },
+          {
+            "line": 59597,
+            "function": "Trig_MVP_21_AmonRa_Actions",
+            "text": "    call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 59601,
+            "function": "InitTrig_MVP_21_AmonRa",
+            "text": "function InitTrig_MVP_21_AmonRa takes nothing returns nothing"
+          },
+          {
+            "line": 59603,
+            "function": "InitTrig_MVP_21_AmonRa",
+            "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_21_AmonRa, EVENT_PLAYER_UNIT_ATTACKED )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版已顯示的召喚材料、數量、模式、時間與門檻已核對"
+      }
+    },
+    "unec": {
+      "summonGuide": {
+        "kind": "首領技能召喚",
+        "title": "迷幻之王",
+        "summary": "由黑暗之王的「召喚 迷幻之王」技能產生，每次召喚兩隻。",
+        "steps": [
+          "黑暗之王持有「召喚 迷幻之王」技能；施放時產生 2 隻迷幻之王，來源為技能物件的召喚單位欄。",
+          "該技能設定冷卻 600 秒、消耗 0 魔力；冷卻值不是固定出現倒數，不保證每 600 秒必定施放。",
+          "召喚個體死亡後不走一般魔物的 45 秒重生流程；是否再次出現取決於黑暗之王再次施放召喚技能。",
+          "已確認召喚者、技能與數量；本次未找到專門要求黑暗之王在某個時間或生命門檻施放此技能的 JASS 指令。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.w3u Ubal.uabi → war3map.w3a A02D.Hwe1/Hwe2；war3map.j 通用召喚物重生排除",
+        "lines": [
+          3514,
+          3861,
+          54330,
+          54355,
+          54551,
+          54568,
+          54592,
+          54858,
+          55484
+        ],
+        "evidence": [
+          {
+            "line": 3514,
+            "function": "CreateUnitsForPlayer10",
+            "text": "function CreateUnitsForPlayer10 takes nothing returns nothing"
+          },
+          {
+            "line": 3861,
+            "function": "CreateUnitsForPlayer10",
+            "text": "    set gg_unit_Ubal_0373 = CreateUnit( p, 'Ubal', -3068.8, -12928.4, 273.180 )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54355,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "    set udg_u_npcMVP[10] = gg_unit_Ubal_0373"
+          },
+          {
+            "line": 54551,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "function Trig_Npc_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54568,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "    local boolean cond1 = not IsUnitType(a, UNIT_TYPE_SUMMONED)"
+          },
+          {
+            "line": 54592,
+            "function": "Trig_Npc_Unit_Revive_Actions",
+            "text": "      if( cond1 and cond2 )then"
+          },
+          {
+            "line": 54858,
+            "function": "Trig_Npc_Drop_Item_Initialization_Actions",
+            "text": "function Trig_Npc_Drop_Item_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 55484,
+            "function": "Trig_Npc_Drop_Item_Initialization_Actions",
+            "text": "    set udg_ut_npcDrop[udg_a] = 'unec'"
+          }
+        ],
+        "verified": true,
+        "reviewed": true,
+        "verificationStatus": "本版召喚技能、數量與冷卻已核對；AI 的確切施放時機尚未確認",
+        "unverifiedFields": [
+          "aiCastTiming"
+        ],
+        "objectEvidence": [
+          {
+            "file": "war3map.w3u",
+            "id": "Ubal",
+            "field": "uabi",
+            "contains": "A02D"
+          },
+          {
+            "file": "war3map.w3a",
+            "id": "A02D",
+            "field": "Hwe1:1:0",
+            "value": "unec"
+          },
+          {
+            "file": "war3map.w3a",
+            "id": "A02D",
+            "field": "Hwe2:1:1",
+            "value": 2
+          },
+          {
+            "file": "war3map.w3a",
+            "id": "A02D",
+            "field": "acdn:1:0",
+            "value": 600.0
+          },
+          {
+            "file": "war3map.w3a",
+            "id": "A02D",
+            "field": "amcs:1:0",
+            "value": 0
+          }
+        ]
+      },
+      "locationStatus": "dynamic",
+      "locationLabelOverride": "黑暗之王召喚",
+      "locationNote": "黑暗之王的 A02D 召喚技能每次產生兩隻迷幻之王；技能冷卻 600 秒，確切 AI 施放時機未確認。",
+      "dynamicSpawnSources": [
+        {
+          "function": "CreateUnitsForPlayer10",
+          "line": 3861,
+          "ability": "A02D",
+          "summoner": "Ubal",
+          "summary": "此行為召喚者黑暗之王的生成；迷幻之王本體由 A02D 技能物件召喚，每次兩隻。",
+          "source": "war3map.w3u Ubal.uabi / war3map.w3a A02D Hwe1,Hwe2",
+          "verificationStatus": "已核對技能物件召喚鏈"
+        }
+      ],
+      "respawn": {
+        "type": "summon",
+        "label": "由首領召喚",
+        "note": "技能召喚個體不走一般 NPC 的 45 秒重生；之後由黑暗之王再次施法才會產生。600 秒為技能冷卻，並非固定出現時間。",
+        "source": "war3map.w3a A02D / Trig_Npc_Unit_Revive_Actions"
+      }
+    },
+    "nsqa": {
+      "summonGuide": {
+        "kind": "萬聖任務",
+        "title": "達納托斯的憎恨",
+        "summary": "萬聖「三道劍印」任務的守印 BOSS。",
+        "steps": [
+          "萬聖模式下，遊戲時間達 1 小時後，在古城靠近中央殘劍開啟「三道劍印」。",
+          "需由存活、非幻象且未隱藏的玩家英雄靠近殘劍 240 範圍內。",
+          "依序前往西側、東側、北側劍印；每道召喚一隻達納托斯的憎恨，必須擊敗該處守印怪才開啟下一道。進度全隊共用，每場完成一次。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · ROSeal_HeroNear / ROSeal_Guardian / ROSeal_Start / Trig_Party_MVP_32_Actions",
+        "lines": [
+          49286,
+          49291,
+          49298,
+          49318,
+          49320,
+          49322,
+          49338,
+          49408,
+          49416,
+          49419,
+          49423,
+          49427,
+          49429,
+          49432,
+          49434,
+          49437,
+          49439,
+          49441,
+          49456,
+          49467,
+          49475
+        ],
+        "verificationStatus": "本版已顯示的召喚條件、道具消耗與時間已核對",
+        "evidence": [
+          {
+            "line": 49286,
+            "function": "ROSeal_HeroNear",
+            "text": "function ROSeal_HeroNear takes real x, real y returns boolean"
+          },
+          {
+            "line": 49291,
+            "function": "ROSeal_HeroNear",
+            "text": "call GroupEnumUnitsInRange(ug, x, y, 240.00, null)"
+          },
+          {
+            "line": 49298,
+            "function": "ROSeal_HeroNear",
+            "text": "if IsUnitType(e, UNIT_TYPE_HERO) and IsUnitAliveBJ(e) and not IsUnitIllusion(e) and not IsUnitHidden(e) then"
+          },
+          {
+            "line": 49318,
+            "function": "ROSeal_Guardian",
+            "text": "function ROSeal_Guardian takes integer k, integer i returns nothing"
+          },
+          {
+            "line": 49320,
+            "function": "ROSeal_Guardian",
+            "text": "local integer uid = 'nsqa'"
+          },
+          {
+            "line": 49322,
+            "function": "ROSeal_Guardian",
+            "text": "local integer abid = 'AIx3'"
+          },
+          {
+            "line": 49338,
+            "function": "ROSeal_Start",
+            "text": "function ROSeal_Start takes integer k returns nothing"
+          },
+          {
+            "line": 49408,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "function Trig_Party_MVP_32_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 49416,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "if udg_GameParty != \"HALLOWEEN\" or udg_system_r_GameTime < 3600.00 then"
+          },
+          {
+            "line": 49419,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "if stage == 0 then"
+          },
+          {
+            "line": 49423,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "if stage == 3 and a == LoadUnitHandle(udg_ABLT_h, k, 2) then"
+          },
+          {
+            "line": 49427,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, i + 1)"
+          },
+          {
+            "line": 49429,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, 0)"
+          },
+          {
+            "line": 49432,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 1 then"
+          },
+          {
+            "line": 49434,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, 1)"
+          },
+          {
+            "line": 49437,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 2 then"
+          },
+          {
+            "line": 49439,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_Guardian(k, i)"
+          },
+          {
+            "line": 49441,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 3 then"
+          },
+          {
+            "line": 49456,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 4 then"
+          },
+          {
+            "line": 49467,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 8 then"
+          },
+          {
+            "line": 49475,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 9 then"
+          }
+        ],
+        "verified": true,
+        "reviewed": true
+      }
+    },
+    "Harf": {
+      "summonGuide": {
+        "kind": "萬聖隱藏 MVP",
+        "title": "魔劍士 達納托斯的記憶",
+        "summary": "萬聖「三道劍印」完整解封後出現。",
+        "steps": [
+          "萬聖模式下，遊戲時間達 1 小時後，由玩家英雄靠近古城中央殘劍 240 範圍內。",
+          "依序解除西側憎恨、東側悲鳴、北側絕望三道劍印，並擊敗每一道召喚出的達納托斯的憎恨。",
+          "三道完成後返回中央殘劍，倒數 20 秒，於中央召喚 Lv.99 魔劍士達納托斯的記憶。進度全隊共用，每場只完成一次。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · ROSeal_HeroNear / ROSeal_Start / Trig_Party_MVP_32_Actions / ROSeal_Summon",
+        "lines": [
+          49286,
+          49291,
+          49338,
+          49364,
+          49366,
+          49385,
+          49402,
+          49408,
+          49416,
+          49427,
+          49429,
+          49434,
+          49467,
+          49470,
+          49479
+        ],
+        "verificationStatus": "本版已顯示的召喚條件、道具消耗與時間已核對",
+        "evidence": [
+          {
+            "line": 49286,
+            "function": "ROSeal_HeroNear",
+            "text": "function ROSeal_HeroNear takes real x, real y returns boolean"
+          },
+          {
+            "line": 49291,
+            "function": "ROSeal_HeroNear",
+            "text": "call GroupEnumUnitsInRange(ug, x, y, 240.00, null)"
+          },
+          {
+            "line": 49338,
+            "function": "ROSeal_Start",
+            "text": "function ROSeal_Start takes integer k returns nothing"
+          },
+          {
+            "line": 49408,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "function Trig_Party_MVP_32_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 49416,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "if udg_GameParty != \"HALLOWEEN\" or udg_system_r_GameTime < 3600.00 then"
+          },
+          {
+            "line": 49427,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, i + 1)"
+          },
+          {
+            "line": 49429,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, 0)"
+          },
+          {
+            "line": 49434,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_NextSword(k, 1)"
+          },
+          {
+            "line": 49467,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "elseif stage == 8 then"
+          },
+          {
+            "line": 49470,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call SaveReal(udg_ABLT_h, k, 3, 20.00)"
+          },
+          {
+            "line": 49479,
+            "function": "Trig_Party_MVP_32_Actions",
+            "text": "call ROSeal_Summon(k)"
+          },
+          {
+            "line": 49364,
+            "function": "ROSeal_Summon",
+            "text": "function ROSeal_Summon takes integer k returns nothing"
+          },
+          {
+            "line": 49366,
+            "function": "ROSeal_Summon",
+            "text": "local integer uid = 'Harf'"
+          },
+          {
+            "line": 49385,
+            "function": "ROSeal_Summon",
+            "text": "call SetHeroLevel(a, 99, true)"
+          },
+          {
+            "line": 49402,
+            "function": "ROSeal_Summon",
+            "text": "call DestroyTrigger(gg_trg_Party_MVP_32)"
+          }
+        ],
+        "verified": true,
+        "reviewed": true
+      }
+    },
+    "Nklj": {
+      "summonGuide": {
+        "kind": "萬聖派對",
+        "title": "噩夢小丑皇",
+        "summary": "萬聖派對的 MVP 31 事件。",
+        "steps": [
+          "萬聖模式在遊戲 50 分鐘啟動各城的「萬聖節驚喜箱」事件；朱諾的箱子在其他各城之後約 30 秒生成。",
+          "噩夢小丑皇尚未出現時，擊殺萬聖節驚喜箱有 25% 機率啟動召喚；在朱諾城區內擊殺箱子則必定啟動。",
+          "召喚流程等待 20 秒後，於該箱子死亡位置生成 Lv.99 噩夢小丑皇，並啟用 30 秒週期的暴風雪機制。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_Select_System_End_Actions / Trig_EGT3000s_Halloween_Actions / InitTrig_EGT3000s_Halloween / Trig_Party_Unit_Revive_Conditions / Trig_Party_Unit_Revive_Func020C / Trig_Party_Unit_Revive_Actions / Trig_Party_MVP_31_Actions / Trig_Npc_Initialization_Actions",
+        "lines": [
+          35534,
+          35560,
+          35563,
+          49021,
+          49025,
+          49030,
+          49032,
+          49039,
+          49128,
+          49130,
+          49197,
+          49217,
+          49218,
+          49219,
+          49220,
+          49221,
+          51484,
+          51485,
+          51488,
+          51568,
+          51569,
+          51575,
+          51628,
+          51629,
+          51633,
+          51637,
+          51639,
+          54330,
+          54342
+        ],
+        "verificationStatus": "本版已顯示的召喚條件、道具消耗與時間已核對",
+        "evidence": [
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35560,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "set udg_GameParty = \"HALLOWEEN\""
+          },
+          {
+            "line": 35563,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "call EnableTrigger( gg_trg_EGT3000s_Halloween )"
+          },
+          {
+            "line": 49128,
+            "function": "Trig_EGT3000s_Halloween_Actions",
+            "text": "function Trig_EGT3000s_Halloween_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 49130,
+            "function": "Trig_EGT3000s_Halloween_Actions",
+            "text": "local integer ai = 'hwat'"
+          },
+          {
+            "line": 49197,
+            "function": "Trig_EGT3000s_Halloween_Actions",
+            "text": "call PolledWait( 30.00 )"
+          },
+          {
+            "line": 49217,
+            "function": "InitTrig_EGT3000s_Halloween",
+            "text": "function InitTrig_EGT3000s_Halloween takes nothing returns nothing"
+          },
+          {
+            "line": 49218,
+            "function": "InitTrig_EGT3000s_Halloween",
+            "text": "set gg_trg_EGT3000s_Halloween = CreateTrigger(  )"
+          },
+          {
+            "line": 49219,
+            "function": "InitTrig_EGT3000s_Halloween",
+            "text": "call DisableTrigger( gg_trg_EGT3000s_Halloween )"
+          },
+          {
+            "line": 49220,
+            "function": "InitTrig_EGT3000s_Halloween",
+            "text": "call TriggerRegisterVariableEvent( gg_trg_EGT3000s_Halloween, \"udg_system_r_GameTime\", GREATER_THAN_OR_EQUAL, 3000.00 )"
+          },
+          {
+            "line": 49221,
+            "function": "InitTrig_EGT3000s_Halloween",
+            "text": "call TriggerAddAction( gg_trg_EGT3000s_Halloween, function Trig_EGT3000s_Halloween_Actions )"
+          },
+          {
+            "line": 51484,
+            "function": "Trig_Party_Unit_Revive_Conditions",
+            "text": "function Trig_Party_Unit_Revive_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 51485,
+            "function": "Trig_Party_Unit_Revive_Conditions",
+            "text": "if ( not ( GetUnitAbilityLevelSwapped('AIfe', GetTriggerUnit()) > 0 ) ) then"
+          },
+          {
+            "line": 51488,
+            "function": "Trig_Party_Unit_Revive_Conditions",
+            "text": "if ( not ( IsUnitType(GetTriggerUnit(), UNIT_TYPE_SUMMONED) != true ) ) then"
+          },
+          {
+            "line": 51568,
+            "function": "Trig_Party_Unit_Revive_Func020C",
+            "text": "function Trig_Party_Unit_Revive_Func020C takes nothing returns boolean"
+          },
+          {
+            "line": 51569,
+            "function": "Trig_Party_Unit_Revive_Func020C",
+            "text": "if ( not ( GetUnitTypeId(GetTriggerUnit()) == 'hwat' ) ) then"
+          },
+          {
+            "line": 51575,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "function Trig_Party_Unit_Revive_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 51628,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "set cond0 = RectContainsUnit(gg_rct_City_Juno_Area, a)"
+          },
+          {
+            "line": 51629,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "set r = GetRandomInt(1, 1000)"
+          },
+          {
+            "line": 51633,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "if( (r > 750 or cond0) and udg_u_npcMVP[31] == null )then"
+          },
+          {
+            "line": 51637,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "set udg_Point = Location(ax, ay)"
+          },
+          {
+            "line": 51639,
+            "function": "Trig_Party_Unit_Revive_Actions",
+            "text": "call ConditionalTriggerExecute( gg_trg_Party_MVP_31 )"
+          },
+          {
+            "line": 49021,
+            "function": "Trig_Party_MVP_31_Actions",
+            "text": "function Trig_Party_MVP_31_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 49025,
+            "function": "Trig_Party_MVP_31_Actions",
+            "text": "call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 49030,
+            "function": "Trig_Party_MVP_31_Actions",
+            "text": "call CreateNUnitsAtLoc( 1, 'Nklj', udg_NPC_PLAYER, udg_Point, GetRandomDirectionDeg() )"
+          },
+          {
+            "line": 49032,
+            "function": "Trig_Party_MVP_31_Actions",
+            "text": "call SetHeroLevelBJ( udg_u_npcMVP[31], 99, true )"
+          },
+          {
+            "line": 49039,
+            "function": "Trig_Party_MVP_31_Actions",
+            "text": "call EnableTrigger( gg_trg_MVP_31_StormGust_AIjass )"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "set udg_const_r_npcMVPTime = 20.00"
+          }
+        ],
+        "verified": true,
+        "reviewed": true
+      }
+    },
+    "Opgh": {
+      "summonGuide": {
+        "kind": "道具解封",
+        "title": "阿特羅斯",
+        "summary": "一般模式以狼魂獸骨解封；休閒模式約 30 分鐘自動解封。",
+        "steps": [
+          "一般模式：以非幻象單位攻擊封印中的阿特羅斯，攻擊者需持有至少 1 次數的「狼魂獸骨」，觸發時扣除 1 次數。",
+          "一般模式公告後等待 20 秒，再將 Boss 交由 NPC 敵對陣營控制並啟用戰鬥流程。",
+          "休閒模式：攻擊解封入口停用，改由遊戲時間超過 1,800 秒（約 30 分鐘）自動執行解封，不要求道具，也略過 20 秒等待。此解封觸發只執行一次。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_18_WolfMan_Conditions / Trig_MVP_18_WolfMan_Func015C / Trig_MVP_18_WolfMan_Actions / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s",
+        "lines": [
+          35534,
+          35592,
+          35597,
+          36113,
+          36114,
+          36138,
+          36161,
+          36201,
+          36203,
+          54330,
+          54342,
+          54363,
+          54468,
+          58049,
+          58050,
+          58053,
+          58059,
+          58060,
+          58066,
+          58068,
+          58071,
+          58072,
+          58074,
+          58084,
+          58088,
+          58090
+        ],
+        "verificationStatus": "本版一般／休閒入口、道具消耗與時間已核對",
+        "evidence": [
+          {
+            "line": 58049,
+            "function": "Trig_MVP_18_WolfMan_Conditions",
+            "text": "function Trig_MVP_18_WolfMan_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 58050,
+            "function": "Trig_MVP_18_WolfMan_Conditions",
+            "text": "if ( not ( GetAttackedUnitBJ() == udg_u_npcMVP[18] ) ) then"
+          },
+          {
+            "line": 58053,
+            "function": "Trig_MVP_18_WolfMan_Conditions",
+            "text": "if ( not ( IsUnitIllusionBJ(GetAttacker()) != true ) ) then"
+          },
+          {
+            "line": 58059,
+            "function": "Trig_MVP_18_WolfMan_Func015C",
+            "text": "function Trig_MVP_18_WolfMan_Func015C takes nothing returns boolean"
+          },
+          {
+            "line": 58060,
+            "function": "Trig_MVP_18_WolfMan_Func015C",
+            "text": "if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 58066,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "function Trig_MVP_18_WolfMan_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 58068,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "local integer i = 'I0C2'"
+          },
+          {
+            "line": 58071,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "if( ic > 0 or udg_const_b_ChillMode )then"
+          },
+          {
+            "line": 58072,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "call SetItemCharges( it, ic-1 )"
+          },
+          {
+            "line": 58074,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "call RemoveItem( it )"
+          },
+          {
+            "line": 58084,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 58088,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "call RescueUnitBJ( udg_u_npcMVP[18], udg_NPC_PLAYER, true )"
+          },
+          {
+            "line": 58090,
+            "function": "Trig_MVP_18_WolfMan_Actions",
+            "text": "call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 54363,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "set udg_u_npcMVP[18] = gg_unit_Opgh_0991"
+          },
+          {
+            "line": 54468,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35597,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "call DisableTrigger( gg_trg_MVP_18_WolfMan )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36161,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "call TriggerExecute( gg_trg_MVP_18_WolfMan )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true
+      }
+    },
+    "O00T": {
+      "summonGuide": {
+        "kind": "道具解封",
+        "title": "闇●十字刺客 艾勒梅斯",
+        "summary": "一般模式以神之手解封；休閒模式約 30 分鐘自動解封。",
+        "steps": [
+          "一般模式：以非幻象單位攻擊封印中的艾勒梅斯，攻擊者需持有至少 1 次數的「神之手」，觸發時扣除 1 次數。",
+          "一般模式公告後等待 20 秒，再將 Boss 交由 NPC 敵對陣營控制並啟用戰鬥流程。",
+          "休閒模式：攻擊解封入口停用，改由遊戲時間超過 1,800 秒（約 30 分鐘）自動執行解封，不要求道具，也略過 20 秒等待。此解封觸發只執行一次。"
+        ],
+        "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_19_Eremes_Conditions / Trig_MVP_19_Eremes_Func015C / Trig_MVP_19_Eremes_Actions / Trig_Npc_Initialization_Actions / Trig_Select_System_End_Actions / Trig_EGT1800s",
+        "lines": [
+          35534,
+          35583,
+          35592,
+          35598,
+          36113,
+          36114,
+          36138,
+          36162,
+          36201,
+          36203,
+          54330,
+          54342,
+          54364,
+          54468,
+          58106,
+          58107,
+          58110,
+          58116,
+          58117,
+          58123,
+          58125,
+          58128,
+          58129,
+          58131,
+          58141,
+          58145,
+          58146,
+          58147,
+          58152
+        ],
+        "verificationStatus": "本版一般／休閒入口、道具消耗與時間已核對",
+        "evidence": [
+          {
+            "line": 58106,
+            "function": "Trig_MVP_19_Eremes_Conditions",
+            "text": "function Trig_MVP_19_Eremes_Conditions takes nothing returns boolean"
+          },
+          {
+            "line": 58107,
+            "function": "Trig_MVP_19_Eremes_Conditions",
+            "text": "if ( not ( GetAttackedUnitBJ() == udg_u_npcMVP[19] ) ) then"
+          },
+          {
+            "line": 58110,
+            "function": "Trig_MVP_19_Eremes_Conditions",
+            "text": "if ( not ( IsUnitIllusionBJ(GetAttacker()) != true ) ) then"
+          },
+          {
+            "line": 58116,
+            "function": "Trig_MVP_19_Eremes_Func015C",
+            "text": "function Trig_MVP_19_Eremes_Func015C takes nothing returns boolean"
+          },
+          {
+            "line": 58117,
+            "function": "Trig_MVP_19_Eremes_Func015C",
+            "text": "if ( not ( udg_const_b_ChillMode != true ) ) then"
+          },
+          {
+            "line": 58123,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "function Trig_MVP_19_Eremes_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 58125,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "local integer i = 'envl'"
+          },
+          {
+            "line": 58128,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "if( ic > 0 or udg_const_b_ChillMode )then"
+          },
+          {
+            "line": 58129,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call SetItemCharges( it, ic-1 )"
+          },
+          {
+            "line": 58131,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call RemoveItem( it )"
+          },
+          {
+            "line": 58141,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call PolledWait( udg_const_r_npcMVPTime )"
+          },
+          {
+            "line": 58145,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call RescueUnitBJ( udg_u_npcMVP[19], udg_NPC_PLAYER, true )"
+          },
+          {
+            "line": 58146,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "set udg_keyHandler = GetHandleIdBJ(udg_u_npcMVP[19])"
+          },
+          {
+            "line": 58147,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call SaveIntegerBJ( 4, StringHashBJ(\"MeteorAssault\"), udg_keyHandler, udg_ABLT_h )"
+          },
+          {
+            "line": 58152,
+            "function": "Trig_MVP_19_Eremes_Actions",
+            "text": "call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 54330,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "function Trig_Npc_Initialization_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 54342,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "set udg_const_r_npcMVPTime = 20.00"
+          },
+          {
+            "line": 54364,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "set udg_u_npcMVP[19] = gg_unit_O00T_1034"
+          },
+          {
+            "line": 54468,
+            "function": "Trig_Npc_Initialization_Actions",
+            "text": "call DestroyTrigger(GetTriggeringTrigger())"
+          },
+          {
+            "line": 35534,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "function Trig_Select_System_End_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 35583,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "call DisableTrigger( gg_trg_MVP_19_Eremes )"
+          },
+          {
+            "line": 35592,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "set udg_const_b_ChillMode = true"
+          },
+          {
+            "line": 35598,
+            "function": "Trig_Select_System_End_Actions",
+            "text": "call DisableTrigger( gg_trg_MVP_19_Eremes )"
+          },
+          {
+            "line": 36113,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "function Trig_EGT1800s_Func006C takes nothing returns boolean"
+          },
+          {
+            "line": 36114,
+            "function": "Trig_EGT1800s_Func006C",
+            "text": "if ( not ( udg_const_b_ChillMode == true ) ) then"
+          },
+          {
+            "line": 36138,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "function Trig_EGT1800s_Actions takes nothing returns nothing"
+          },
+          {
+            "line": 36162,
+            "function": "Trig_EGT1800s_Actions",
+            "text": "call TriggerExecute( gg_trg_MVP_19_Eremes )"
+          },
+          {
+            "line": 36201,
+            "function": "InitTrig_EGT1800s",
+            "text": "function InitTrig_EGT1800s takes nothing returns nothing"
+          },
+          {
+            "line": 36203,
+            "function": "InitTrig_EGT1800s",
+            "text": "call TriggerRegisterVariableEvent( gg_trg_EGT1800s, \"udg_system_r_GameTime\", GREATER_THAN, 1800.00 )"
+          }
+        ],
+        "verified": true,
+        "reviewed": true
+      }
+    }
+  }
+}

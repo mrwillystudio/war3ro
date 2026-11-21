@@ -1,0 +1,92 @@
+{
+  "version": "Ro-Online 7.0c08",
+  "auditDate": "2026-11-21",
+  "mapSha256": "0be2938f1e367bd8d560799d925694adda359421eecb08f77805dbb506683cf4",
+  "dataBundleSha256": "adaae44bdca4ee36d7b6c28fb382b8a49bcd1160ad2361cea39cb2698a244326",
+  "coverage": {
+    "monsters": 189,
+    "heroesCalculated": 38,
+    "itemsTotal": 988,
+    "itemsWithoutVariants": 475,
+    "excludedItems": 191,
+    "cards": 55,
+    "sockets": 64,
+    "recipes": 78,
+    "drops": 483,
+    "modelPreviewsRendered": 189,
+    "modelPreviewsTotal": 189,
+    "monsterIcons": 189,
+    "itemIcons": 988,
+    "uniqueAssets": 896,
+    "resolvedTextReferences": 5,
+    "catalogHiddenItems": 11,
+    "visibleItemsWithoutVariants": 464,
+    "visibleMonsters": 188,
+    "hiddenEncounters": 31,
+    "realSets": 7,
+    "singleItemEffects": 0,
+    "shops": 30
+  },
+  "changedExistingObjectPrices": 64,
+  "verifiedShopOffers": 162,
+  "mechanicsReviewed": 28,
+  "summonGuidesReviewed": 31,
+  "sourceSnippets": 1638,
+  "manualAreasPreserved": 40,
+  "manualPlacementsPreserved": 836,
+  "dataValidation": {
+    "integrityPassed": true,
+    "independentIssues": [],
+    "priceRegressionCases": 12,
+    "catalogEdgeCases": 31
+  },
+  "domValidation": {
+    "passed": true,
+    "environment": "isolated DOM execution of actual production scripts",
+    "visualLayoutTested": false,
+    "checks": [
+      "cloak verified shop price",
+      "favorites survive reload with old rawcode",
+      "price I06F",
+      "price I088",
+      "price I02H",
+      "price I0NO",
+      "item search updates actual DOM",
+      "new monster OKP1",
+      "new monster O0NT",
+      "new monster n0DK",
+      "current trigger mechanics and indirect summon guide",
+      "quest exchange 30 hearts",
+      "existing recipe-1 plan compatibility",
+      "route #cards",
+      "route #sockets",
+      "route #sets",
+      "route #world",
+      "route #world?p=workspace",
+      "route #about",
+      "hidden workspace available",
+      "workspace point click, deduplication and correction editing",
+      "disabled and secondary monster attacks",
+      "mobile interaction mode restores and locates correction draft",
+      "mobile item detail and persisted favorite",
+      "production loader uses current dataset"
+    ],
+    "errors": []
+  },
+  "previewValidation": {
+    "count": 189,
+    "allPassed": true,
+    "freshlyRendered": 189,
+    "reused": 0,
+    "sourceTeamColorUnconfirmed": [
+      "nslv",
+      "nrdk"
+    ]
+  },
+  "knownLimits": [
+    "真實瀏覽器 CSS 排版與觸控未實測；隔離 Chromium 無法啟動。",
+    "迷幻之王召喚來源與技能冷卻已確認，AI 確切施放時機未確認；600 秒不是固定生成倒數。",
+    "七彩地龍、七彩飛龍的本版生成擁有者未確認，預覽隊伍色使用標示的參考值。",
+    "部分 NPC 任務解鎖與套裝下游戰鬥分支仍分別標示，未宣稱遊戲實戰完整模擬。"
+  ]
+}

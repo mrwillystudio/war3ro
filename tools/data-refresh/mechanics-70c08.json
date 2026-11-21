@@ -1,0 +1,3868 @@
+{
+  "mapSha256": "0be2938f1e367bd8d560799d925694adda359421eecb08f77805dbb506683cf4",
+  "monsters": {
+    "UNMR": {
+      "mechanics": [
+        {
+          "id": "MECH-UNMR-MARK",
+          "name": "追蹤印記",
+          "description": "選取場內有效玩家目標，圓形預警先追蹤 1.2 秒，再鎖定最後位置；施法開始 2.4 秒時在 180 半徑內爆發，之後持續按週期間隔灼燒。離開鎖定區域可避開該區傷害。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · NMR_Select L58791；NMR_Time L58230；NMR_Param L58196；NMR_Tick L59228；NMR_AreaDamage L58982",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            58196,
+            58199,
+            58230,
+            58233,
+            58236,
+            58248,
+            58287,
+            58791,
+            58825,
+            58982,
+            59010,
+            59228,
+            59300,
+            59316,
+            59320
+          ],
+          "sourceEvidence": [
+            {
+              "function": "NMR_Select",
+              "line": 58791,
+              "text": "function NMR_Select takes integer state returns nothing"
+            },
+            {
+              "function": "NMR_Select",
+              "line": 58825,
+              "text": "            set udg_NMR_Target[slot] = u"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58230,
+              "text": "function NMR_Time takes integer id returns real"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58233,
+              "text": "        return 1.2"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58248,
+              "text": "        return 1.2"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58236,
+              "text": "        return 2.4"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58287,
+              "text": "        return 2.4"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58196,
+              "text": "function NMR_Param takes integer id returns real"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58199,
+              "text": "        return 180."
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59228,
+              "text": "function NMR_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59300,
+              "text": "                if step <= fl and NMR_Eligible(u) then"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59316,
+              "text": "            call NMR_AreaDamage(NMR_Param(1), NMR_Damage(1), false)"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59320,
+              "text": "            call NMR_AreaDamage(NMR_Param(1), NMR_Damage(2), false)"
+            },
+            {
+              "function": "NMR_AreaDamage",
+              "line": 58982,
+              "text": "function NMR_AreaDamage takes real radius, real damage, boolean stun returns nothing"
+            },
+            {
+              "function": "NMR_AreaDamage",
+              "line": 59010,
+              "text": "                if dx * dx + dy * dy <= r2 then"
+            }
+          ],
+          "area": 180,
+          "trigger": "火柱機制就緒並選到場內有效玩家"
+        },
+        {
+          "id": "MECH-UNMR-METEOR",
+          "name": "隕石波",
+          "description": "以選定位置建立多波隕石預警，每波落點以 220 半徑結算傷害與暈眩；第二波依序嘗試向右、向左及向上偏移落點；若偏移位置都在場外或不可走，則退回原落點。落點同時嘗試召喚阿努比斯，場內召喚數量達上限時不再增加。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · NMR_MeteorWave L59053；NMR_Param L58196；NMR_Tick L59228；NMR_SpawnAnubis L59031",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            58196,
+            58202,
+            59031,
+            59037,
+            59041,
+            59053,
+            59066,
+            59080,
+            59082,
+            59228,
+            59342,
+            59347,
+            59353
+          ],
+          "sourceEvidence": [
+            {
+              "function": "NMR_MeteorWave",
+              "line": 59053,
+              "text": "function NMR_MeteorWave takes integer wave returns nothing"
+            },
+            {
+              "function": "NMR_MeteorWave",
+              "line": 59066,
+              "text": "        if wave == 2 then"
+            },
+            {
+              "function": "NMR_MeteorWave",
+              "line": 59080,
+              "text": "        set udg_NMR_X[i] = x"
+            },
+            {
+              "function": "NMR_MeteorWave",
+              "line": 59082,
+              "text": "        call NMR_MarkPoint(i, rg, 0., true)"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58196,
+              "text": "function NMR_Param takes integer id returns real"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58202,
+              "text": "        return 220."
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59228,
+              "text": "function NMR_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59342,
+              "text": "            call NMR_MeteorWave((step - start) / dt + 1)"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59347,
+              "text": "                call NMR_SpawnAnubis(udg_NMR_X[i], udg_NMR_Y[i])"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59353,
+              "text": "            call NMR_AreaDamage(NMR_Param(2), NMR_Damage(3), true)"
+            },
+            {
+              "function": "NMR_SpawnAnubis",
+              "line": 59031,
+              "text": "function NMR_SpawnAnubis takes real x, real y returns nothing"
+            },
+            {
+              "function": "NMR_SpawnAnubis",
+              "line": 59037,
+              "text": "    if CountUnitsInGroup(udg_NMR_Adds) >= NMR_Limit(1) then"
+            },
+            {
+              "function": "NMR_SpawnAnubis",
+              "line": 59041,
+              "text": "    set u = CreateUnit(udg_NPC_PLAYER, 'e00A', x, y, 270.)"
+            }
+          ],
+          "area": 220
+        },
+        {
+          "id": "MECH-UNMR-SAFE",
+          "name": "聖域安全圈",
+          "description": "生命降至 70% 與 35% 門檻且結界機制就緒時，分別推進一次階段。場內隨機挑選可走的庇護位置，Boss 暫時無敵並移位；5 秒後，距庇護圓心超過 300 的有效玩家會受到結界傷害，圓周邊界安全。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · NMR_Param L58196；NMR_Time L58230；NMR_SelectSanctuary L59130；NMR_Begin L59157；NMR_Tick L59228",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            58196,
+            58205,
+            58211,
+            58214,
+            58230,
+            58254,
+            59130,
+            59146,
+            59157,
+            59206,
+            59217,
+            59219,
+            59228,
+            59276,
+            59358,
+            59369,
+            59372
+          ],
+          "sourceEvidence": [
+            {
+              "function": "NMR_Param",
+              "line": 58196,
+              "text": "function NMR_Param takes integer id returns real"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58211,
+              "text": "        return .70"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58214,
+              "text": "        return .35"
+            },
+            {
+              "function": "NMR_Param",
+              "line": 58205,
+              "text": "        return 300."
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58230,
+              "text": "function NMR_Time takes integer id returns real"
+            },
+            {
+              "function": "NMR_Time",
+              "line": 58254,
+              "text": "        return 5."
+            },
+            {
+              "function": "NMR_SelectSanctuary",
+              "line": 59130,
+              "text": "function NMR_SelectSanctuary takes nothing returns boolean"
+            },
+            {
+              "function": "NMR_SelectSanctuary",
+              "line": 59146,
+              "text": "        if NMR_SanctuaryWalkable(x, y) then"
+            },
+            {
+              "function": "NMR_Begin",
+              "line": 59157,
+              "text": "function NMR_Begin takes integer state returns nothing"
+            },
+            {
+              "function": "NMR_Begin",
+              "line": 59206,
+              "text": "        set udg_NMR_Phase = udg_NMR_Phase + 1"
+            },
+            {
+              "function": "NMR_Begin",
+              "line": 59217,
+              "text": "        call SetUnitInvulnerable(udg_NMR_Boss, true)"
+            },
+            {
+              "function": "NMR_Begin",
+              "line": 59219,
+              "text": "        call NMR_Arrive(NMR_Param(9), NMR_Param(10))"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59228,
+              "text": "function NMR_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59276,
+              "text": "        if udg_NMR_Phase < 2 and udg_NMR_Clock >= udg_NMR_WardReady and GetWidgetLife(udg_NMR_Boss) <= GetUnitState(udg_NMR_Boss, UNIT_STATE_MAX_LIFE) * NMR_Param(5 + udg_NMR_Phase) then"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59358,
+              "text": "    elseif state == 3 and step == NMR_Ticks(NMR_Time(8)) then"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59369,
+              "text": "                if dx * dx + dy * dy > r2 then"
+            },
+            {
+              "function": "NMR_Tick",
+              "line": 59372,
+              "text": "                    call NMR_Hit(u, NMR_Damage(3 + udg_NMR_Phase))"
+            }
+          ],
+          "area": 300,
+          "trigger": "生命降至 70% / 35% 且結界機制就緒"
+        }
+      ]
+    },
+    "Harf": {
+      "mechanics": [
+        {
+          "id": "MECH-HARF-SLASH",
+          "name": "劍路斬擊",
+          "description": "以目標當下方向鎖定劍路，先顯示扇形斬擊預警，斬擊結算後再接直線突刺。每段按自己的預警形狀結算傷害，並記錄形狀供後續劍痕回響使用。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · ROTh_BeginSlash L50826；ROTh_BeginThrust L50844；ROTh_Tick L51032；ROTh_Area L50494",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            50494,
+            50521,
+            50523,
+            50826,
+            50830,
+            50838,
+            50844,
+            50855,
+            51032,
+            51165,
+            51166,
+            51169,
+            51171,
+            51173,
+            51192,
+            51194
+          ],
+          "sourceEvidence": [
+            {
+              "function": "ROTh_BeginSlash",
+              "line": 50826,
+              "text": "function ROTh_BeginSlash takes hashtable h, integer k, unit target returns nothing"
+            },
+            {
+              "function": "ROTh_BeginSlash",
+              "line": 50830,
+              "text": "    local real a = Atan2(GetUnitY(target) - y, GetUnitX(target) - x)"
+            },
+            {
+              "function": "ROTh_BeginSlash",
+              "line": 50838,
+              "text": "    call ROTh_Warn(h, k, 1, x, y, a, ROTh_Param(1), ROTh_Param(2))"
+            },
+            {
+              "function": "ROTh_BeginThrust",
+              "line": 50844,
+              "text": "function ROTh_BeginThrust takes hashtable h, integer k, unit target returns nothing"
+            },
+            {
+              "function": "ROTh_BeginThrust",
+              "line": 50855,
+              "text": "    call ROTh_Warn(h, k, 2, x, y, a, ROTh_Param(3), ROTh_Param(4))"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51032,
+              "text": "function ROTh_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51165,
+              "text": "            call ROTh_Area(boss, 1, x, y, a, ROTh_Param(1), ROTh_Param(2), ROTh_Damage(1), false, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51192,
+              "text": "                call ROTh_Area(boss, 1, x, y, a, ROTh_Param(1), ROTh_Param(2), ROTh_Damage(7), false, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51169,
+              "text": "            call ROTh_BeginThrust(h, k, target)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51171,
+              "text": "            call ROTh_Area(boss, 2, x, y, a, ROTh_Param(3), ROTh_Param(4), ROTh_Damage(2), false, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51194,
+              "text": "                call ROTh_Area(boss, 2, x, y, a, ROTh_Param(3), ROTh_Param(4), ROTh_Damage(8), false, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51166,
+              "text": "            call ROTh_Remember(h, k, 1)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51173,
+              "text": "            call ROTh_Remember(h, k, 2)"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50494,
+              "text": "function ROTh_Area takes unit boss, integer shape, real x, real y, real angle, real radius, real width, real damage, boolean magical, group alreadyHit returns nothing"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50521,
+              "text": "            if shape == 1 then"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50523,
+              "text": "            elseif shape == 2 then"
+            }
+          ]
+        },
+        {
+          "id": "MECH-HARF-FALL",
+          "name": "追蹤墜擊",
+          "description": "圓形預警先追蹤指定目標 1.2 秒，再鎖定位置並等待 1.1 秒後墜擊。傷害結算在鎖定位置，墜擊結算後會留下持續地面危險區。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · ROTh_BeginFall L50861；ROTh_Tick L51032",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            50861,
+            50865,
+            50871,
+            51032,
+            51133,
+            51136,
+            51144,
+            51177,
+            51179
+          ],
+          "sourceEvidence": [
+            {
+              "function": "ROTh_BeginFall",
+              "line": 50861,
+              "text": "function ROTh_BeginFall takes hashtable h, integer k, unit target returns nothing"
+            },
+            {
+              "function": "ROTh_BeginFall",
+              "line": 50865,
+              "text": "    call SaveUnitHandle(h, k, 1, target)"
+            },
+            {
+              "function": "ROTh_BeginFall",
+              "line": 50871,
+              "text": "    call ROTh_State(h, k, 20, 1.20)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51032,
+              "text": "function ROTh_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51133,
+              "text": "    elseif state == 20 then"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51136,
+              "text": "            call SaveReal(h, k, 12, GetUnitX(markedTarget))"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51144,
+              "text": "            call ROTh_State(h, k, 21, 1.10)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51177,
+              "text": "            call ROTh_Area(boss, 3, x, y, 0.00, ROTh_Param(7), 0.00, ROTh_Damage(3), true, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51179,
+              "text": "            call ROTh_AddHazard(h, k, x, y)"
+            }
+          ]
+        },
+        {
+          "id": "MECH-HARF-RING",
+          "name": "內外劍環",
+          "description": "以 Boss 當下位置為中心分兩段結算：先預警並打擊內圈，接著預警外環；外環爆發時，中央區域才是安全核心。施放前會清除覆蓋中央安全核心的舊劍池，避免舊危險區堵住躲避位置。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · ROTh_BeginRing L50877；ROTh_Tick L51032；ROTh_Area L50494",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            50494,
+            50522,
+            50525,
+            50526,
+            50527,
+            50528,
+            50877,
+            50883,
+            50892,
+            50901,
+            51032,
+            51181,
+            51182,
+            51184,
+            51186,
+            51188
+          ],
+          "sourceEvidence": [
+            {
+              "function": "ROTh_BeginRing",
+              "line": 50877,
+              "text": "function ROTh_BeginRing takes hashtable h, integer k, real recovery returns nothing"
+            },
+            {
+              "function": "ROTh_BeginRing",
+              "line": 50883,
+              "text": "    local real safe = ROTh_Param(5) + ROTh_Param(7) + 64.00"
+            },
+            {
+              "function": "ROTh_BeginRing",
+              "line": 50892,
+              "text": "                call ROTh_ClearHazard(h, k, i)"
+            },
+            {
+              "function": "ROTh_BeginRing",
+              "line": 50901,
+              "text": "    call ROTh_Warn(h, k, 3, x, y, 0.00, ROTh_Param(5), 0.00)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51032,
+              "text": "function ROTh_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51181,
+              "text": "        elseif state == 30 then"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51182,
+              "text": "            call ROTh_Area(boss, 5, x, y, 0.00, ROTh_Param(5), 0.00, ROTh_Damage(5), true, null)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51184,
+              "text": "            call ROTh_Warn(h, k, 4, x, y, 0.00, ROTh_Param(6), ROTh_Param(5))"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51186,
+              "text": "        elseif state == 31 then"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51188,
+              "text": "            call ROTh_Area(boss, 4, x, y, 0.00, ROTh_Param(6), ROTh_Param(5), ROTh_Damage(6), true, null)"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50494,
+              "text": "function ROTh_Area takes unit boss, integer shape, real x, real y, real angle, real radius, real width, real damage, boolean magical, group alreadyHit returns nothing"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50525,
+              "text": "            elseif shape == 3 or shape == 5 then"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50522,
+              "text": "                set inside = d2 <= radius * radius and (d2 < 0.01 or along >= SquareRoot(d2) * Cos(width * bj_DEGTORAD))"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50526,
+              "text": "                set inside = d2 <= radius * radius"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50527,
+              "text": "            elseif shape == 4 then"
+            },
+            {
+              "function": "ROTh_Area",
+              "line": 50528,
+              "text": "                set inside = d2 >= width * width and d2 <= radius * radius"
+            }
+          ]
+        },
+        {
+          "id": "MECH-HARF-ECHO",
+          "name": "劍痕回響",
+          "description": "第二階段最多回放 2 段、第三階段最多回放 3 段已記錄的斬擊／突刺形狀，實際段數受已有紀錄數限制。每段都重新選取有效目標，以當下 Boss 位置與目標方向建立預警及傷害；專用回響流程會先清掉持續劍池。",
+          "modeLabel": "一般模式",
+          "source": "war3map.j · ROTh_ChooseSkill L50994；ROTh_BeginEcho L50961；ROTh_NextEcho L50907；ROTh_Tick L51032",
+          "descriptionStatus": "ok",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            50907,
+            50923,
+            50937,
+            50939,
+            50955,
+            50961,
+            50962,
+            50966,
+            50967,
+            50969,
+            50975,
+            50994,
+            51001,
+            51003,
+            51022,
+            51032,
+            51190,
+            51200
+          ],
+          "sourceEvidence": [
+            {
+              "function": "ROTh_ChooseSkill",
+              "line": 50994,
+              "text": "function ROTh_ChooseSkill takes hashtable h, integer k, unit target returns nothing"
+            },
+            {
+              "function": "ROTh_ChooseSkill",
+              "line": 51001,
+              "text": "    if life <= 0.35 then"
+            },
+            {
+              "function": "ROTh_ChooseSkill",
+              "line": 51003,
+              "text": "    elseif life <= 0.70 then"
+            },
+            {
+              "function": "ROTh_ChooseSkill",
+              "line": 51022,
+              "text": "        call ROTh_BeginEcho(h, k)"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50961,
+              "text": "function ROTh_BeginEcho takes hashtable h, integer k returns nothing"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50962,
+              "text": "    local integer n = 2"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50966,
+              "text": "    if LoadInteger(h, k, 4) >= 3 then"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50967,
+              "text": "        set n = 3"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50969,
+              "text": "    set n = IMinBJ(n, LoadInteger(h, k, 18))"
+            },
+            {
+              "function": "ROTh_BeginEcho",
+              "line": 50975,
+              "text": "        call ROTh_ClearHazards(h, k)"
+            },
+            {
+              "function": "ROTh_NextEcho",
+              "line": 50907,
+              "text": "function ROTh_NextEcho takes hashtable h, integer k returns nothing"
+            },
+            {
+              "function": "ROTh_NextEcho",
+              "line": 50923,
+              "text": "    set target = ROTh_PickHero(boss, LoadReal(h, k, 10), LoadReal(h, k, 11))"
+            },
+            {
+              "function": "ROTh_NextEcho",
+              "line": 50937,
+              "text": "    set x = GetUnitX(boss)"
+            },
+            {
+              "function": "ROTh_NextEcho",
+              "line": 50939,
+              "text": "    set a = Atan2(GetUnitY(target) - y, GetUnitX(target) - x)"
+            },
+            {
+              "function": "ROTh_NextEcho",
+              "line": 50955,
+              "text": "    call ROTh_State(h, k, 50, 1.40)"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51032,
+              "text": "function ROTh_Tick takes nothing returns nothing"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51190,
+              "text": "        elseif state == 50 then"
+            },
+            {
+              "function": "ROTh_Tick",
+              "line": 51200,
+              "text": "                call ROTh_NextEcho(h, k)"
+            }
+          ]
+        }
+      ]
+    },
+    "OKP1": {
+      "mechanics": [
+        {
+          "id": "MECH-OKP1-MONEY",
+          "name": "金錢攻擊 AI",
+          "description": "國王波利開始攻擊目標時，AI 嘗試對該目標施放金錢攻擊，15 秒後才會再次下達這個指令。技能本體的基礎傷害為 10,000 物理傷害，實際傷害仍經共用傷害流程與目標防禦計算。",
+          "modeLabel": "一般模式",
+          "internal": false,
+          "descriptionStatus": "ok",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "source": "war3map.j · Trig_MVP_AI_KingPoring_AIjass_Conditions L61733；Trig_MVP_AI_KingPoring_AIjass_Actions L61740；Trig_Money_Attack_vJass_Func040C L78692；Trig_Money_Attack_vJass_Actions L78744",
+          "sourceLines": [
+            61733,
+            61734,
+            61740,
+            61742,
+            61743,
+            78692,
+            78693,
+            78744,
+            78828,
+            78829,
+            78870,
+            78877
+          ],
+          "sourceEvidence": [
+            {
+              "line": 61733,
+              "function": "Trig_MVP_AI_KingPoring_AIjass_Conditions",
+              "text": "function Trig_MVP_AI_KingPoring_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "line": 61734,
+              "function": "Trig_MVP_AI_KingPoring_AIjass_Conditions",
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'OKP1' ) ) then"
+            },
+            {
+              "line": 61740,
+              "function": "Trig_MVP_AI_KingPoring_AIjass_Actions",
+              "text": "function Trig_MVP_AI_KingPoring_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "line": 61742,
+              "function": "Trig_MVP_AI_KingPoring_AIjass_Actions",
+              "text": "    call IssueTargetOrderBJ( GetAttacker(), \"chainlightning\", GetTriggerUnit() )"
+            },
+            {
+              "line": 61743,
+              "function": "Trig_MVP_AI_KingPoring_AIjass_Actions",
+              "text": "    call PolledWait(15.00)"
+            },
+            {
+              "line": 78692,
+              "function": "Trig_Money_Attack_vJass_Func040C",
+              "text": "function Trig_Money_Attack_vJass_Func040C takes nothing returns boolean"
+            },
+            {
+              "line": 78693,
+              "function": "Trig_Money_Attack_vJass_Func040C",
+              "text": "    if ( not ( GetSpellAbilityId() == 'AKP1' ) ) then"
+            },
+            {
+              "line": 78744,
+              "function": "Trig_Money_Attack_vJass_Actions",
+              "text": "function Trig_Money_Attack_vJass_Actions takes nothing returns nothing"
+            },
+            {
+              "line": 78828,
+              "function": "Trig_Money_Attack_vJass_Actions",
+              "text": "    if ( Trig_Money_Attack_vJass_Func040C() ) then"
+            },
+            {
+              "line": 78829,
+              "function": "Trig_Money_Attack_vJass_Actions",
+              "text": "        set g = 10000."
+            },
+            {
+              "line": 78870,
+              "function": "Trig_Money_Attack_vJass_Actions",
+              "text": "    set g = g + pt + ex"
+            },
+            {
+              "line": 78877,
+              "function": "Trig_Money_Attack_vJass_Actions",
+              "text": "    call UnitDamageTargetSP(a, b, g, ATTACK_TYPE_MELEE, DAMAGE_TYPE_NORMAL )"
+            }
+          ],
+          "cooldown": 15,
+          "damage": 10000,
+          "trigger": "國王波利開始攻擊目標"
+        }
+      ]
+    },
+    "O0NT": {
+      "mechanics": [
+        {
+          "id": "MECH-O0NT-WATER",
+          "name": "水球術 AI",
+          "description": "不祥烏龜將軍開始攻擊時，先讓共用震地入口處理；若目前沒有施放震地或水球術、未被暫停或隱藏，且目標仍存活、為敵方、非魔法免疫並位於 600 距離內，就嘗試對它施放水球術。技能本身的冷卻與魔力條件仍需滿足。",
+          "modeLabel": "一般模式",
+          "internal": false,
+          "descriptionStatus": "ok",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "source": "war3map.j · RONT_WaterBall L56697；InitTrig_MVP_8_NightmareTurtleGeneral_AIjass L56809",
+          "sourceLines": [
+            56697,
+            56702,
+            56708,
+            56709,
+            56710,
+            56809,
+            56815,
+            56816
+          ],
+          "sourceEvidence": [
+            {
+              "line": 56697,
+              "function": "RONT_WaterBall",
+              "text": "function RONT_WaterBall takes nothing returns nothing"
+            },
+            {
+              "line": 56702,
+              "function": "RONT_WaterBall",
+              "text": "    if GetUnitTypeId(a) != RONT_Id() or a != udg_u_npcMVP[8] then"
+            },
+            {
+              "line": 56708,
+              "function": "RONT_WaterBall",
+              "text": "    call TriggerSleepAction(0.00)"
+            },
+            {
+              "line": 56709,
+              "function": "RONT_WaterBall",
+              "text": "    if a == udg_u_npcMVP[8] and GetWidgetLife(a) > .405 and not IsUnitPaused(a) and not IsUnitHidden(a) and GetUnitCurrentOrder(a) != OrderId(\"stomp\") and GetUnitCurrentOrder(a) != OrderId(\"chainlightning\") and GetWidgetLife(b) > .405 and IsUnitEnemy(b, udg_NPC_PLAYER) and not IsUnitType(b, UNIT_TYPE_MAGIC_IMMUNE) and IsUnitInRange(a, b, 600.) then"
+            },
+            {
+              "line": 56710,
+              "function": "RONT_WaterBall",
+              "text": "        call IssueTargetOrder(a, \"chainlightning\", b)"
+            },
+            {
+              "line": 56809,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "function InitTrig_MVP_8_NightmareTurtleGeneral_AIjass takes nothing returns nothing"
+            },
+            {
+              "line": 56815,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "    call TriggerRegisterAnyUnitEventBJ(t, EVENT_PLAYER_UNIT_ATTACKED)"
+            },
+            {
+              "line": 56816,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "    call TriggerAddAction(t, function RONT_WaterBall)"
+            }
+          ],
+          "castRange": 600,
+          "trigger": "不祥烏龜將軍開始攻擊有效目標"
+        },
+        {
+          "id": "MECH-O0NT-ENDURE",
+          "name": "暈眩後霸體反制",
+          "description": "受到本圖暈眩系統的較高級暈眩時，程式會確認暈眩狀態已生效；若反制已就緒、Boss 存活且沒有霸體，便解除這次暈眩並嘗試施放霸體。霸體施放成功後，這個反制入口冷卻 45 秒；此條件不代表所有來源的控場都會觸發。",
+          "modeLabel": "一般模式",
+          "internal": false,
+          "descriptionStatus": "ok",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "source": "war3map.j · RONT_EndureSpell L56766；RONT_EndureConfirm L56741；RONT_EndureReady L56716",
+          "sourceLines": [
+            56716,
+            56720,
+            56741,
+            56747,
+            56752,
+            56753,
+            56766,
+            56771,
+            56773,
+            56776,
+            56778,
+            56785
+          ],
+          "sourceEvidence": [
+            {
+              "line": 56766,
+              "function": "RONT_EndureSpell",
+              "text": "function RONT_EndureSpell takes nothing returns boolean"
+            },
+            {
+              "line": 56771,
+              "function": "RONT_EndureSpell",
+              "text": "    if aid == udg_SS_DUMMY_DIZZY then"
+            },
+            {
+              "line": 56773,
+              "function": "RONT_EndureSpell",
+              "text": "        if GetUnitTypeId(u) == 'O0NT' and GetUnitAbilityLevel(GetTriggerUnit(), aid) > 1 and not LoadBoolean(udg_ATTR_h, GetHandleId(u), StringHash(\"RONT_ENDURE_CD\")) and GetUnitAbilityLevel(u, udg_SS_ABILITY_EDDGA) == 0 then"
+            },
+            {
+              "line": 56776,
+              "function": "RONT_EndureSpell",
+              "text": "            call TimerStart(t, .03, false, function RONT_EndureConfirm)"
+            },
+            {
+              "line": 56778,
+              "function": "RONT_EndureSpell",
+              "text": "    elseif aid == 'ACro' then"
+            },
+            {
+              "line": 56785,
+              "function": "RONT_EndureSpell",
+              "text": "            call TimerStart(t, 45., false, function RONT_EndureReady)"
+            },
+            {
+              "line": 56741,
+              "function": "RONT_EndureConfirm",
+              "text": "function RONT_EndureConfirm takes nothing returns nothing"
+            },
+            {
+              "line": 56747,
+              "function": "RONT_EndureConfirm",
+              "text": "    if GetUnitTypeId(u) == 'O0NT' and GetWidgetLife(u) > .405 and not IsUnitType(u, UNIT_TYPE_DEAD) and not IsUnitHidden(u) and not LoadBoolean(udg_ATTR_h, uk, StringHash(\"RONT_ENDURE_CD\")) and not LoadBoolean(udg_ATTR_h, uk, StringHash(\"RONT_ENDURE_CAST\")) and GetUnitAbilityLevel(u, 'BPSE') > 0 and GetUnitAbilityLevel(u, udg_SS_ABILITY_EDDGA) == 0 then"
+            },
+            {
+              "line": 56752,
+              "function": "RONT_EndureConfirm",
+              "text": "            call UnitRemoveAbility(u, 'BPSE')"
+            },
+            {
+              "line": 56753,
+              "function": "RONT_EndureConfirm",
+              "text": "            call IssueImmediateOrder(u, \"roar\")"
+            },
+            {
+              "line": 56716,
+              "function": "RONT_EndureReady",
+              "text": "function RONT_EndureReady takes nothing returns nothing"
+            },
+            {
+              "line": 56720,
+              "function": "RONT_EndureReady",
+              "text": "    call RemoveSavedBoolean(udg_ATTR_h, GetHandleId(u), StringHash(\"RONT_ENDURE_CD\"))"
+            }
+          ],
+          "cooldown": 45,
+          "trigger": "指定暈眩技能等級 > 1，且確認暈眩狀態生效"
+        },
+        {
+          "id": "MECH-O0NT-ADDS",
+          "name": "暗夜龜召喚群",
+          "description": "本場不祥烏龜將軍召喚出暗夜龜時，先移除上一批召喚群，再保留技能原本產生的 1 隻並額外建立 4 隻，共 5 隻暗夜龜；這批召喚物會補滿魔力。Boss 對應清理流程會移除該批召喚物。",
+          "modeLabel": "一般模式",
+          "internal": false,
+          "descriptionStatus": "ok",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationStatus": "已逐項核對本版程式中的顯示摘要",
+          "source": "war3map.j · RONT_SummonNightTurtle L56225；RONT_ClearNightTurtle L56207；RONT_EndBloodTide L56258；InitTrig_MVP_8_NightmareTurtleGeneral_AIjass L56809",
+          "sourceLines": [
+            56207,
+            56217,
+            56225,
+            56235,
+            56236,
+            56239,
+            56244,
+            56246,
+            56248,
+            56258,
+            56259,
+            56809,
+            56825,
+            56826
+          ],
+          "sourceEvidence": [
+            {
+              "line": 56225,
+              "function": "RONT_SummonNightTurtle",
+              "text": "function RONT_SummonNightTurtle takes nothing returns nothing"
+            },
+            {
+              "line": 56235,
+              "function": "RONT_SummonNightTurtle",
+              "text": "    if a == udg_u_npcMVP[8] and GetUnitTypeId(a) == RONT_Id() and GetOwningPlayer(a) == udg_NPC_PLAYER and GetUnitTypeId(b) == 'n0DK' and GetOwningPlayer(b) == udg_NPC_PLAYER then"
+            },
+            {
+              "line": 56236,
+              "function": "RONT_SummonNightTurtle",
+              "text": "        call RONT_ClearNightTurtle()"
+            },
+            {
+              "line": 56239,
+              "function": "RONT_SummonNightTurtle",
+              "text": "        call GroupAddUnit(g, b)"
+            },
+            {
+              "line": 56244,
+              "function": "RONT_SummonNightTurtle",
+              "text": "            exitwhen i > 4"
+            },
+            {
+              "line": 56246,
+              "function": "RONT_SummonNightTurtle",
+              "text": "            set c = CreateUnit(udg_NPC_PLAYER, 'n0DK', x + 112. * Cos(an), y + 112. * Sin(an), GetUnitFacing(a))"
+            },
+            {
+              "line": 56248,
+              "function": "RONT_SummonNightTurtle",
+              "text": "            call SetUnitState(c, UNIT_STATE_MANA, GetUnitState(c, UNIT_STATE_MAX_MANA))"
+            },
+            {
+              "line": 56207,
+              "function": "RONT_ClearNightTurtle",
+              "text": "function RONT_ClearNightTurtle takes nothing returns nothing"
+            },
+            {
+              "line": 56217,
+              "function": "RONT_ClearNightTurtle",
+              "text": "            call RemoveUnit(b)"
+            },
+            {
+              "line": 56258,
+              "function": "RONT_EndBloodTide",
+              "text": "function RONT_EndBloodTide takes nothing returns nothing"
+            },
+            {
+              "line": 56259,
+              "function": "RONT_EndBloodTide",
+              "text": "    call RONT_ClearNightTurtle()"
+            },
+            {
+              "line": 56809,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "function InitTrig_MVP_8_NightmareTurtleGeneral_AIjass takes nothing returns nothing"
+            },
+            {
+              "line": 56825,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "    call TriggerRegisterAnyUnitEventBJ(t, EVENT_PLAYER_UNIT_SUMMON)"
+            },
+            {
+              "line": 56826,
+              "function": "InitTrig_MVP_8_NightmareTurtleGeneral_AIjass",
+              "text": "    call TriggerAddAction(t, function RONT_SummonNightTurtle)"
+            }
+          ],
+          "trigger": "本場不祥烏龜將軍成功召喚暗夜龜"
+        },
+        {
+          "id": "MECH-O0NT-STOMP",
+          "internal": false,
+          "modeLabel": "一般模式",
+          "name": "騎乘攻擊自動施法",
+          "description": "不祥烏龜將軍開始攻擊時，AI會下達「騎乘攻擊」施法指令，之後約80秒才恢復觸發。成功施放後，獨立傷害程式對自身周圍半徑320內的有效敵人套用15,000基礎技能傷害。技能本體冷卻為75秒；80秒是AI觸發間隔。烏龜將軍與不祥烏龜將軍共用同一個AI觸發器，其中一方觸發後，另一方也會暫停觸發約80秒。",
+          "cooldown": 80,
+          "cooldownType": "AI觸發間隔",
+          "skillCooldown": 75,
+          "abilityId": "A06T",
+          "damage": 15000,
+          "area": 320,
+          "trigger": "ATTACKED：攻擊者為O004或O0NT；共用AI觸發器已啟用",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_TurtleGeneral_AIjass / Trig_Brandish_Spear_vJass / IsValidTarget",
+          "sharedTriggerUnits": [
+            "O004",
+            "O0NT"
+          ],
+          "targetRule": "敵方、存活且非魔免",
+          "descriptionStatus": "ok",
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            9027,
+            9028,
+            9029,
+            61759,
+            61762,
+            61780,
+            61782,
+            61784,
+            61787,
+            61788,
+            61794,
+            74227,
+            74251,
+            74280,
+            74286,
+            74296,
+            74311,
+            74316,
+            74342
+          ],
+          "sourceEvidence": [
+            {
+              "function": "IsValidTarget",
+              "line": 9027,
+              "text": "    local boolean cond1 = IsUnitEnemy(targetUnit, GetOwningPlayer(whichUnit))"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9028,
+              "text": "    local boolean cond2 = GetUnitState(targetUnit, UNIT_STATE_LIFE) > 0.405"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9029,
+              "text": "    local boolean cond3 = not IsUnitType(targetUnit, UNIT_TYPE_MAGIC_IMMUNE)"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Func014C",
+              "line": 61759,
+              "text": "    if ( ( GetUnitTypeId(GetAttacker()) == 'O004' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Func014C",
+              "line": 61762,
+              "text": "    if ( ( GetUnitTypeId(GetAttacker()) == 'O0NT' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61780,
+              "text": "    local real t = 80.00"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61782,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61784,
+              "text": "    call IssueImmediateOrderBJ( a, \"stomp\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61787,
+              "text": "    call PolledWait( t )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61788,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_TurtleGeneral_AIjass",
+              "line": 61794,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_TurtleGeneral_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Func001C",
+              "line": 74227,
+              "text": "    if ( ( GetSpellAbilityId() == 'A06T' ) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74251,
+              "text": "    local real rg = 320."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74280,
+              "text": "    if ( GetSpellAbilityId() == 'A02O' ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74286,
+              "text": "        set g = 15000."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74296,
+              "text": "    call GroupEnumUnitsInRange(ug, ax, ay, rg, null)"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74311,
+              "text": "        if( IsValidTarget(a, e, false) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74316,
+              "text": "            call UnitDamageTargetSP(a, e, g, ATTACK_TYPE_MELEE, DAMAGE_TYPE_NORMAL )"
+            },
+            {
+              "function": "InitTrig_Brandish_Spear_vJass",
+              "line": 74342,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Brandish_Spear_vJass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3u",
+              "id": "O0NT",
+              "field": "uabi",
+              "contains": "A06T"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "base": "AOws",
+              "field": "anam:0:0",
+              "value": "騎乘攻擊"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "field": "acdn:1:0",
+              "value": 75.0
+            },
+            {
+              "file": "Warcraft III 1.27.1 Custom native ability.ini",
+              "id": "AOws",
+              "field": "order",
+              "value": "stomp"
+            }
+          ]
+        }
+      ]
+    },
+    "O00G": {
+      "mechanics": [
+        {
+          "id": "MECH-O00G-BREATH",
+          "name": "黑暗呼吸",
+          "description": "墨蛇君開始攻擊時，在自己的位置建立黑暗呼吸施法單位；AI 立即停用，60 秒後重新啟用。黑暗呼吸成功施放後等待 2 秒，在施法單位當時的位置 812 範圍內，對有效目標送出 50,000 魔法傷害；符合移動條件的目標另套用推移效果。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_EvilSnakeLord_AIjass_Conditions / Trig_MVP_AI_EvilSnakeLord_AIjass_Actions / InitTrig_MVP_AI_EvilSnakeLord_AIjass / Trig_DarkBreath_AIjass_Conditions / Trig_DarkBreath_AIjass_Actions",
+          "internal": false,
+          "cooldown": 60,
+          "trigger": "EVENT_PLAYER_UNIT_ATTACKED：墨蛇君成為攻擊者",
+          "damage": 50000,
+          "area": 812,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            36809,
+            59936,
+            61390,
+            61391,
+            61397,
+            61403,
+            61409,
+            61411,
+            61416,
+            61422,
+            61426,
+            61428,
+            61429,
+            61497,
+            61498,
+            61504,
+            61517,
+            61521,
+            61522,
+            61541,
+            61542,
+            61557
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Conditions",
+              "line": 61390,
+              "text": "function Trig_MVP_AI_EvilSnakeLord_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Conditions",
+              "line": 61391,
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'O00G' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61397,
+              "text": "function Trig_MVP_AI_EvilSnakeLord_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61403,
+              "text": "    local integer uid = 'h01R'"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61409,
+              "text": "    local real t = 60.00"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61411,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61416,
+              "text": "    call IssueImmediateOrderBJ( c, \"locustswarm\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_EvilSnakeLord_AIjass_Actions",
+              "line": 61422,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_EvilSnakeLord_AIjass",
+              "line": 61426,
+              "text": "function InitTrig_MVP_AI_EvilSnakeLord_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_AI_EvilSnakeLord_AIjass",
+              "line": 61428,
+              "text": "    call DisableTrigger( gg_trg_MVP_AI_EvilSnakeLord_AIjass )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_EvilSnakeLord_AIjass",
+              "line": 61429,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_EvilSnakeLord_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Conditions",
+              "line": 61497,
+              "text": "function Trig_DarkBreath_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Conditions",
+              "line": 61498,
+              "text": "    if ( not ( GetSpellAbilityId() == 'AUls' ) ) then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61504,
+              "text": "function Trig_DarkBreath_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61517,
+              "text": "    local real d = 50000.00"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61521,
+              "text": "    local real rg = 812.00"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61522,
+              "text": "    local integer t = 2"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61541,
+              "text": "        if IsValidAreaTarget(ap, e, false) then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61542,
+              "text": "            if GetUnitAbilityLevelSwapped(udg_SS_ABILITY_EDDGA, e) < 1 then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61557,
+              "text": "    call EnableTrigger( gg_trg_Mover_Handler_AIjass )"
+            },
+            {
+              "function": "Trig_Event_End_Quest_MS_Actions",
+              "line": 36809,
+              "text": "    call EnableTrigger( gg_trg_MVP_AI_EvilSnakeLord_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_24_EvilSnakeLord_Actions",
+              "line": 59936,
+              "text": "        call EnableTrigger( gg_trg_MVP_AI_EvilSnakeLord_AIjass )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        }
+      ]
+    },
+    "O00J": {
+      "mechanics": [
+        {
+          "id": "MECH-O00J-BREATH",
+          "name": "黑暗呼吸反擊",
+          "description": "只有選擇 MVP 狂暴等級時才啟用。俄塞里斯的受傷事件中，若傷害來源距離不超過 500，會以 25% 機率在 Boss 位置建立黑暗呼吸施法單位；觸發成功後停用 60 秒。黑暗呼吸成功施放後等待 2 秒，在施法單位當時的位置 812 範圍內，對有效目標送出 50,000 魔法傷害，並對符合條件者套用推移效果。",
+          "modeLabel": "狂暴模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_Select_System_End_Func024C / Trig_MVP_AI_Osiris_AIjass_Actions / InitTrig_MVP_AI_Osiris_AIjass / Trig_DarkBreath_AIjass_Conditions / Trig_DarkBreath_AIjass_Actions",
+          "internal": false,
+          "cooldown": 60,
+          "trigger": "受傷事件：來源距離 ≤ 500 且 25% 機率",
+          "damage": 50000,
+          "area": 812,
+          "castRange": 500,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            35496,
+            35497,
+            35610,
+            35611,
+            35612,
+            35614,
+            54384,
+            61437,
+            61446,
+            61457,
+            61462,
+            61463,
+            61471,
+            61475,
+            61477,
+            61488,
+            61490,
+            61497,
+            61498,
+            61504,
+            61517,
+            61521,
+            61522,
+            61541,
+            61542,
+            61557
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Select_System_End_Func024C",
+              "line": 35496,
+              "text": "function Trig_Select_System_End_Func024C takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_Select_System_End_Func024C",
+              "line": 35497,
+              "text": "    if ( not ( udg_Dialog_B_Select[udg_Integer] == 2 ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61437,
+              "text": "function Trig_MVP_AI_Osiris_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61446,
+              "text": "    local integer uid = 'O00J'"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61457,
+              "text": "    local real t = 60.00"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61462,
+              "text": "        if dx * dx + dy * dy <= 250000. then"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61463,
+              "text": "            if GetRandomInt(1, 100) <= 25 then"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61471,
+              "text": "                call IssueImmediateOrderBJ( c, \"locustswarm\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61475,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_Osiris_AIjass_Actions",
+              "line": 61477,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Osiris_AIjass",
+              "line": 61488,
+              "text": "function InitTrig_MVP_AI_Osiris_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Osiris_AIjass",
+              "line": 61490,
+              "text": "    call DisableTrigger( gg_trg_MVP_AI_Osiris_AIjass )"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Conditions",
+              "line": 61497,
+              "text": "function Trig_DarkBreath_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Conditions",
+              "line": 61498,
+              "text": "    if ( not ( GetSpellAbilityId() == 'AUls' ) ) then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61504,
+              "text": "function Trig_DarkBreath_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61517,
+              "text": "    local real d = 50000.00"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61521,
+              "text": "    local real rg = 812.00"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61522,
+              "text": "    local integer t = 2"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61541,
+              "text": "        if IsValidAreaTarget(ap, e, false) then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61542,
+              "text": "            if GetUnitAbilityLevelSwapped(udg_SS_ABILITY_EDDGA, e) < 1 then"
+            },
+            {
+              "function": "Trig_DarkBreath_AIjass_Actions",
+              "line": 61557,
+              "text": "    call EnableTrigger( gg_trg_Mover_Handler_AIjass )"
+            },
+            {
+              "function": "Trig_Select_System_End_Actions",
+              "line": 35610,
+              "text": "    set udg_Integer = 1"
+            },
+            {
+              "function": "Trig_Select_System_End_Actions",
+              "line": 35611,
+              "text": "    if ( Trig_Select_System_End_Func024C() ) then"
+            },
+            {
+              "function": "Trig_Select_System_End_Actions",
+              "line": 35612,
+              "text": "        call SetPlayerTechResearchedSwap( 'Rhpm', 1, udg_NPC_PLAYER )"
+            },
+            {
+              "function": "Trig_Select_System_End_Actions",
+              "line": 35614,
+              "text": "        call EnableTrigger( gg_trg_MVP_AI_Osiris_AIjass )"
+            },
+            {
+              "function": "Trig_Npc_Initialization_Actions",
+              "line": 54384,
+              "text": "    call TriggerRegisterUnitEvent( gg_trg_MVP_AI_Osiris_AIjass, gg_unit_O00J_0781, EVENT_UNIT_DAMAGED )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        },
+        {
+          "id": "MECH-O00J-GUARD",
+          "name": "狂暴木乃伊護衛",
+          "description": "俄塞里斯開始攻擊目標時，指定場地內存活的狂暴木乃伊會被命令攻擊同一目標；追擊指令觸發後停用 15 秒。另有每 15 秒的移動檢查，只有 Boss 存活、不在復活群組，且上次追擊後的 30 秒移動抑制倒數歸零，才會重新安排 Boss 與護衛的位置。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_13_Bodyguard_Attack_AIjass_Conditions / Trig_MVP_13_Bodyguard_Attack_AIjass_Actions / InitTrig_MVP_13_Bodyguard_Attack_AIjass / Trig_MVP_13_Bodyguard_Move_AIjass_Conditions / Trig_MVP_13_Bodyguard_Move_AIjass_Actions / InitTrig_MVP_13_Bodyguard_Move_AIjass / Trig_Update_Revive_Board_AIjass_Actions / InitTrig_Update_Revive_Board_AIjass",
+          "internal": false,
+          "cooldown": 15,
+          "trigger": "EVENT_PLAYER_UNIT_ATTACKED：俄塞里斯指定攻擊目標",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            35889,
+            35890,
+            42767,
+            42791,
+            42792,
+            42799,
+            42802,
+            61574,
+            61575,
+            61581,
+            61585,
+            61588,
+            61595,
+            61600,
+            61602,
+            61610,
+            61616,
+            61627,
+            61628,
+            61631,
+            61634,
+            61640,
+            61642,
+            61644,
+            61667,
+            61676,
+            61688,
+            61689,
+            61690,
+            61691,
+            61692,
+            61693
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Conditions",
+              "line": 61574,
+              "text": "function Trig_MVP_13_Bodyguard_Attack_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Conditions",
+              "line": 61575,
+              "text": "    if ( not ( GetAttacker() == udg_u_npcMVP[13] ) ) then"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61581,
+              "text": "function Trig_MVP_13_Bodyguard_Attack_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61585,
+              "text": "    local integer uid = 'n01Q'"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61588,
+              "text": "    local real t = 15.00"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61595,
+              "text": "    set ug = GetUnitsInRectAll(gg_rct________446)"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61600,
+              "text": "        if GetUnitTypeId(e) == uid and IsUnitAliveBJ(e) then"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61602,
+              "text": "            call IssueTargetOrderBJ( e, \"attack\", b )"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Attack_AIjass_Actions",
+              "line": 61610,
+              "text": "    set udg_Bodyguard_Move = 30"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Attack_AIjass",
+              "line": 61616,
+              "text": "function InitTrig_MVP_13_Bodyguard_Attack_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Conditions",
+              "line": 61627,
+              "text": "function Trig_MVP_13_Bodyguard_Move_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Conditions",
+              "line": 61628,
+              "text": "    if ( not ( IsUnitAliveBJ(udg_u_npcMVP[13]) == true ) ) then"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Conditions",
+              "line": 61631,
+              "text": "    if ( not ( IsUnitInGroup(udg_u_npcMVP[13], udg_ug_npcReviver) == false ) ) then"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Conditions",
+              "line": 61634,
+              "text": "    if ( not ( udg_Bodyguard_Move == 0 ) ) then"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Actions",
+              "line": 61640,
+              "text": "function Trig_MVP_13_Bodyguard_Move_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Actions",
+              "line": 61642,
+              "text": "    local unit a = udg_u_npcMVP[13]"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Actions",
+              "line": 61644,
+              "text": "    local integer uid = 'n01Q'"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Actions",
+              "line": 61667,
+              "text": "    set ug = GetUnitsInRectAll(gg_rct________446)"
+            },
+            {
+              "function": "Trig_MVP_13_Bodyguard_Move_AIjass_Actions",
+              "line": 61676,
+              "text": "        if GetUnitTypeId(e) == uid and IsUnitAliveBJ(e) then"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61688,
+              "text": "function InitTrig_MVP_13_Bodyguard_Move_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61689,
+              "text": "    set gg_trg_MVP_13_Bodyguard_Move_AIjass = CreateTrigger(  )"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61690,
+              "text": "    call DisableTrigger( gg_trg_MVP_13_Bodyguard_Move_AIjass )"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61691,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_MVP_13_Bodyguard_Move_AIjass, 15.00 )"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61692,
+              "text": "    call TriggerAddCondition( gg_trg_MVP_13_Bodyguard_Move_AIjass, Condition( function Trig_MVP_13_Bodyguard_Move_AIjass_Conditions ) )"
+            },
+            {
+              "function": "InitTrig_MVP_13_Bodyguard_Move_AIjass",
+              "line": 61693,
+              "text": "    call TriggerAddAction( gg_trg_MVP_13_Bodyguard_Move_AIjass, function Trig_MVP_13_Bodyguard_Move_AIjass_Actions )"
+            },
+            {
+              "function": "Trig_Update_Revive_Board_AIjass_Actions",
+              "line": 42767,
+              "text": "function Trig_Update_Revive_Board_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Update_Revive_Board_AIjass_Actions",
+              "line": 42791,
+              "text": "    if udg_Bodyguard_Move > 0 then"
+            },
+            {
+              "function": "Trig_Update_Revive_Board_AIjass_Actions",
+              "line": 42792,
+              "text": "        set udg_Bodyguard_Move = udg_Bodyguard_Move - 1"
+            },
+            {
+              "function": "InitTrig_Update_Revive_Board_AIjass",
+              "line": 42799,
+              "text": "function InitTrig_Update_Revive_Board_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_Update_Revive_Board_AIjass",
+              "line": 42802,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_Update_Revive_Board_AIjass, 1.00 )"
+            },
+            {
+              "function": "Trig_EGT600s_Actions",
+              "line": 35889,
+              "text": "    call EnableTrigger( gg_trg_MVP_13_Bodyguard_Attack_AIjass )"
+            },
+            {
+              "function": "Trig_EGT600s_Actions",
+              "line": 35890,
+              "text": "    call EnableTrigger( gg_trg_MVP_13_Bodyguard_Move_AIjass )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        }
+      ]
+    },
+    "Ubal": {
+      "mechanics": [
+        {
+          "id": "MECH-UBAL-FIRE",
+          "name": "火柱觸發",
+          "description": "黑暗之王成功施放內部觸發技能後，在目標點建立火柱傷害單位。等待 2 秒後，只有判定效果 X001 仍存在才會下達火雨指令；否則移除該單位。此 Boss 使用隕石術傷害能力 ACrf，作用範圍 750。起始觸發技能的一級冷卻為 180 秒、施法距離 750。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_Fire_Pillar_Trigger_AIjass_Func045C / Trig_Fire_Pillar_Trigger_AIjass_Actions / InitTrig_Fire_Pillar_Trigger_AIjass",
+          "internal": false,
+          "cooldown": 180,
+          "trigger": "SPELL_EFFECT：A0JB",
+          "area": 750,
+          "castRange": 750,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            94980,
+            94981,
+            94984,
+            94997,
+            95003,
+            95005,
+            95007,
+            95009,
+            95011,
+            95013,
+            95015,
+            95016,
+            95020,
+            95032,
+            95034,
+            95045,
+            95047
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94980,
+              "text": "function Trig_Fire_Pillar_Trigger_AIjass_Func045C takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94981,
+              "text": "    if ( ( GetSpellAbilityId() == 'A0JB' ) ) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94984,
+              "text": "    if ( ( GetSpellAbilityId() == 'A0HS' ) ) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 94997,
+              "text": "function Trig_Fire_Pillar_Trigger_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95003,
+              "text": "    local integer uid = 'n02W'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95005,
+              "text": "    local integer uid1 = 'Ubal'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95007,
+              "text": "    local integer uid2 = 'Nfir'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95009,
+              "text": "    local integer aid = 'ACrf'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95011,
+              "text": "    local integer aid1 = 'ANrf'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95013,
+              "text": "    local integer bid = 'X001'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95015,
+              "text": "    local real px = GetSpellTargetX()"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95016,
+              "text": "    local real py = GetSpellTargetY()"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95020,
+              "text": "    local integer t = 2"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95032,
+              "text": "    if UnitHasBuffBJ(c, bid) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95034,
+              "text": "        call IssuePointOrder(c, \"rainoffire\", px, py)"
+            },
+            {
+              "function": "InitTrig_Fire_Pillar_Trigger_AIjass",
+              "line": 95045,
+              "text": "function InitTrig_Fire_Pillar_Trigger_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_Fire_Pillar_Trigger_AIjass",
+              "line": 95047,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Fire_Pillar_Trigger_AIjass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。",
+          "abilityEvidence": [
+            {
+              "id": "A0JB",
+              "level": 1,
+              "source": "war3map.w3a + 未修改原生模板",
+              "values": {
+                "cool": 180.0,
+                "rng": 750.0,
+                "area": 750.0
+              }
+            },
+            {
+              "id": "ACrf",
+              "level": 1,
+              "source": "war3map.w3a + 未修改原生模板",
+              "values": {
+                "area": 750.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "Nfir": {
+      "mechanics": [
+        {
+          "id": "MECH-NFIR-FIREBALL",
+          "name": "無限塔・隕石火球",
+          "description": "無限塔版本的 15 秒週期機制。Boss 存活且通過狀態檢查時，會先建立一次隨機落點，1 秒後再次檢查並可建立第二次。每次在 Boss 附近 500 範圍選點，經 1.5 秒預警與 0.6 秒落下延遲後，對落點 390 範圍內有效敵人送出 100,000 魔法傷害；傷害後仍存活的目標可再受暈眩指令。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Conditions / Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions / InitTrig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass / Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            57575,
+            57579,
+            57582,
+            57588,
+            57593,
+            57595,
+            57602,
+            57608,
+            57611,
+            57619,
+            57632,
+            57635,
+            57644,
+            57649,
+            57650,
+            57651,
+            57687,
+            57689,
+            57692,
+            57694
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Conditions",
+              "line": 57575,
+              "text": "function Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Conditions",
+              "line": 57579,
+              "text": "    if ( not ( IsUnitAliveBJ(udg_u_npcMVP[30]) == true ) ) then"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Conditions",
+              "line": 57582,
+              "text": "    if ( not ( GetUnitAbilityLevelSwapped('ACba', udg_u_npcMVP[30]) < 3 ) ) then"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions",
+              "line": 57588,
+              "text": "function Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions",
+              "line": 57593,
+              "text": "    local real t = 1.00"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions",
+              "line": 57595,
+              "text": "    call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass )"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass_Actions",
+              "line": 57602,
+              "text": "    call ConditionalTriggerExecute( gg_trg_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass )"
+            },
+            {
+              "function": "InitTrig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass",
+              "line": 57608,
+              "text": "function InitTrig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_Npc_Tower_MVP_30_Ifrit_Timer_AIjass",
+              "line": 57611,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_Npc_Tower_MVP_30_Ifrit_Timer_AIjass, 15.00 )"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57619,
+              "text": "function Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57632,
+              "text": "    local real g = 100000."
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57635,
+              "text": "    local string se = \"Abilities\\\\Weapons\\\\FireBallMissile\\\\FireBallMissile.mdl\""
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57644,
+              "text": "    local real d = GetRandomReal(0. , 500.)"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57649,
+              "text": "    local real rg = 390."
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57650,
+              "text": "    local real t = 1.5"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57651,
+              "text": "    local real t1 = .6"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57687,
+              "text": "        if IsUnitEnemy(e, ap) and IsUnitAliveBJ(e) and GetUnitAbilityLevelSwapped(udg_SS_ABILITY_DUMMY, e) == 0 and not IsUnitType(e, UNIT_TYPE_MAGIC_IMMUNE) then"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57689,
+              "text": "            call UnitDamageTargetBJ(a, e, g, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC )"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57692,
+              "text": "            if IsUnitAliveBJ(e) and GetUnitTypeId(a) != 0 and a == udg_u_npcMVP[30] then"
+            },
+            {
+              "function": "Trig_Npc_Tower_MVP_30_Ifrit_FireBall_AIjass_Actions",
+              "line": 57694,
+              "text": "                call IssueTargetOrderEX( a, e, ck, aid, \"thunderbolt\", lv )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。",
+          "cooldown": 15,
+          "damage": 100000,
+          "area": 390
+        },
+        {
+          "id": "MECH-NFIR-FIRE",
+          "name": "火柱觸發",
+          "description": "伊夫利特成功施放內部觸發技能後，在目標點建立火柱傷害單位。等待 2 秒後，只有判定效果 X001 仍存在才會下達火雨指令；否則移除該單位。此 Boss 使用隕石術傷害能力 ACrf，作用範圍 750。起始觸發技能的一級冷卻為 180 秒、施法距離 750。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_Fire_Pillar_Trigger_AIjass_Func045C / Trig_Fire_Pillar_Trigger_AIjass_Actions / InitTrig_Fire_Pillar_Trigger_AIjass",
+          "internal": false,
+          "cooldown": 180,
+          "trigger": "SPELL_EFFECT：A0HS",
+          "area": 750,
+          "castRange": 750,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            94980,
+            94981,
+            94984,
+            94997,
+            95003,
+            95005,
+            95007,
+            95009,
+            95011,
+            95013,
+            95015,
+            95016,
+            95020,
+            95032,
+            95034,
+            95045,
+            95047
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94980,
+              "text": "function Trig_Fire_Pillar_Trigger_AIjass_Func045C takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94981,
+              "text": "    if ( ( GetSpellAbilityId() == 'A0JB' ) ) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Func045C",
+              "line": 94984,
+              "text": "    if ( ( GetSpellAbilityId() == 'A0HS' ) ) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 94997,
+              "text": "function Trig_Fire_Pillar_Trigger_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95003,
+              "text": "    local integer uid = 'n02W'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95005,
+              "text": "    local integer uid1 = 'Ubal'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95007,
+              "text": "    local integer uid2 = 'Nfir'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95009,
+              "text": "    local integer aid = 'ACrf'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95011,
+              "text": "    local integer aid1 = 'ANrf'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95013,
+              "text": "    local integer bid = 'X001'"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95015,
+              "text": "    local real px = GetSpellTargetX()"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95016,
+              "text": "    local real py = GetSpellTargetY()"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95020,
+              "text": "    local integer t = 2"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95032,
+              "text": "    if UnitHasBuffBJ(c, bid) then"
+            },
+            {
+              "function": "Trig_Fire_Pillar_Trigger_AIjass_Actions",
+              "line": 95034,
+              "text": "        call IssuePointOrder(c, \"rainoffire\", px, py)"
+            },
+            {
+              "function": "InitTrig_Fire_Pillar_Trigger_AIjass",
+              "line": 95045,
+              "text": "function InitTrig_Fire_Pillar_Trigger_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_Fire_Pillar_Trigger_AIjass",
+              "line": 95047,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Fire_Pillar_Trigger_AIjass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。",
+          "abilityEvidence": [
+            {
+              "id": "A0HS",
+              "level": 1,
+              "source": "war3map.w3a + 未修改原生模板",
+              "values": {
+                "cool": 180.0,
+                "rng": 750.0,
+                "area": 750.0
+              }
+            },
+            {
+              "id": "ACrf",
+              "level": 1,
+              "source": "war3map.w3a + 未修改原生模板",
+              "values": {
+                "area": 750.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "O003": {
+      "mechanics": [
+        {
+          "id": "MECH-O003-LV",
+          "name": "Lord Vermilion 雷暴",
+          "description": "巴風特開始攻擊且未受指定沉默效果 BNsi 阻止時，以當下攻擊目標的位置固定中心。每次流程設定 5 輪，每輪設定 5,000 魔法傷害，作用於 762 範圍內存活、非魔免且非傷害假人的敵人，輪間等待約 0.33 秒。程式在這 5 輪結束後才停用觸發器 45 秒，因此前段施放流程仍可能接收新的攻擊事件。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_Baphomet_vJass_Conditions / Trig_MVP_AI_Baphomet_vJass_Actions / InitTrig_MVP_AI_Baphomet_vJass",
+          "internal": false,
+          "cooldown": 45,
+          "trigger": "EVENT_PLAYER_UNIT_ATTACKED：巴風特成為攻擊者",
+          "damage": 5000,
+          "area": 762,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            62045,
+            62046,
+            62049,
+            62055,
+            62065,
+            62066,
+            62072,
+            62091,
+            62093,
+            62095,
+            62100,
+            62101,
+            62102,
+            62103,
+            62140,
+            62141,
+            62142,
+            62143,
+            62147,
+            62166,
+            62167,
+            62168,
+            62172,
+            62174
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Conditions",
+              "line": 62045,
+              "text": "function Trig_MVP_AI_Baphomet_vJass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Conditions",
+              "line": 62046,
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'O003' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Conditions",
+              "line": 62049,
+              "text": "    if ( not ( UnitHasBuffBJ(GetAttacker(), 'BNsi') != true ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62055,
+              "text": "function Trig_MVP_AI_Baphomet_vJass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62065,
+              "text": "    local real x = GetUnitX(b)"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62066,
+              "text": "    local real y = GetUnitY(b)"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62072,
+              "text": "    local real g = 5000."
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62091,
+              "text": "    local real t = .33"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62093,
+              "text": "    local integer z = 5"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62095,
+              "text": "    local real rg = 762."
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62100,
+              "text": "    local boolean cond1 = false"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62101,
+              "text": "    local boolean cond2 = false"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62102,
+              "text": "    local boolean cond3 = false"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62103,
+              "text": "    local boolean cond4 = false"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62140,
+              "text": "            set cond1 = IsUnitEnemy(e, ap) == true"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62141,
+              "text": "            set cond2 = IsUnitAliveBJ(e) == true"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62142,
+              "text": "            set cond3 = IsUnitType(e, UNIT_TYPE_MAGIC_IMMUNE) != true"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62143,
+              "text": "            set cond4 = GetUnitAbilityLevelSwapped(udg_SS_ABILITY_DUMMY, e) == 0"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62147,
+              "text": "                call UnitDamageTargetBJ(a, e, g, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC )"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62166,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62167,
+              "text": "    call PolledWait( 45.00 )"
+            },
+            {
+              "function": "Trig_MVP_AI_Baphomet_vJass_Actions",
+              "line": 62168,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Baphomet_vJass",
+              "line": 62172,
+              "text": "function InitTrig_MVP_AI_Baphomet_vJass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Baphomet_vJass",
+              "line": 62174,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_Baphomet_vJass, EVENT_PLAYER_UNIT_ATTACKED )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        }
+      ]
+    },
+    "N00M": {
+      "mechanics": [
+        {
+          "id": "MECH-N00M-FANG",
+          "name": "無影之牙",
+          "description": "德古拉伯爵開始攻擊且未受指定沉默效果 BNsi 阻止時，建立 MONSTER_CAST 施法單位，朝攻擊目標當下的位置施放無影之牙 A06S。使用一級技能：設定傷害 15,000、施法距離 1,000；技能物件冷卻為 30 秒，但這個 AI 入口成功觸發後會停用 75 秒。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_Dracula_AIjass_Conditions / Trig_MVP_AI_Dracula_AIjass_Actions / InitTrig_MVP_AI_Dracula_AIjass",
+          "internal": false,
+          "cooldown": 75,
+          "trigger": "EVENT_PLAYER_UNIT_ATTACKED：德古拉成為攻擊者",
+          "damage": 15000,
+          "castRange": 1000,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            62182,
+            62183,
+            62186,
+            62192,
+            62201,
+            62203,
+            62211,
+            62213,
+            62218,
+            62219,
+            62226,
+            62230,
+            62232
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Conditions",
+              "line": 62182,
+              "text": "function Trig_MVP_AI_Dracula_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Conditions",
+              "line": 62183,
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'N00M' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Conditions",
+              "line": 62186,
+              "text": "    if ( not ( UnitHasBuffBJ(GetAttacker(), 'BNsi') != true ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62192,
+              "text": "function Trig_MVP_AI_Dracula_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62201,
+              "text": "    local integer uid = 'h01Y'"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62203,
+              "text": "    local integer aid = 'A06S'"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62211,
+              "text": "    local real t = 75.00"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62213,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62218,
+              "text": "    call UnitAddAbilityBJ( aid, c )"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62219,
+              "text": "    call IssuePointOrder(c, \"impale\", npx, npy)"
+            },
+            {
+              "function": "Trig_MVP_AI_Dracula_AIjass_Actions",
+              "line": 62226,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Dracula_AIjass",
+              "line": 62230,
+              "text": "function InitTrig_MVP_AI_Dracula_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Dracula_AIjass",
+              "line": 62232,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_Dracula_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。",
+          "abilityEvidence": [
+            {
+              "id": "A06S",
+              "level": 1,
+              "source": "war3map.w3a + 未修改原生模板",
+              "values": {
+                "datac": 15000.0,
+                "rng": 1000.0,
+                "cool": 30.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "Uwar": {
+      "mechanics": [
+        {
+          "id": "MECH-UWAR-FIRE",
+          "name": "火柱反擊",
+          "description": "法老王成為傷害修改事件的目標時，在傷害來源當下的位置建立火柱預警。等待 2.4 秒後，對該固定位置 290 範圍內的有效目標送出 30,000 魔法傷害；傷害執行後再等待 10 秒才重新啟用觸發器，從本次觸發起約 12.4 秒。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_OnDamage_FirePillar_AIjass_Conditions / Trig_OnDamage_FirePillar_AIjass_Actions / InitTrig_OnDamage_FirePillar_AIjass",
+          "internal": false,
+          "cooldown": 12.4,
+          "trigger": "DamageModifierEvent：法老王成為受傷目標",
+          "damage": 30000,
+          "area": 290,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            11920,
+            11921,
+            11927,
+            11931,
+            11936,
+            11937,
+            11942,
+            11963,
+            11964,
+            11965,
+            11972,
+            11975,
+            11979,
+            11989,
+            12003,
+            12010,
+            12014,
+            12016
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Conditions",
+              "line": 11920,
+              "text": "function Trig_OnDamage_FirePillar_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Conditions",
+              "line": 11921,
+              "text": "    if ( not ( GetUnitTypeId(udg_DamageEventTarget) == 'Uwar' ) ) then"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11927,
+              "text": "function Trig_OnDamage_FirePillar_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11931,
+              "text": "    local unit a = udg_DamageEventSource"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11936,
+              "text": "    local real px = GetUnitX(a)"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11937,
+              "text": "    local real py = GetUnitY(a)"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11942,
+              "text": "    local real g = 30000."
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11963,
+              "text": "    local real rg = 290."
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11964,
+              "text": "    local real t = 2.4"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11965,
+              "text": "    local real t1 = 10.00"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11972,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11975,
+              "text": "    call TriggerSleepAction(t)"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11979,
+              "text": "    call TriggerSleepAction( 0. )"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 11989,
+              "text": "        if IsValidTarget(b, e, true) then"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 12003,
+              "text": "    call PolledWait( t1 )"
+            },
+            {
+              "function": "Trig_OnDamage_FirePillar_AIjass_Actions",
+              "line": 12010,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_OnDamage_FirePillar_AIjass",
+              "line": 12014,
+              "text": "function InitTrig_OnDamage_FirePillar_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_OnDamage_FirePillar_AIjass",
+              "line": 12016,
+              "text": "    call TriggerRegisterVariableEvent( gg_trg_OnDamage_FirePillar_AIjass, \"udg_DamageModifierEvent\", EQUAL, 1.00 )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        }
+      ]
+    },
+    "Nklj": {
+      "mechanics": [
+        {
+          "id": "MECH-NKLJ-STORM",
+          "name": "暴風雪落點",
+          "description": "噩夢小丑皇生成後啟用每 30 秒的暴風雪機制：在自身附近 500 範圍內選擇隨機落點，預警 2.5 秒後建立暴風雪傷害單位，交由共用傷害迴圈處理。此入口檢查 MVP 31 物件是否存在；一般模式的死亡獎勵流程會停用此週期觸發。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_Party_MVP_31_Actions / Trig_MVP_31_StormGust_AIjass_Conditions / Trig_MVP_31_StormGust_AIjass_Actions / InitTrig_MVP_31_StormGust_AIjass",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            49021,
+            49031,
+            49032,
+            49033,
+            49038,
+            49039,
+            49054,
+            49055,
+            49061,
+            49062,
+            49064,
+            49075,
+            49077,
+            49085,
+            49089,
+            49098,
+            49109,
+            49117,
+            49118,
+            49119,
+            49120,
+            49121,
+            49122,
+            53871
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49021,
+              "text": "function Trig_Party_MVP_31_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49031,
+              "text": "    set udg_u_npcMVP[31] = GetLastCreatedUnit()"
+            },
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49032,
+              "text": "    call SetHeroLevelBJ( udg_u_npcMVP[31], 99, true )"
+            },
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49033,
+              "text": "    call GroupAddUnitSimple( udg_u_npcMVP[31], udg_EventGroup[12] )"
+            },
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49038,
+              "text": "    call EnableTrigger( gg_trg_Party_Unit_Limit )"
+            },
+            {
+              "function": "Trig_Party_MVP_31_Actions",
+              "line": 49039,
+              "text": "    call EnableTrigger( gg_trg_MVP_31_StormGust_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Conditions",
+              "line": 49054,
+              "text": "function Trig_MVP_31_StormGust_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Conditions",
+              "line": 49055,
+              "text": "    if ( not ( udg_u_npcMVP[31] != null ) ) then"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49061,
+              "text": "function Trig_MVP_31_StormGust_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49062,
+              "text": "    // 'h02B'：部隊 - 暴風雪（傷害）"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49064,
+              "text": "    local unit a = udg_u_npcMVP[31]"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49075,
+              "text": "    local integer uid = 'h02B'"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49077,
+              "text": "    local real d = GetRandomReal(0. , 500.)"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49085,
+              "text": "    local real t = 2.5"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49089,
+              "text": "    local string se0 = \"war3mapImported\\\\Effect-CastingAera3s500.mdx\""
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49098,
+              "text": "    set s = CreateUnit( ap, uid, px, py, 0. )"
+            },
+            {
+              "function": "Trig_MVP_31_StormGust_AIjass_Actions",
+              "line": 49109,
+              "text": "    call EnableTrigger( gg_trg_OnDamage_StormGust_looper_AIjass )"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49117,
+              "text": "function InitTrig_MVP_31_StormGust_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49118,
+              "text": "    set gg_trg_MVP_31_StormGust_AIjass = CreateTrigger(  )"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49119,
+              "text": "    call DisableTrigger( gg_trg_MVP_31_StormGust_AIjass )"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49120,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_MVP_31_StormGust_AIjass, 30.00 )"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49121,
+              "text": "    call TriggerAddCondition( gg_trg_MVP_31_StormGust_AIjass, Condition( function Trig_MVP_31_StormGust_AIjass_Conditions ) )"
+            },
+            {
+              "function": "InitTrig_MVP_31_StormGust_AIjass",
+              "line": 49122,
+              "text": "    call TriggerAddAction( gg_trg_MVP_31_StormGust_AIjass, function Trig_MVP_31_StormGust_AIjass_Actions )"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_Actions",
+              "line": 53871,
+              "text": "    call DisableTrigger( gg_trg_MVP_31_StormGust_AIjass )"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。",
+          "cooldown": 30
+        }
+      ]
+    },
+    "O00T": {
+      "mechanics": [
+        {
+          "id": "MECH-O00T-METEOR",
+          "name": "Meteor Assault 隕石突襲",
+          "description": "初始化後依序追蹤 80%、60%、40%、20% 四個生命門檻。只有傷害值大於 1、來源為英雄，且傷害事件讀取的目前生命不高於下一門檻時，才消耗一次門檻並觸發；同一傷害事件最多處理一個門檻。每次在觸發當下的 Boss 位置固定預警，2.8 秒後對該位置 390 範圍內有效敵人送出 100,000 魔法傷害。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_19_Eremes_Actions / Trig_OnDamage_MVP_AIjass_Conditions / Trig_OnDamage_MVP_AIjass_Actions / InitTrig_OnDamage_MVP_AIjass / Trig_MVP_19_Eremes_MeteorAssault_AIjass_Conditions / Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+          "cooldown": null,
+          "trigger": "英雄來源傷害事件 > 1；目前生命 ≤ 下一個 80% / 60% / 40% / 20% 門檻",
+          "damage": 100000,
+          "area": 390,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "sourceVersion": "Ro-Online 7.0c08",
+          "sourceLines": [
+            11824,
+            11825,
+            11828,
+            11831,
+            11837,
+            11853,
+            11854,
+            11856,
+            11857,
+            11858,
+            11864,
+            11866,
+            58123,
+            58147,
+            61176,
+            61177,
+            61183,
+            61191,
+            61192,
+            61197,
+            61205,
+            61206,
+            61214,
+            61215,
+            61239,
+            61241
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_MVP_19_Eremes_Actions",
+              "line": 58123,
+              "text": "function Trig_MVP_19_Eremes_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_Actions",
+              "line": 58147,
+              "text": "    call SaveIntegerBJ( 4, StringHashBJ(\"MeteorAssault\"), udg_keyHandler, udg_ABLT_h )"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Conditions",
+              "line": 11824,
+              "text": "function Trig_OnDamage_MVP_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Conditions",
+              "line": 11825,
+              "text": "    if ( not ( udg_DamageEventAmount > 1.00 ) ) then"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Conditions",
+              "line": 11828,
+              "text": "    if ( not ( GetUnitRace(udg_DamageEventTarget) == RACE_UNDEAD ) ) then"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Conditions",
+              "line": 11831,
+              "text": "    if ( not ( IsUnitType(udg_DamageEventTarget, UNIT_TYPE_HERO) == true ) ) then"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11837,
+              "text": "function Trig_OnDamage_MVP_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11853,
+              "text": "    if udg_DamageEventTarget == udg_u_npcMVP[19] and IsUnitType(udg_DamageEventSource, UNIT_TYPE_HERO) then"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11854,
+              "text": "        set k = StringHashBJ(\"MeteorAssault\")"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11856,
+              "text": "        if ki > 0 and GetUnitLifePercent(udg_DamageEventTarget) <= 20. * I2R(ki) then"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11857,
+              "text": "            call SaveIntegerBJ( ki-1, k, bk, udg_ABLT_h )"
+            },
+            {
+              "function": "Trig_OnDamage_MVP_AIjass_Actions",
+              "line": 11858,
+              "text": "    call ConditionalTriggerExecute( gg_trg_MVP_19_Eremes_MeteorAssault_AIjass )"
+            },
+            {
+              "function": "InitTrig_OnDamage_MVP_AIjass",
+              "line": 11864,
+              "text": "function InitTrig_OnDamage_MVP_AIjass takes nothing returns nothing"
+            },
+            {
+              "function": "InitTrig_OnDamage_MVP_AIjass",
+              "line": 11866,
+              "text": "    call TriggerRegisterVariableEvent( gg_trg_OnDamage_MVP_AIjass, \"udg_DamageModifierEvent\", EQUAL, 1.00 )"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Conditions",
+              "line": 61176,
+              "text": "function Trig_MVP_19_Eremes_MeteorAssault_AIjass_Conditions takes nothing returns boolean"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Conditions",
+              "line": 61177,
+              "text": "    if ( not ( IsUnitAliveBJ(udg_u_npcMVP[19]) == true ) ) then"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61183,
+              "text": "function Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions takes nothing returns nothing"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61191,
+              "text": "    local real ax = GetUnitX(a)"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61192,
+              "text": "    local real ay = GetUnitY(a)"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61197,
+              "text": "    local real g = 100000."
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61205,
+              "text": "    local string se1 = \"war3mapImported\\\\Effect-MeteorAssault.mdx\""
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61206,
+              "text": "    local string se2 = \"war3mapImported\\\\Effect-MeteorAssaultSlam.mdx\""
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61214,
+              "text": "    local real rg = 390."
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61215,
+              "text": "    local real t = 2.8"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61239,
+              "text": "        set ok1 = IsUnitAliveBJ(e)"
+            },
+            {
+              "function": "Trig_MVP_19_Eremes_MeteorAssault_AIjass_Actions",
+              "line": 61241,
+              "text": "        set ok3 = not IsUnitType(e, UNIT_TYPE_MAGIC_IMMUNE)"
+            }
+          ],
+          "verified": true,
+          "verificationScope": "已核對此段顯示的條件、常數、時間與技能欄位；傷害為送入傷害系統的設定值。"
+        }
+      ]
+    },
+    "O00D": {
+      "mechanics": [
+        {
+          "id": "MECH-O00D-HEAL",
+          "name": "吸血回復聯動",
+          "description": "聯動啟用期間，全圖有單位成功施放「吸血攻擊」時，若黃金盜蟲仍存活，會立即增加4,000 HP。此事件沒有要求施法者必須是黃金盜蟲。一般與休閒模式的德古拉伯爵死亡處理都會停用這項聯動。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_EatBlood_Attack_AIjass / Trig_Npc_Initialization_Actions / Trig_Mvp_treasure_Item_Actions / Trig_Mvp_treasure_Item_ChillMode_Actions",
+          "internal": false,
+          "trigger": "SPELL_EFFECT：Afod；聯動仍啟用且黃金盜蟲存活",
+          "heal": 4000,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "disabledBy": "德古拉伯爵（N00M）死亡處理",
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            53850,
+            53852,
+            54262,
+            54264,
+            54356,
+            62241,
+            62252,
+            62256,
+            62263
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_Mvp_treasure_Item_Actions",
+              "line": 53850,
+              "text": "    if uid == 'N00M' then"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_Actions",
+              "line": 53852,
+              "text": "    call DisableTrigger( gg_trg_EatBlood_Attack_AIjass )"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+              "line": 54262,
+              "text": "    if uid == 'N00M' then"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+              "line": 54264,
+              "text": "    call DisableTrigger( gg_trg_EatBlood_Attack_AIjass )"
+            },
+            {
+              "function": "Trig_Npc_Initialization_Actions",
+              "line": 54356,
+              "text": "    set udg_u_npcMVP[11] = gg_unit_O00D_0253"
+            },
+            {
+              "function": "Trig_EatBlood_Attack_AIjass_Conditions",
+              "line": 62241,
+              "text": "    if ( not ( GetSpellAbilityId() == 'Afod' ) ) then"
+            },
+            {
+              "function": "Trig_EatBlood_Attack_AIjass_Actions",
+              "line": 62252,
+              "text": "    if IsUnitAliveBJ(udg_u_npcMVP[11]) then"
+            },
+            {
+              "function": "Trig_EatBlood_Attack_AIjass_Actions",
+              "line": 62256,
+              "text": "        call SetUnitLifeBJ(udg_u_npcMVP[11], GetUnitStateSwap(UNIT_STATE_LIFE, udg_u_npcMVP[11]) + 4000.00)"
+            },
+            {
+              "function": "InitTrig_EatBlood_Attack_AIjass",
+              "line": 62263,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_EatBlood_Attack_AIjass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3a",
+              "id": "Afod",
+              "field": "anam:0:0",
+              "value": "吸血攻擊"
+            }
+          ]
+        }
+      ]
+    },
+    "O00M": {
+      "mechanics": [
+        {
+          "id": "MECH-O00M-THUNDER",
+          "name": "雷暴陣",
+          "description": "獸人英雄生成後啟用；每30秒檢查一次，Boss存在、存活且「傷害重置」層數低於3時發動。沿當下面向前方300、600、900距離設置3個預警落點，約1.8秒後，各對半徑300內的有效敵人造成20,000基礎魔法傷害，並對仍存活的目標追加暈眩施法。3個區域分別結算，重疊處可能重複受擊；Boss死亡處理會停用此機制。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_22_OrcHero_Thunderstorm_AIjass / Trig_MVP_22_OrcHero_Actions / IsValidTarget",
+          "cooldown": 30,
+          "trigger": "每30秒；獸人英雄存在、存活，且傷害重置（ACba）等級<3",
+          "damage": 20000,
+          "area": 300,
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "cooldownType": "週期檢查間隔",
+          "delay": 1.8,
+          "impactCount": 3,
+          "impactDistances": [
+            300,
+            600,
+            900
+          ],
+          "targetRule": "敵方、存活、非魔免，且不是帶有技能假人標記的單位",
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            9027,
+            9028,
+            9029,
+            9033,
+            36763,
+            36764,
+            36767,
+            53846,
+            53847,
+            54268,
+            54269,
+            59716,
+            59717,
+            59721,
+            61271,
+            61274,
+            61277,
+            61303,
+            61318,
+            61322,
+            61323,
+            61326,
+            61332,
+            61333,
+            61338,
+            61346,
+            61348,
+            61356,
+            61358,
+            61361,
+            61363,
+            61382
+          ],
+          "sourceEvidence": [
+            {
+              "function": "IsValidTarget",
+              "line": 9027,
+              "text": "    local boolean cond1 = IsUnitEnemy(targetUnit, GetOwningPlayer(whichUnit))"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9028,
+              "text": "    local boolean cond2 = GetUnitState(targetUnit, UNIT_STATE_LIFE) > 0.405"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9029,
+              "text": "    local boolean cond3 = not IsUnitType(targetUnit, UNIT_TYPE_MAGIC_IMMUNE)"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9033,
+              "text": "      set cond4 = GetUnitAbilityLevelSwapped(udg_SS_ABILITY_DUMMY, targetUnit) == 0"
+            },
+            {
+              "function": "Trig_Event_End_Quest_MS_Actions",
+              "line": 36763,
+              "text": "    call CreateNUnitsAtLoc( 1, 'O00M', udg_NPC_PLAYER, udg_Point, 270.00 )"
+            },
+            {
+              "function": "Trig_Event_End_Quest_MS_Actions",
+              "line": 36764,
+              "text": "    set udg_u_npcMVP[22] = GetLastCreatedUnit()"
+            },
+            {
+              "function": "Trig_Event_End_Quest_MS_Actions",
+              "line": 36767,
+              "text": "    call EnableTrigger( gg_trg_MVP_22_OrcHero_Thunderstorm_AIjass )"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_Actions",
+              "line": 53846,
+              "text": "    if uid == 'O00M' then"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_Actions",
+              "line": 53847,
+              "text": "    call DisableTrigger( gg_trg_MVP_22_OrcHero_Thunderstorm_AIjass )"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+              "line": 54268,
+              "text": "    elseif uid == 'O00M' then"
+            },
+            {
+              "function": "Trig_Mvp_treasure_Item_ChillMode_Actions",
+              "line": 54269,
+              "text": "    call DisableTrigger( gg_trg_MVP_22_OrcHero_Thunderstorm_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Actions",
+              "line": 59716,
+              "text": "        call CreateNUnitsAtLoc( 1, 'O00M', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Actions",
+              "line": 59717,
+              "text": "        set udg_u_npcMVP[22] = GetLastCreatedUnit()"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Actions",
+              "line": 59721,
+              "text": "        call EnableTrigger( gg_trg_MVP_22_OrcHero_Thunderstorm_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Conditions",
+              "line": 61271,
+              "text": "    if ( not ( udg_u_npcMVP[22] != null ) ) then"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Conditions",
+              "line": 61274,
+              "text": "    if ( not ( IsUnitAliveBJ(udg_u_npcMVP[22]) == true ) ) then"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Conditions",
+              "line": 61277,
+              "text": "    if ( not ( GetUnitAbilityLevelSwapped('ACba', udg_u_npcMVP[22]) < 3 ) ) then"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61303,
+              "text": "    local real g = 20000."
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61318,
+              "text": "    local real d = 300."
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61322,
+              "text": "    local real rg = 300."
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61323,
+              "text": "    local real t = 1.8"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61326,
+              "text": "    local integer z = 3"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61332,
+              "text": "        set px = ax + d*i*Cos(an * bj_DEGTORAD)"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61333,
+              "text": "        set py = ay + d*i*Sin(an * bj_DEGTORAD)"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61338,
+              "text": "    call TriggerSleepAction(t)"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61346,
+              "text": "        set ug = CreateGroup()"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61348,
+              "text": "        call GroupEnumUnitsInRange(ug, px, py, rg, null)"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61356,
+              "text": "            if IsValidTarget(a, e, true) then"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61358,
+              "text": "                call UnitDamageTargetBJ(a, e, gHit, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC )"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61361,
+              "text": "                if IsUnitAliveBJ(e) then"
+            },
+            {
+              "function": "Trig_MVP_22_OrcHero_Thunderstorm_AIjass_Actions",
+              "line": 61363,
+              "text": "                    call IssueTargetOrderEX( a, e, ck, aid, \"thunderbolt\", sl )"
+            },
+            {
+              "function": "InitTrig_MVP_22_OrcHero_Thunderstorm_AIjass",
+              "line": 61382,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_MVP_22_OrcHero_Thunderstorm_AIjass, 30.00 )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3a",
+              "id": "ACba",
+              "field": "anam:0:0",
+              "value": "傷害重置"
+            }
+          ]
+        }
+      ]
+    },
+    "O007": {
+      "mechanics": [
+        {
+          "id": "MECH-O007-STOMP",
+          "name": "騎乘攻擊自動施法",
+          "description": "蟻后開始攻擊時，AI會下達「騎乘攻擊」施法指令，之後約80秒才恢復觸發。成功施放後，獨立傷害程式對自身周圍半徑320內的有效敵人套用15,000基礎技能傷害。技能本體冷卻為75秒；80秒是AI觸發間隔。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_Maya_AIjass / Trig_Brandish_Spear_vJass / IsValidTarget",
+          "internal": false,
+          "cooldown": 80,
+          "trigger": "ATTACKED：攻擊者為蟻后O007；AI觸發器已啟用",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "cooldownType": "AI觸發間隔",
+          "skillCooldown": 75,
+          "abilityId": "A06T",
+          "damage": 15000,
+          "area": 320,
+          "sharedTriggerUnits": [
+            "O007"
+          ],
+          "targetRule": "敵方、存活且非魔免",
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            9027,
+            9028,
+            9029,
+            61700,
+            61711,
+            61713,
+            61715,
+            61718,
+            61719,
+            61725,
+            74227,
+            74251,
+            74280,
+            74286,
+            74296,
+            74311,
+            74316,
+            74342
+          ],
+          "sourceEvidence": [
+            {
+              "function": "IsValidTarget",
+              "line": 9027,
+              "text": "    local boolean cond1 = IsUnitEnemy(targetUnit, GetOwningPlayer(whichUnit))"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9028,
+              "text": "    local boolean cond2 = GetUnitState(targetUnit, UNIT_STATE_LIFE) > 0.405"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9029,
+              "text": "    local boolean cond3 = not IsUnitType(targetUnit, UNIT_TYPE_MAGIC_IMMUNE)"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Conditions",
+              "line": 61700,
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'O007' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Actions",
+              "line": 61711,
+              "text": "    local real t = 80.00"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Actions",
+              "line": 61713,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Actions",
+              "line": 61715,
+              "text": "    call IssueImmediateOrderBJ( a, \"stomp\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Actions",
+              "line": 61718,
+              "text": "    call PolledWait( t )"
+            },
+            {
+              "function": "Trig_MVP_AI_Maya_AIjass_Actions",
+              "line": 61719,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_Maya_AIjass",
+              "line": 61725,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_Maya_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Func001C",
+              "line": 74227,
+              "text": "    if ( ( GetSpellAbilityId() == 'A06T' ) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74251,
+              "text": "    local real rg = 320."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74280,
+              "text": "    if ( GetSpellAbilityId() == 'A02O' ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74286,
+              "text": "        set g = 15000."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74296,
+              "text": "    call GroupEnumUnitsInRange(ug, ax, ay, rg, null)"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74311,
+              "text": "        if( IsValidTarget(a, e, false) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74316,
+              "text": "            call UnitDamageTargetSP(a, e, g, ATTACK_TYPE_MELEE, DAMAGE_TYPE_NORMAL )"
+            },
+            {
+              "function": "InitTrig_Brandish_Spear_vJass",
+              "line": 74342,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Brandish_Spear_vJass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3u",
+              "id": "O007",
+              "field": "uabi",
+              "contains": "A06T"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "base": "AOws",
+              "field": "anam:0:0",
+              "value": "騎乘攻擊"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "field": "acdn:1:0",
+              "value": 75.0
+            },
+            {
+              "file": "Warcraft III 1.27.1 Custom native ability.ini",
+              "id": "AOws",
+              "field": "order",
+              "value": "stomp"
+            }
+          ]
+        }
+      ]
+    },
+    "O004": {
+      "mechanics": [
+        {
+          "id": "MECH-O004-STOMP",
+          "name": "騎乘攻擊自動施法",
+          "description": "烏龜將軍開始攻擊時，AI會下達「騎乘攻擊」施法指令，之後約80秒才恢復觸發。成功施放後，獨立傷害程式對自身周圍半徑320內的有效敵人套用15,000基礎技能傷害。技能本體冷卻為75秒；80秒是AI觸發間隔。烏龜將軍與不祥烏龜將軍共用同一個AI觸發器，其中一方觸發後，另一方也會暫停觸發約80秒。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_TurtleGeneral_AIjass / Trig_Brandish_Spear_vJass / IsValidTarget",
+          "internal": false,
+          "cooldown": 80,
+          "trigger": "ATTACKED：攻擊者為O004或O0NT；共用AI觸發器已啟用",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "cooldownType": "AI觸發間隔",
+          "skillCooldown": 75,
+          "abilityId": "A06T",
+          "damage": 15000,
+          "area": 320,
+          "sharedTriggerUnits": [
+            "O004",
+            "O0NT"
+          ],
+          "targetRule": "敵方、存活且非魔免",
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            9027,
+            9028,
+            9029,
+            61759,
+            61762,
+            61780,
+            61782,
+            61784,
+            61787,
+            61788,
+            61794,
+            74227,
+            74251,
+            74280,
+            74286,
+            74296,
+            74311,
+            74316,
+            74342
+          ],
+          "sourceEvidence": [
+            {
+              "function": "IsValidTarget",
+              "line": 9027,
+              "text": "    local boolean cond1 = IsUnitEnemy(targetUnit, GetOwningPlayer(whichUnit))"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9028,
+              "text": "    local boolean cond2 = GetUnitState(targetUnit, UNIT_STATE_LIFE) > 0.405"
+            },
+            {
+              "function": "IsValidTarget",
+              "line": 9029,
+              "text": "    local boolean cond3 = not IsUnitType(targetUnit, UNIT_TYPE_MAGIC_IMMUNE)"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Func014C",
+              "line": 61759,
+              "text": "    if ( ( GetUnitTypeId(GetAttacker()) == 'O004' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Func014C",
+              "line": 61762,
+              "text": "    if ( ( GetUnitTypeId(GetAttacker()) == 'O0NT' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61780,
+              "text": "    local real t = 80.00"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61782,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61784,
+              "text": "    call IssueImmediateOrderBJ( a, \"stomp\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61787,
+              "text": "    call PolledWait( t )"
+            },
+            {
+              "function": "Trig_MVP_AI_TurtleGeneral_AIjass_Actions",
+              "line": 61788,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_TurtleGeneral_AIjass",
+              "line": 61794,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_TurtleGeneral_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Func001C",
+              "line": 74227,
+              "text": "    if ( ( GetSpellAbilityId() == 'A06T' ) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74251,
+              "text": "    local real rg = 320."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74280,
+              "text": "    if ( GetSpellAbilityId() == 'A02O' ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74286,
+              "text": "        set g = 15000."
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74296,
+              "text": "    call GroupEnumUnitsInRange(ug, ax, ay, rg, null)"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74311,
+              "text": "        if( IsValidTarget(a, e, false) ) then"
+            },
+            {
+              "function": "Trig_Brandish_Spear_vJass_Actions",
+              "line": 74316,
+              "text": "            call UnitDamageTargetSP(a, e, g, ATTACK_TYPE_MELEE, DAMAGE_TYPE_NORMAL )"
+            },
+            {
+              "function": "InitTrig_Brandish_Spear_vJass",
+              "line": 74342,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_Brandish_Spear_vJass, EVENT_PLAYER_UNIT_SPELL_EFFECT )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3u",
+              "id": "O004",
+              "field": "uabi",
+              "contains": "A06T"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "base": "AOws",
+              "field": "anam:0:0",
+              "value": "騎乘攻擊"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A06T",
+              "field": "acdn:1:0",
+              "value": 75.0
+            },
+            {
+              "file": "Warcraft III 1.27.1 Custom native ability.ini",
+              "id": "AOws",
+              "field": "order",
+              "value": "stomp"
+            }
+          ]
+        }
+      ]
+    },
+    "O00N": {
+      "mechanics": [
+        {
+          "id": "MECH-O00N-STOMP",
+          "name": "暗十字審判自動施法",
+          "description": "死靈騎士生成流程啟用AI後，開始攻擊時會下達「暗十字審判」施法指令，之後約30秒才恢復觸發。成功施放後，傷害程式以自身為中心，每0.5秒執行一輪，共3輪；每輪對半徑612內的非盟軍單位套用25,000基礎魔法傷害。技能本體的物件冷卻為29.5秒，AI觸發間隔為30秒。",
+          "modeLabel": "一般模式",
+          "source": "Ro-Online 7.0c08 war3map.j · Trig_MVP_AI_DeadSoulKinght_AIjass / Trig_Grand_Darkness_AIjass / Trig_Grand_Darkness_Effect_AIjass / Trig_MVP_26_LordOfKnight_Actions",
+          "internal": false,
+          "cooldown": 30,
+          "trigger": "ATTACKED：攻擊者為死靈騎士O00N；生成流程已啟用AI",
+          "descriptionStatus": "ok",
+          "verificationStatus": "本版已顯示的觸發條件與數值已核對",
+          "cooldownType": "AI觸發間隔",
+          "skillCooldown": 29.5,
+          "abilityId": "A0AQ",
+          "damage": 25000,
+          "area": 612,
+          "pulses": 3,
+          "pulseInterval": 0.5,
+          "verified": true,
+          "sourceVersion": "Ro-Online 7.0c08",
+          "verificationScope": "已核對此圖鑑摘要顯示的條件、數值與技能對應；未宣稱模擬全部戰鬥流程。",
+          "sourceLines": [
+            36337,
+            36341,
+            60010,
+            60014,
+            61803,
+            61814,
+            61816,
+            61818,
+            61821,
+            61822,
+            61828,
+            61829,
+            61838,
+            61858,
+            61860,
+            61890,
+            61907,
+            61914,
+            61915,
+            61916,
+            61943,
+            61948,
+            61950,
+            62038
+          ],
+          "sourceEvidence": [
+            {
+              "function": "Trig_EGT3000s_Actions",
+              "line": 36337,
+              "text": "        call CreateNUnitsAtLoc( 1, 'O00N', udg_NPC_PLAYER, udg_Point, bj_UNIT_FACING )"
+            },
+            {
+              "function": "Trig_EGT3000s_Actions",
+              "line": 36341,
+              "text": "        call EnableTrigger( gg_trg_MVP_AI_DeadSoulKinght_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_26_LordOfKnight_Actions",
+              "line": 60010,
+              "text": "    call CreateNUnitsAtLoc( 1, 'O00N', udg_NPC_PLAYER, udg_p_npcMVP[26], bj_UNIT_FACING )"
+            },
+            {
+              "function": "Trig_MVP_26_LordOfKnight_Actions",
+              "line": 60014,
+              "text": "    call EnableTrigger( gg_trg_MVP_AI_DeadSoulKinght_AIjass )"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Conditions",
+              "line": 61803,
+              "text": "    if ( not ( GetUnitTypeId(GetAttacker()) == 'O00N' ) ) then"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Actions",
+              "line": 61814,
+              "text": "    local real t = 30.00"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Actions",
+              "line": 61816,
+              "text": "    call DisableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Actions",
+              "line": 61818,
+              "text": "    call IssueImmediateOrderBJ( a, \"stomp\" )"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Actions",
+              "line": 61821,
+              "text": "    call PolledWait( t )"
+            },
+            {
+              "function": "Trig_MVP_AI_DeadSoulKinght_AIjass_Actions",
+              "line": 61822,
+              "text": "    call EnableTrigger( GetTriggeringTrigger() )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_DeadSoulKinght_AIjass",
+              "line": 61828,
+              "text": "    call DisableTrigger( gg_trg_MVP_AI_DeadSoulKinght_AIjass )"
+            },
+            {
+              "function": "InitTrig_MVP_AI_DeadSoulKinght_AIjass",
+              "line": 61829,
+              "text": "    call TriggerRegisterAnyUnitEventBJ( gg_trg_MVP_AI_DeadSoulKinght_AIjass, EVENT_PLAYER_UNIT_ATTACKED )"
+            },
+            {
+              "function": "Trig_Grand_Darkness_AIjass_Conditions",
+              "line": 61838,
+              "text": "    if ( not ( GetSpellAbilityId() == 'A0AQ' ) ) then"
+            },
+            {
+              "function": "Trig_Grand_Darkness_AIjass_Actions",
+              "line": 61858,
+              "text": "    set udg_GrandCross_Index[i] = 3"
+            },
+            {
+              "function": "Trig_Grand_Darkness_AIjass_Actions",
+              "line": 61860,
+              "text": "    call EnableTrigger( gg_trg_Grand_Darkness_Effect_AIjass )"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61890,
+              "text": "    local real rg = 612.00"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61907,
+              "text": "    local real d = 25000.00"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61914,
+              "text": "            set udg_GrandCross_Index[slot] = udg_GrandCross_Index[slot] - 1"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61915,
+              "text": "            set px = GetUnitX(a)"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61916,
+              "text": "            set py = GetUnitY(a)"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61943,
+              "text": "            call GroupEnumUnitsInRange(ug, px, py, rg, null)"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61948,
+              "text": "                if not IsUnitAlly(e, ap) then"
+            },
+            {
+              "function": "Trig_Grand_Darkness_Effect_AIjass_Actions",
+              "line": 61950,
+              "text": "                    call UnitDamageTargetBJ( a, e, d, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC )"
+            },
+            {
+              "function": "InitTrig_Grand_Darkness_Effect_AIjass",
+              "line": 62038,
+              "text": "    call TriggerRegisterTimerEventPeriodic( gg_trg_Grand_Darkness_Effect_AIjass, 0.50 )"
+            }
+          ],
+          "objectEvidence": [
+            {
+              "file": "war3map.w3u",
+              "id": "O00N",
+              "field": "uabi",
+              "contains": "A0AQ"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A0AQ",
+              "base": "AOws",
+              "field": "anam:0:0",
+              "value": "暗十字審判"
+            },
+            {
+              "file": "war3map.w3a",
+              "id": "A0AQ",
+              "field": "acdn:1:0",
+              "value": 29.5
+            },
+            {
+              "file": "Warcraft III 1.27.1 Custom native ability.ini",
+              "id": "AOws",
+              "field": "order",
+              "value": "stomp"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3966 @@
+{
+  "sourceMapSha256": "0be2938f1e367bd8d560799d925694adda359421eecb08f77805dbb506683cf4",
+  "counts": {
+    "existing": 186,
+    "fresh": 186,
+    "retainedVerifiedNative": 0
+  },
+  "freshIds": [
+    "n001",
+    "hmtm",
+    "e00F",
+    "uobs",
+    "n002",
+    "ucsB",
+    "n018",
+    "n02C",
+    "umtw",
+    "n01C",
+    "n01X",
+    "n000",
+    "n017",
+    "n01D",
+    "ucs2",
+    "u00A",
+    "n02G",
+    "nanw",
+    "u007",
+    "n00Z",
+    "e005",
+    "n010",
+    "n003",
+    "nzom",
+    "u005",
+    "n02K",
+    "n00T",
+    "n027",
+    "n02N",
+    "ucrm",
+    "u001",
+    "n00A",
+    "n00H",
+    "e001",
+    "n01K",
+    "ugrm",
+    "n009",
+    "ucs1",
+    "u00D",
+    "u009",
+    "o000",
+    "ugar",
+    "n01E",
+    "u003",
+    "o005",
+    "n01B",
+    "etrp",
+    "zhyd",
+    "n007",
+    "u008",
+    "n006",
+    "u006",
+    "n011",
+    "o00P",
+    "n01N",
+    "n008",
+    "n02F",
+    "hwt2",
+    "n01J",
+    "n01R",
+    "ndtp",
+    "n00Q",
+    "nvdw",
+    "nftr",
+    "o00S",
+    "uban",
+    "u00E",
+    "u00B",
+    "ushd",
+    "u00C",
+    "nbal",
+    "u00H",
+    "z001",
+    "nnsu",
+    "nfsp",
+    "u00J",
+    "h01J",
+    "n019",
+    "n00R",
+    "u00G",
+    "uplg",
+    "uskm",
+    "nftt",
+    "e009",
+    "ngnw",
+    "o00L",
+    "n00G",
+    "u00K",
+    "n01O",
+    "o00H",
+    "n02H",
+    "ngh2",
+    "ngsp",
+    "nfgo",
+    "n00E",
+    "e00D",
+    "nanc",
+    "u004",
+    "n00B",
+    "nsth",
+    "n012",
+    "n016",
+    "hspt",
+    "ndqn",
+    "uabo",
+    "n015",
+    "n01Q",
+    "n02T",
+    "hgyr",
+    "O00D",
+    "nslv",
+    "O00B",
+    "nrdk",
+    "hdhw",
+    "nmyr",
+    "otau",
+    "o00F",
+    "O00U",
+    "n00U",
+    "o00R",
+    "n014",
+    "nfbr",
+    "O00I",
+    "nwen",
+    "Uvng",
+    "n00V",
+    "O006",
+    "uktg",
+    "nhar",
+    "O00A",
+    "ncat",
+    "uswb",
+    "n00W",
+    "nlps",
+    "O009",
+    "n00Y",
+    "u00F",
+    "n02S",
+    "O00C",
+    "ngir",
+    "O00G",
+    "u000",
+    "u002",
+    "O002",
+    "O00Q",
+    "nskg",
+    "nsll",
+    "e00A",
+    "e008",
+    "nrwm",
+    "O00M",
+    "unec",
+    "h00U",
+    "O00J",
+    "hkni",
+    "ngrd",
+    "nbzd",
+    "nbda",
+    "nhea",
+    "nbwm",
+    "Ubal",
+    "Uanb",
+    "O003",
+    "n02U",
+    "O007",
+    "ufro",
+    "hphx",
+    "N00M",
+    "Ulic",
+    "O00V",
+    "nsqa",
+    "Ucrl",
+    "Uwar",
+    "O00N",
+    "O004",
+    "O00O",
+    "Nfir",
+    "UNMR",
+    "Nklj",
+    "Udea",
+    "O00T",
+    "Harf",
+    "Opgh",
+    "URgd",
+    "UKrk",
+    "Udth"
+  ],
+  "retainedIds": [],
+  "images": [
+    {
+      "id": "n001",
+      "name": "波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        65,
+        473,
+        446
+      ],
+      "alphaPixels": 101839,
+      "imageSha256": "5e5714806d924941df5add1d5d9233ccfa4ae43a1dd12df11dfd2e53d6bb2fc4"
+    },
+    {
+      "id": "hmtm",
+      "name": "波利之王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        65,
+        473,
+        446
+      ],
+      "alphaPixels": 101839,
+      "imageSha256": "5e5714806d924941df5add1d5d9233ccfa4ae43a1dd12df11dfd2e53d6bb2fc4"
+    },
+    {
+      "id": "e00F",
+      "name": "蟲蛹",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        79,
+        38,
+        432,
+        473
+      ],
+      "alphaPixels": 118152,
+      "imageSha256": "bcd220e73eead2a9ce326d668a80f5770d82c6da5d99bd326a011da0dfa9560d"
+    },
+    {
+      "id": "uobs",
+      "name": "喜慶波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        67,
+        38,
+        444,
+        473
+      ],
+      "alphaPixels": 95294,
+      "imageSha256": "9f60c99333cef38f85d2b87c877935378f3078ce4957a864f15b9066f4a44b6c"
+    },
+    {
+      "id": "n002",
+      "name": "土波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        65,
+        473,
+        446
+      ],
+      "alphaPixels": 101839,
+      "imageSha256": "fd31ae58f451766358d1bff12b13e49f3b350a6449fe75da05900b966c246811"
+    },
+    {
+      "id": "ucsB",
+      "name": "大嘴鳥蛋",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        80,
+        38,
+        431,
+        473
+      ],
+      "alphaPixels": 113328,
+      "imageSha256": "eb3778b1476640db6a94bd39d4c1c2a24e1cf3c66104410b8f1ff2432f030713"
+    },
+    {
+      "id": "n018",
+      "name": "瘋兔",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        49,
+        472,
+        463
+      ],
+      "alphaPixels": 122283,
+      "imageSha256": "e940c83ec3456dfa4378a9145d0635f6ad410c412c30f960f40b486420487cf1"
+    },
+    {
+      "id": "n02C",
+      "name": "綠綿蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        101,
+        472,
+        412
+      ],
+      "alphaPixels": 83495,
+      "imageSha256": "8922d29cf1eb3a0b9a9fe0a6f0b358c8ad57e96f6ac30381a5b742a35d5641fd"
+    },
+    {
+      "id": "umtw",
+      "name": "聖誕波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        67,
+        38,
+        444,
+        473
+      ],
+      "alphaPixels": 95294,
+      "imageSha256": "9f60c99333cef38f85d2b87c877935378f3078ce4957a864f15b9066f4a44b6c"
+    },
+    {
+      "id": "n01C",
+      "name": "樹精",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        99,
+        39,
+        402,
+        473
+      ],
+      "alphaPixels": 59501,
+      "imageSha256": "8cb63228783c4183f18f8c2ec9a8965bdf83bac546ca557e396be88f9a03018a"
+    },
+    {
+      "id": "n01X",
+      "name": "白蟻幼蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        89,
+        473,
+        422
+      ],
+      "alphaPixels": 96689,
+      "imageSha256": "fc86eb783361460a56eccf384950622844a7f424ba177a097e47bae147cd2be5"
+    },
+    {
+      "id": "n000",
+      "name": "羅達蛙",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        48,
+        472,
+        463
+      ],
+      "alphaPixels": 67399,
+      "imageSha256": "00bc0f3d6122a186ed3389c266adc2c68a5073e612ed4038abff910cc12c53a2"
+    },
+    {
+      "id": "n017",
+      "name": "藍瘋兔",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        49,
+        472,
+        463
+      ],
+      "alphaPixels": 122283,
+      "imageSha256": "6a720527fc1166866e3e5996fdfbf9bf859fc5266889ea4c53e098795d4f6986"
+    },
+    {
+      "id": "n01D",
+      "name": "小野豬",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        42,
+        473,
+        469
+      ],
+      "alphaPixels": 130398,
+      "imageSha256": "a851addc9d28995a9cf2a6ad49313cf54169bf3abbbff3e64aa5742fc65cc2b8"
+    },
+    {
+      "id": "ucs2",
+      "name": "吸血蝙蝠",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        103,
+        39,
+        409,
+        472
+      ],
+      "alphaPixels": 39352,
+      "imageSha256": "a8f267243ffe4b2a5132374f2a748c98b1180cab5cc88509e3cf742b5f037101"
+    },
+    {
+      "id": "u00A",
+      "name": "沙漠幼狼",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        126,
+        40,
+        385,
+        472
+      ],
+      "alphaPixels": 49418,
+      "imageSha256": "12becc9498ce0231912f8887f148449931f0a5f58a4f5706f069228facab2ea9"
+    },
+    {
+      "id": "n02G",
+      "name": "蜂兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        38,
+        470,
+        471
+      ],
+      "alphaPixels": 44767,
+      "imageSha256": "a9fbb045332d44fb30631741cea11491559c61a76f86a7e1cf3692a041e86582"
+    },
+    {
+      "id": "nanw",
+      "name": "龍蠅",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        108,
+        471,
+        403
+      ],
+      "alphaPixels": 40385,
+      "imageSha256": "01c8d5fbbe4937249474ae72194d9ca34e40c404251423c5ddf4cd0b326d37cf"
+    },
+    {
+      "id": "u007",
+      "name": "盜蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        102,
+        472,
+        408
+      ],
+      "alphaPixels": 60886,
+      "imageSha256": "b5768016a4c9709edfbf3ce03ba9e36568258743ac23d2328dbce139ae61d0c4"
+    },
+    {
+      "id": "n00Z",
+      "name": "蛙王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        48,
+        472,
+        463
+      ],
+      "alphaPixels": 67399,
+      "imageSha256": "8c5e04b2180214e5837e0ac552a4ddd79040551c75bf86b39c61d806f41bf42c"
+    },
+    {
+      "id": "e005",
+      "name": "曼陀羅魔花",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        53,
+        472,
+        458
+      ],
+      "alphaPixels": 90861,
+      "imageSha256": "9e29b1e1d664428b665cbf557f1df602c20a167c8a22888fedadfaa14c35ab72"
+    },
+    {
+      "id": "n010",
+      "name": "蝸牛",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        56,
+        473,
+        455
+      ],
+      "alphaPixels": 97997,
+      "imageSha256": "50a4d1f6535fd0ad739fdc35a3cd65d354bb7d80da60031f41366fea19d96fc8"
+    },
+    {
+      "id": "n003",
+      "name": "波波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        65,
+        473,
+        446
+      ],
+      "alphaPixels": 101839,
+      "imageSha256": "16235d5891438b58b14a21b682a3e1a600e864d36227ecb3cb314d6da7127679"
+    },
+    {
+      "id": "nzom",
+      "name": "腐屍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        142,
+        41,
+        373,
+        473
+      ],
+      "alphaPixels": 39882,
+      "imageSha256": "8ba586d2e47b8f511924cc8d38e92d887f4f52dbe79f742f5aad7c2b91c03d6c"
+    },
+    {
+      "id": "u005",
+      "name": "青蛇",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        138,
+        38,
+        373,
+        472
+      ],
+      "alphaPixels": 57634,
+      "imageSha256": "29332c0baad61591b5cea7980f897219a44d3fa46e115b7d2cbf7559f43cda4a"
+    },
+    {
+      "id": "n02K",
+      "name": "克瑞米",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        63,
+        170,
+        459,
+        338
+      ],
+      "alphaPixels": 19474,
+      "imageSha256": "126a79174676eb0d0c67984c823b67a821de0c1d8be2c4ab45947bdf36bc892c"
+    },
+    {
+      "id": "n00T",
+      "name": "冰波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        65,
+        473,
+        446
+      ],
+      "alphaPixels": 101839,
+      "imageSha256": "1ffd88d769994d8166ee2ac17d6ddb19b6c323560a9aa06aff417e0f407686c6"
+    },
+    {
+      "id": "n027",
+      "name": "幽靈波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        62,
+        39,
+        449,
+        473
+      ],
+      "alphaPixels": 124975,
+      "imageSha256": "240ecdf4de10e4c98aaf678987fc1012fe51e113a2e614c1e50082b02cdc3bb6"
+    },
+    {
+      "id": "n02N",
+      "name": "大嘴鳥",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        73,
+        51,
+        425,
+        473
+      ],
+      "alphaPixels": 81440,
+      "imageSha256": "a5caaf1f952eba8ff4c85830a31d305c8e7d4adbac53a582950e4fd44c8e17cb"
+    },
+    {
+      "id": "ucrm",
+      "name": "毒蘑菇",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        99,
+        38,
+        412,
+        473
+      ],
+      "alphaPixels": 70629,
+      "imageSha256": "53995b150657e9c6662ebb098fdfec83f9baf43427b88d68477d805bc53f52be"
+    },
+    {
+      "id": "u001",
+      "name": "瑪勒盜蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        102,
+        472,
+        408
+      ],
+      "alphaPixels": 60886,
+      "imageSha256": "5655c8e879a8f8159eb9fe4b93df691f51c341ebfe5cc4164a04aab5026696fc"
+    },
+    {
+      "id": "n00A",
+      "name": "螃蟹",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        98,
+        473,
+        412
+      ],
+      "alphaPixels": 62227,
+      "imageSha256": "f116f8e8971f142433649b3676a8ae1de3fb0c371adc9e8fa0e5b0f8017cba41"
+    },
+    {
+      "id": "n00H",
+      "name": "天使波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        97,
+        470,
+        414
+      ],
+      "alphaPixels": 72744,
+      "imageSha256": "cb3a4afca5d683cace9e0da95fb27067c25aa3c150e0815886b2560e7fa7cbd2"
+    },
+    {
+      "id": "e001",
+      "name": "長老樹精",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        95,
+        43,
+        407,
+        473
+      ],
+      "alphaPixels": 60127,
+      "imageSha256": "101fd57695cad99b5e7a3278c3c4b9489c00d9e436a234836c1d75fca5765ae5"
+    },
+    {
+      "id": "n01K",
+      "name": "黑蟻",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        72,
+        40,
+        439,
+        470
+      ],
+      "alphaPixels": 69541,
+      "imageSha256": "f8b7ebcc0485e598dd0d8d50822b7d69a32ccc0729f42ffb7747ff1bf21b30fd"
+    },
+    {
+      "id": "ugrm",
+      "name": "溜溜猴",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        60,
+        38,
+        451,
+        472
+      ],
+      "alphaPixels": 87323,
+      "imageSha256": "32da0819585f49e78dadedf9c825ac555c8ab4cb9da6bda2236595d32d2449d7"
+    },
+    {
+      "id": "n009",
+      "name": "突變蛙",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        70,
+        40,
+        441,
+        471
+      ],
+      "alphaPixels": 53543,
+      "imageSha256": "16589845e214604d48671fafdd8139bbfa74d8c088d38d586f12109e897113e3"
+    },
+    {
+      "id": "ucs1",
+      "name": "鍬形蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        102,
+        472,
+        408
+      ],
+      "alphaPixels": 60886,
+      "imageSha256": "9a69f66c7f6e7683f9b99740b10436cef0771feaf4e1df2e3e4398fbf0491425"
+    },
+    {
+      "id": "u00D",
+      "name": "毒蛇",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        138,
+        38,
+        373,
+        472
+      ],
+      "alphaPixels": 57634,
+      "imageSha256": "065ff83001d38493e7ea076784453d9dd2bc49312b92eadda9dd7656b0986b56"
+    },
+    {
+      "id": "u009",
+      "name": "流浪之狼",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        100,
+        45,
+        402,
+        473
+      ],
+      "alphaPixels": 82727,
+      "imageSha256": "929e4d9f73dc310f47a27e079cc371160e25f1ed9f1fe20e33e0534e511cc15f"
+    },
+    {
+      "id": "o000",
+      "name": "獸人戰士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        83,
+        38,
+        428,
+        473
+      ],
+      "alphaPixels": 95947,
+      "imageSha256": "fe54bf52ef2186cec812e29ce1114c71ce6f9bd93d41d3cde66369fc030174b6"
+    },
+    {
+      "id": "ugar",
+      "name": "紅蝙蝠",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        103,
+        39,
+        409,
+        472
+      ],
+      "alphaPixels": 39352,
+      "imageSha256": "77064578999ba1b4cedbe03c6bb8393d89693bc3b76ae5b79757b53ee63ace82"
+    },
+    {
+      "id": "n01E",
+      "name": "大腳熊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        61,
+        40,
+        450,
+        473
+      ],
+      "alphaPixels": 115021,
+      "imageSha256": "cf2baccf059c22fd67df73197a8e1772269bb37d8aebfd527938e902c64b74e2"
+    },
+    {
+      "id": "u003",
+      "name": "狼",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        100,
+        45,
+        402,
+        473
+      ],
+      "alphaPixels": 82727,
+      "imageSha256": "60cee5a46823b5127d9aa9e4a2195b76887a365887d0e1d23cd8152f0154f24b"
+    },
+    {
+      "id": "o005",
+      "name": "艾斯蜘蛛",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        111,
+        472,
+        399
+      ],
+      "alphaPixels": 46319,
+      "imageSha256": "74ab0be277b1635ddc64652bbf7152e782b406c13603f9b5b6bbd9208be944b7"
+    },
+    {
+      "id": "n01B",
+      "name": "邪骸海盜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        135,
+        38,
+        376,
+        473
+      ],
+      "alphaPixels": 45426,
+      "imageSha256": "e73b0ecf78cadff5998f0279cbd6817b1b19faba11fea25b8cfa73cd793100fa"
+    },
+    {
+      "id": "etrp",
+      "name": "噬人花",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        116,
+        39,
+        393,
+        473
+      ],
+      "alphaPixels": 77555,
+      "imageSha256": "619caf2d36e57a0db786cb5ba9e58a99b1c787ebc58b1eaa2473ca439a6701c9"
+    },
+    {
+      "id": "zhyd",
+      "name": "蚯蚓",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        100,
+        39,
+        411,
+        473
+      ],
+      "alphaPixels": 48312,
+      "imageSha256": "1c86c11d10575c0c4f72ced68c8948afad6f6b311c2bc18b1463c7d35f50c6d2"
+    },
+    {
+      "id": "n007",
+      "name": "野豬",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        136,
+        41,
+        375,
+        473
+      ],
+      "alphaPixels": 68602,
+      "imageSha256": "2b8c374682c724e496e138e9bf892f3a3af441237de228b18908728adec895f8"
+    },
+    {
+      "id": "u008",
+      "name": "沙漠之狼",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        113,
+        39,
+        398,
+        473
+      ],
+      "alphaPixels": 59253,
+      "imageSha256": "439fb909f44f49cb71d9d146c864a985c74656cfeb8374f06b0236a1cce3b1ff"
+    },
+    {
+      "id": "n006",
+      "name": "邪骸獸人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        85,
+        38,
+        426,
+        472
+      ],
+      "alphaPixels": 76844,
+      "imageSha256": "8d815402e968b4f84ee573442fdd4266e4b14e9cf62df7b5486a23ac14001187"
+    },
+    {
+      "id": "u006",
+      "name": "邪骸士兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        108,
+        40,
+        404,
+        472
+      ],
+      "alphaPixels": 72650,
+      "imageSha256": "328988261fd73eafa4230724db541e3efd568b56cfbc4f42ccf53fae4f354c26"
+    },
+    {
+      "id": "n011",
+      "name": "人魚",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        90,
+        67,
+        424,
+        473
+      ],
+      "alphaPixels": 42740,
+      "imageSha256": "a9ea200529c9ece91ad3c019d7ca35168ba29874954104d869f95221644faa44"
+    },
+    {
+      "id": "o00P",
+      "name": "刺錘犬妖",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        101,
+        40,
+        413,
+        473
+      ],
+      "alphaPixels": 57770,
+      "imageSha256": "158d16469af7bd9bd26ff1105238677af652b0b80be15751807ca57241ca9a75"
+    },
+    {
+      "id": "n01N",
+      "name": "巨石怪",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        65,
+        40,
+        445,
+        473
+      ],
+      "alphaPixels": 86725,
+      "imageSha256": "09910489dc813a9269c35f7a7633e4909156838ffe97cc9ded9879c2b343070a"
+    },
+    {
+      "id": "n008",
+      "name": "邪骸弓箭手",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        63,
+        472,
+        449
+      ],
+      "alphaPixels": 48906,
+      "imageSha256": "e6cd165c034ac018744e68b7e459de23cc6692182f6cc1399182951fc57d20b7"
+    },
+    {
+      "id": "n02F",
+      "name": "犬妖弓箭手",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        91,
+        50,
+        403,
+        473
+      ],
+      "alphaPixels": 61445,
+      "imageSha256": "af2994cb98804b61f8196390fdd3d36c327461e2e65130d8bb41fa4b7b189a31"
+    },
+    {
+      "id": "hwt2",
+      "name": "泥人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        50,
+        38,
+        461,
+        473
+      ],
+      "alphaPixels": 96431,
+      "imageSha256": "c581f1a536199c17f331cf05f3cf7f934c8624acb7995444afcc2fa9452bdc11"
+    },
+    {
+      "id": "n01J",
+      "name": "拉鏈熊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        61,
+        40,
+        450,
+        473
+      ],
+      "alphaPixels": 118571,
+      "imageSha256": "23692642268546820782927f86d0e46a32e6741ee6eed923264a0e0d041eea79"
+    },
+    {
+      "id": "n01R",
+      "name": "木乃伊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        158,
+        126,
+        373,
+        473
+      ],
+      "alphaPixels": 38669,
+      "imageSha256": "50e0b25530ca060757b386eae6cfc6a89caa8865fb7d5474ce452e54566ea1bd"
+    },
+    {
+      "id": "ndtp",
+      "name": "南瓜先生",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        73,
+        38,
+        439,
+        473
+      ],
+      "alphaPixels": 32048,
+      "imageSha256": "23dfb00b101e1569edd8047f7b8d753d9e900c6992d8b092b36b28c21b468119"
+    },
+    {
+      "id": "n00Q",
+      "name": "綠腐屍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        161,
+        38,
+        350,
+        430
+      ],
+      "alphaPixels": 40957,
+      "imageSha256": "f2b6692b0814fb93bd0db736588fc1f016891ecb9199b003b80fbfca6bdf2797"
+    },
+    {
+      "id": "nvdw",
+      "name": "萬聖魔",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        82,
+        38,
+        429,
+        471
+      ],
+      "alphaPixels": 53861,
+      "imageSha256": "8a9a3187f3482dbd7bb3e14adfa4998039825adfe46ab4b6ff5f6da2716dfe79"
+    },
+    {
+      "id": "nftr",
+      "name": "大斧哥布靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        62,
+        38,
+        449,
+        473
+      ],
+      "alphaPixels": 76611,
+      "imageSha256": "35e18000d243fc08bedab16c5966c92db2987e4d449ac7a7bc237ea475798b1e"
+    },
+    {
+      "id": "o00S",
+      "name": "礦工魔",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        46,
+        473,
+        466
+      ],
+      "alphaPixels": 97885,
+      "imageSha256": "7a7c203a3896a408fa9a87bf49fc484c0592256e1c9bd373d85d244f5a31c079"
+    },
+    {
+      "id": "uban",
+      "name": "鬼女",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        61,
+        76,
+        450,
+        437
+      ],
+      "alphaPixels": 46304,
+      "imageSha256": "bf999a7d65b62829c1cd938481313dd42a07037d75ae6023da99155c5c43574f"
+    },
+    {
+      "id": "u00E",
+      "name": "黑蛇",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        138,
+        38,
+        373,
+        472
+      ],
+      "alphaPixels": 57634,
+      "imageSha256": "a380ddb72ca811c8491c85beb41116c008cd1d003512236ee80a21287ae33ef7"
+    },
+    {
+      "id": "u00B",
+      "name": "畢帝特地龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        173,
+        39,
+        338,
+        471
+      ],
+      "alphaPixels": 32385,
+      "imageSha256": "eacb23d7088b609a3e8d2fa3dc13d12e47726a65127d743a6df682b3ff7e3bc0"
+    },
+    {
+      "id": "ushd",
+      "name": "鬼火",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        106,
+        419,
+        417
+      ],
+      "alphaPixels": 71857,
+      "imageSha256": "977651fde8665dcecc9987ad89afd5ebce855dc6f9cc457635cfb53910c0dc4a"
+    },
+    {
+      "id": "u00C",
+      "name": "畢帝特飛龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        61,
+        473,
+        450
+      ],
+      "alphaPixels": 72172,
+      "imageSha256": "63ee0ae7f934cb83fce7b1fd862cd4a9690ac3b7e6c1abdb724316968376b784"
+    },
+    {
+      "id": "nbal",
+      "name": "小惡魔",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        52,
+        40,
+        459,
+        473
+      ],
+      "alphaPixels": 88663,
+      "imageSha256": "163947841b998b53a8d74d77342a6146d92089f562cd1714850c47276e463d20"
+    },
+    {
+      "id": "u00H",
+      "name": "爆炎蝙蝠",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        103,
+        39,
+        409,
+        472
+      ],
+      "alphaPixels": 39352,
+      "imageSha256": "2f0941a4d266af5a0370f3cdb1300afe5ceb59b42698e889ebaed7f7792c5f12"
+    },
+    {
+      "id": "z001",
+      "name": "武士火槍兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        144,
+        38,
+        367,
+        473
+      ],
+      "alphaPixels": 53787,
+      "imageSha256": "82a6724591bb7b10a37e095c423618e85e66cffc9eb5badb923869a773196d2a"
+    },
+    {
+      "id": "nnsu",
+      "name": "蛇女伊絲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        81,
+        38,
+        430,
+        473
+      ],
+      "alphaPixels": 73152,
+      "imageSha256": "d23f4ffbb7cfa1e8af2f99fbf8b4037db893399eb0219dc560fe21140961b541"
+    },
+    {
+      "id": "nfsp",
+      "name": "榔頭哥布靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        91,
+        39,
+        420,
+        472
+      ],
+      "alphaPixels": 61572,
+      "imageSha256": "333b8d2f108f58ca5394f78879946481c7d858d8aa3c8e2fbdbfbd75ac894974"
+    },
+    {
+      "id": "u00J",
+      "name": "蝙蝠弓箭手",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        73,
+        39,
+        439,
+        472
+      ],
+      "alphaPixels": 50422,
+      "imageSha256": "afc3d978e0ad66a7010aa6e36828b78e55cc179179e7c758fabf7fdeed3e9b6e"
+    },
+    {
+      "id": "h01J",
+      "name": "夢魘",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        146,
+        40,
+        365,
+        472
+      ],
+      "alphaPixels": 64064,
+      "imageSha256": "c6bbbf9fed61605cabbef8ffb594c8b240cff7eca9b0ac3c9719885ee803d3c6"
+    },
+    {
+      "id": "n019",
+      "name": "獸人弓箭手",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        97,
+        39,
+        418,
+        467
+      ],
+      "alphaPixels": 49708,
+      "imageSha256": "d2b7a499a616ce0e7ea7e54d5849235a02027f1900b007fbe9e535c826e10ae2"
+    },
+    {
+      "id": "n00R",
+      "name": "小巴風特",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        67,
+        38,
+        444,
+        473
+      ],
+      "alphaPixels": 85350,
+      "imageSha256": "66c67ad68b3faedccbd8fe0086a5a06eb4644467a28c7584f068dca83a5ebb2f"
+    },
+    {
+      "id": "u00G",
+      "name": "九尾狐",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        111,
+        45,
+        399,
+        473
+      ],
+      "alphaPixels": 62091,
+      "imageSha256": "ba71565d6a9d1fcddcfe5430f29985816f5cc611f5141a3f575be9ee7f720cc0"
+    },
+    {
+      "id": "uplg",
+      "name": "邪惡箱",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        68,
+        38,
+        443,
+        473
+      ],
+      "alphaPixels": 129753,
+      "imageSha256": "7904f12880cd4daf8d94ca750418aed8bce82ce9110d65a8eee2de43a290ed96"
+    },
+    {
+      "id": "uskm",
+      "name": "風魔巫師",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        141,
+        42,
+        372,
+        472
+      ],
+      "alphaPixels": 63975,
+      "imageSha256": "ebd2c04de5eb416e39fb219e096a8343563f41d92eaeae65a89c8635fe70dc46"
+    },
+    {
+      "id": "nftt",
+      "name": "刺錘哥布靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        56,
+        38,
+        455,
+        473
+      ],
+      "alphaPixels": 80271,
+      "imageSha256": "6d55c11d580ba43461b0086907eeb1313e90435e3045041c0c2ed085a7c9d9a5"
+    },
+    {
+      "id": "e009",
+      "name": "幽靈劍士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        126,
+        40,
+        358,
+        469
+      ],
+      "alphaPixels": 39447,
+      "imageSha256": "bfa6ccdbdf1c467c6d1f28da382e42e18530c1d7ac5182f983b40df3c01acf9d"
+    },
+    {
+      "id": "ngnw",
+      "name": "犬妖首領",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        67,
+        39,
+        446,
+        473
+      ],
+      "alphaPixels": 82402,
+      "imageSha256": "328a55768d30d1e16336d56a69469972b4538d62846f161ea0276f3811f86789"
+    },
+    {
+      "id": "o00L",
+      "name": "獸人戰士長",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        83,
+        38,
+        428,
+        473
+      ],
+      "alphaPixels": 95947,
+      "imageSha256": "d0417b8800c77798464033478cef65e6e15b11e50a9874deb69219575f3c6f27"
+    },
+    {
+      "id": "n00G",
+      "name": "人魚士兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        83,
+        40,
+        432,
+        473
+      ],
+      "alphaPixels": 74129,
+      "imageSha256": "81ebb3725f07da2cee42f48faeb21c69c4c5309bd1b15b73d1d4f41bd62dca1d"
+    },
+    {
+      "id": "u00K",
+      "name": "惡靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        93,
+        38,
+        420,
+        473
+      ],
+      "alphaPixels": 71533,
+      "imageSha256": "edef138199da1f57bb18f0fd344a787d322e795ed6aa92da04a63c571ab550bb"
+    },
+    {
+      "id": "n01O",
+      "name": "腐屍戰俘",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        136,
+        40,
+        376,
+        473
+      ],
+      "alphaPixels": 52449,
+      "imageSha256": "d77f53568bc8b8f2a8eeec0e07df4e04468e12355a198c267b0f04ccd0f276c6"
+    },
+    {
+      "id": "o00H",
+      "name": "惡雲仙人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        91,
+        38,
+        420,
+        472
+      ],
+      "alphaPixels": 90695,
+      "imageSha256": "22dd7bff3e58f1658723758ab45da1b72b27d2b745c472be556e35b67bfad7c1"
+    },
+    {
+      "id": "n02H",
+      "name": "狂暴蜂兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        38,
+        470,
+        471
+      ],
+      "alphaPixels": 44767,
+      "imageSha256": "f26e1e754e7e50bdd7f5008ef2a9e51c33a01a54d72efb55a51c990003629468"
+    },
+    {
+      "id": "ngh2",
+      "name": "白幽靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        93,
+        38,
+        417,
+        446
+      ],
+      "alphaPixels": 101105,
+      "imageSha256": "48b6ffb680b49641312d94bf7615c2bc54e7b5970f5e668bc7d90fdbb7b59a72"
+    },
+    {
+      "id": "ngsp",
+      "name": "噴射哥布靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        74,
+        472,
+        437
+      ],
+      "alphaPixels": 84841,
+      "imageSha256": "0bf3f1b5c83fb1a68d3bd4b8b4d542f4cdcb95909337e783f45661a988a9616f"
+    },
+    {
+      "id": "nfgo",
+      "name": "梅納海葵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        91,
+        473,
+        421
+      ],
+      "alphaPixels": 93227,
+      "imageSha256": "3ef5f841fa8a3f7aa2514f7e246cb31d85bc423947807f9d379eec9b26743905"
+    },
+    {
+      "id": "n00E",
+      "name": "狂暴大腳熊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        61,
+        40,
+        450,
+        473
+      ],
+      "alphaPixels": 115021,
+      "imageSha256": "b79d1b39788b5c687c975597a7e7b99bf68520e2574912f64079d203c9a11f2d"
+    },
+    {
+      "id": "e00D",
+      "name": "鐘怪",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        68,
+        39,
+        443,
+        473
+      ],
+      "alphaPixels": 95927,
+      "imageSha256": "4b1b3274c4ab74f71dcd8d1a5a2243666e6e52d4e5d607860efbb44e1ad8f836"
+    },
+    {
+      "id": "nanc",
+      "name": "沙漠毒蠍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        65,
+        39,
+        446,
+        473
+      ],
+      "alphaPixels": 71115,
+      "imageSha256": "348194e8abb9847075850a892c0fc3f2f2e1ddeeba97ecb3c62d2f4e8498ca3e"
+    },
+    {
+      "id": "u004",
+      "name": "卡崙寶寶",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        100,
+        45,
+        402,
+        473
+      ],
+      "alphaPixels": 82727,
+      "imageSha256": "1fb0591726eef30500032b7152499c32536acdfd377a8ed64fbfd9e0f4e5ee69"
+    },
+    {
+      "id": "n00B",
+      "name": "海神",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        94,
+        42,
+        416,
+        473
+      ],
+      "alphaPixels": 70613,
+      "imageSha256": "62f2c235ff1203e28bcfccc1271a9a441b3930adedfa7cdad52e05390751dd80"
+    },
+    {
+      "id": "nsth",
+      "name": "卡利斯格",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        115,
+        38,
+        396,
+        473
+      ],
+      "alphaPixels": 46496,
+      "imageSha256": "246a7194f85d16cc8605c7afbddbad225073c9190aae24d11075076fe3a357d1"
+    },
+    {
+      "id": "n012",
+      "name": "果樹龜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        151,
+        38,
+        360,
+        473
+      ],
+      "alphaPixels": 36450,
+      "imageSha256": "ff3ce694af1e514a0976506307a6ca06d42f6dfc77b53b9e380e39df23b76231"
+    },
+    {
+      "id": "n016",
+      "name": "海豹寶寶",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        140,
+        472,
+        371
+      ],
+      "alphaPixels": 50036,
+      "imageSha256": "e3e2503dca66af13f2992aaaa3be7e44eb8f6a8acafbf84e88c17f933ba3d989"
+    },
+    {
+      "id": "hspt",
+      "name": "熊貓",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        61,
+        40,
+        450,
+        473
+      ],
+      "alphaPixels": 115021,
+      "imageSha256": "40d9ed300e621fc2152577f0de055caa6f293856b4a427bbac4a301e6d77935c"
+    },
+    {
+      "id": "ndqn",
+      "name": "艾斯恩魔女",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        165,
+        39,
+        346,
+        473
+      ],
+      "alphaPixels": 38244,
+      "imageSha256": "6da2623350d2d67b9e4a7169f1b3426e4440998f44749fa3a1e50f8a77846c9e"
+    },
+    {
+      "id": "uabo",
+      "name": "邪惡雪人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        60,
+        38,
+        451,
+        473
+      ],
+      "alphaPixels": 97256,
+      "imageSha256": "1dc0f6d570a582888554489159ddea5b06b36338a0ba3be9ce5f16b2a8f35ea8"
+    },
+    {
+      "id": "n015",
+      "name": "人魚弓箭手",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        114,
+        457,
+        397
+      ],
+      "alphaPixels": 71531,
+      "imageSha256": "f3574614f9c3191443d4662664e79d2cbb8e4e102a828da35afd98faa8aaf069"
+    },
+    {
+      "id": "n01Q",
+      "name": "狂暴木乃伊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        158,
+        126,
+        373,
+        473
+      ],
+      "alphaPixels": 38669,
+      "imageSha256": "b48649a87dae98d24ddc7e850d4879ce29eb47ce257f220186b238251df40ff9"
+    },
+    {
+      "id": "n02T",
+      "name": "狂暴綠綿蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        101,
+        472,
+        412
+      ],
+      "alphaPixels": 83495,
+      "imageSha256": "1f073f5b3110c05e625de0620a37afa30f021e69cc3db2caf788f88ba515fe51"
+    },
+    {
+      "id": "hgyr",
+      "name": "直升機哥布靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        60,
+        141,
+        442,
+        381
+      ],
+      "alphaPixels": 45085,
+      "imageSha256": "eae1c6b3af70a7f66a74b79200bbfa912c7109f377d9bcf34d40a8b2889b7db1"
+    },
+    {
+      "id": "O00D",
+      "name": "黃金盜蟲",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        115,
+        472,
+        398
+      ],
+      "alphaPixels": 54345,
+      "imageSha256": "9c0617c96726d6d6bd82906debee4107daeb40a2a09ac03739686e56a03dcba6"
+    },
+    {
+      "id": "nslv",
+      "name": "七彩地龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        85,
+        38,
+        426,
+        473
+      ],
+      "alphaPixels": 81417,
+      "imageSha256": "9158713cb1e23f69259b72a788143d05784293981fd2ac0abe9fc35308348698"
+    },
+    {
+      "id": "O00B",
+      "name": "虎王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        39,
+        470,
+        473
+      ],
+      "alphaPixels": 90971,
+      "imageSha256": "193f2203dd5f52b3e8724e5d3cf58f907d7db47fe554986dc3cde26232985fc0"
+    },
+    {
+      "id": "nrdk",
+      "name": "七彩飛龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        61,
+        473,
+        450
+      ],
+      "alphaPixels": 72187,
+      "imageSha256": "e7111415e06aac2f56b2ee589ba17a65012cde27fd084ccaafe952b8d57dbffb"
+    },
+    {
+      "id": "hdhw",
+      "name": "惡魔波利",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        55,
+        145,
+        456,
+        351
+      ],
+      "alphaPixels": 42884,
+      "imageSha256": "e377c7b937a634735a9d1d2ece92e3f702116c20725b3708190bbf5c594bcdc5"
+    },
+    {
+      "id": "nmyr",
+      "name": "深海人魚士兵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        87,
+        41,
+        420,
+        473
+      ],
+      "alphaPixels": 72169,
+      "imageSha256": "6e6c02c53100f9ac624ae3c81177c21938906ddeb61c3c188b8be747ff9dbcd6"
+    },
+    {
+      "id": "otau",
+      "name": "狂暴米諾斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        98,
+        38,
+        414,
+        473
+      ],
+      "alphaPixels": 67163,
+      "imageSha256": "abc0a8a7a220327436ad0e5412ec7d357dd8ea3b999c43022ee1d0b5a78b126c"
+    },
+    {
+      "id": "o00F",
+      "name": "狂暴米諾斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        98,
+        38,
+        414,
+        473
+      ],
+      "alphaPixels": 67163,
+      "imageSha256": "0db88d17cc6dc867518d4601628428928e039ff6908b4b4b4679317acf5f26f6"
+    },
+    {
+      "id": "O00U",
+      "name": "月夜貓",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        70,
+        38,
+        441,
+        473
+      ],
+      "alphaPixels": 37778,
+      "imageSha256": "956a4befd0e9fd54fa2f95d41073c269db1cf7b12680facf7e250a143b6caa8c"
+    },
+    {
+      "id": "n00U",
+      "name": "火焰龜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        45,
+        40,
+        466,
+        473
+      ],
+      "alphaPixels": 103645,
+      "imageSha256": "6b54acc0c70cda229f3b85771f3b8cf5835714827ebb5765a80a9e776ddab0cc"
+    },
+    {
+      "id": "o00R",
+      "name": "溫古力安特",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        65,
+        39,
+        446,
+        473
+      ],
+      "alphaPixels": 71115,
+      "imageSha256": "e8e144fceb2461ae008a8b4368ca91b47359db7e7d476516d0588e951ba39e59"
+    },
+    {
+      "id": "n014",
+      "name": "火忍西怒畢",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        130,
+        39,
+        381,
+        473
+      ],
+      "alphaPixels": 52497,
+      "imageSha256": "8d1174831c38f34e89ba7418d1c37962fe0fc794bb8fe8b0f954d0de63e2f033"
+    },
+    {
+      "id": "nfbr",
+      "name": "狂暴野豬",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        136,
+        41,
+        375,
+        473
+      ],
+      "alphaPixels": 68602,
+      "imageSha256": "56bfc268b9af429a25d19924ba8b1a05bef984b021c1914d573b45cda9670680"
+    },
+    {
+      "id": "O00I",
+      "name": "皮里恩",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        104,
+        472,
+        406
+      ],
+      "alphaPixels": 47113,
+      "imageSha256": "350f65adabaa430bb58b694558078e886abac1b3015f47b1733a19abc97617d9"
+    },
+    {
+      "id": "nwen",
+      "name": "雪獸",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        84,
+        39,
+        427,
+        473
+      ],
+      "alphaPixels": 94480,
+      "imageSha256": "54807474342a25384429532675c5b5080d616bfecd9ba47558b46318735a6358"
+    },
+    {
+      "id": "Uvng",
+      "name": "塔奧群卡",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        121,
+        473,
+        390
+      ],
+      "alphaPixels": 46355,
+      "imageSha256": "f77848dac4b2174e50370022f9ad544f3dabffb2c5f9d377706dacc52ee3707c"
+    },
+    {
+      "id": "n00V",
+      "name": "岩石龜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        64,
+        38,
+        447,
+        473
+      ],
+      "alphaPixels": 100761,
+      "imageSha256": "f9ba40056241504aa2bca648641c6bc4b0b746e1c5d43a8cee52cfe15908070b"
+    },
+    {
+      "id": "O006",
+      "name": "海盜之王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        74,
+        40,
+        437,
+        473
+      ],
+      "alphaPixels": 45641,
+      "imageSha256": "4d1719822a80ccfe9fea66d422f4fc61d4047ca39cc48689ba209b13ceae8192"
+    },
+    {
+      "id": "uktg",
+      "name": "邪靈魔導士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        84,
+        41,
+        428,
+        472
+      ],
+      "alphaPixels": 60124,
+      "imageSha256": "8ca6662571789e93f5ac005e8b4abf53b6762fbce385b0c9e6bad7b5e4e7f64c"
+    },
+    {
+      "id": "nhar",
+      "name": "鳥人哈比",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        66,
+        49,
+        446,
+        471
+      ],
+      "alphaPixels": 49468,
+      "imageSha256": "57487e4457d1f20a2b9ef45161fc013b3eb6726ab42677e9df7a22bb5a399622"
+    },
+    {
+      "id": "O00A",
+      "name": "元靈武士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        42,
+        473,
+        469
+      ],
+      "alphaPixels": 78554,
+      "imageSha256": "001ae6cacdc56b94e2569dd2055d75a463e7fa99b510676d72fff9ffa2b5c640"
+    },
+    {
+      "id": "ncat",
+      "name": "瑞比歐",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        62,
+        38,
+        449,
+        473
+      ],
+      "alphaPixels": 82674,
+      "imageSha256": "0fd77f43be1b175f0de451be4cc728e4baf0e6d74f5d9c75dd27cde6e75211a9"
+    },
+    {
+      "id": "uswb",
+      "name": "銀月魔女",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        85,
+        38,
+        426,
+        473
+      ],
+      "alphaPixels": 51904,
+      "imageSha256": "54c750e1e42ede5d4d29be69088a31de856f9e098ab252b07ecd7f1c4d8831d0"
+    },
+    {
+      "id": "n00W",
+      "name": "風靈龜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        99,
+        39,
+        412,
+        473
+      ],
+      "alphaPixels": 74667,
+      "imageSha256": "02b38e4f9e14259256ad6df0e88248bf448ae42091fae354bdef5b91d965fbb3"
+    },
+    {
+      "id": "nlps",
+      "name": "大腳龍蝦",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        54,
+        39,
+        458,
+        472
+      ],
+      "alphaPixels": 79221,
+      "imageSha256": "51943388545d228e02c5a85a361d30ec7531a5e26fae86ea237c52c20b6c5d10"
+    },
+    {
+      "id": "O009",
+      "name": "死靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        152,
+        38,
+        359,
+        473
+      ],
+      "alphaPixels": 48063,
+      "imageSha256": "efdf58fd7ada55c05ac681612aae91dbe3bcefe03898606ec023b09942dd899d"
+    },
+    {
+      "id": "n00Y",
+      "name": "水靈龜",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        96,
+        39,
+        415,
+        473
+      ],
+      "alphaPixels": 90312,
+      "imageSha256": "4e9ec4b60073ded52551901258a11e68a2113b8a30baff5008445162dfc411f2"
+    },
+    {
+      "id": "u00F",
+      "name": "獅鷲獸",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        154,
+        471,
+        357
+      ],
+      "alphaPixels": 19269,
+      "imageSha256": "9a0420995681153ec3b114daa40d2ab143d68c0fa9f0c267f066fef98e11fbc8"
+    },
+    {
+      "id": "n02S",
+      "name": "雪熊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        52,
+        51,
+        460,
+        472
+      ],
+      "alphaPixels": 99175,
+      "imageSha256": "55f9a06669163ba65ccbacea0a991c37a740c1fada5f89fbd11ea13fc63bcedc"
+    },
+    {
+      "id": "O00C",
+      "name": "卡崙",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        47,
+        38,
+        464,
+        472
+      ],
+      "alphaPixels": 90278,
+      "imageSha256": "48efe6cdaad22e38ab2343a1ead47041a6f01f63632a137cf74c35427cdaaf37"
+    },
+    {
+      "id": "ngir",
+      "name": "哥布靈首領",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        106,
+        473,
+        407
+      ],
+      "alphaPixels": 46161,
+      "imageSha256": "cd477eab40bd108b589b7f5656c4f7bcf4c1886f468beabce01afffe31918274"
+    },
+    {
+      "id": "O00G",
+      "name": "墨蛇君",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        71,
+        473,
+        440
+      ],
+      "alphaPixels": 78821,
+      "imageSha256": "8068fb08ab2325e844e64b862fc55835ed3a9f2f20cff428edd812c99d8f5e27"
+    },
+    {
+      "id": "u000",
+      "name": "邪骸戰士長",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        108,
+        40,
+        404,
+        472
+      ],
+      "alphaPixels": 72650,
+      "imageSha256": "c8272c3b086483bcce0c92aaf14a445ada3e5e4c42da865a2df2f376ef7272d5"
+    },
+    {
+      "id": "u002",
+      "name": "狂暴惡靈",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        113,
+        38,
+        399,
+        473
+      ],
+      "alphaPixels": 52181,
+      "imageSha256": "bdc26fffbc7cf5755b3910c662f4f4dd0057aff73760370e235ab2bab64a72c3"
+    },
+    {
+      "id": "O002",
+      "name": "獸人酋長",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        99,
+        40,
+        412,
+        473
+      ],
+      "alphaPixels": 83676,
+      "imageSha256": "6ded575dc48c1edaabbc39e0f86dd3998f67e18cc86786269d37a1c6fc72311e"
+    },
+    {
+      "id": "O00Q",
+      "name": "蜂后",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        115,
+        39,
+        396,
+        472
+      ],
+      "alphaPixels": 53680,
+      "imageSha256": "a918cd8a34d6b31826b04245f9e8030b12cc9d7085387517a3c7b58b94b32232"
+    },
+    {
+      "id": "nskg",
+      "name": "邪骸浪人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        42,
+        38,
+        469,
+        473
+      ],
+      "alphaPixels": 63075,
+      "imageSha256": "f72d0a96c9e2a1c5da5ed941353ccbd9fa600e7e0a30a8f083773abcfc1c7a20"
+    },
+    {
+      "id": "nsll",
+      "name": "火蜥蜴",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        85,
+        38,
+        426,
+        473
+      ],
+      "alphaPixels": 81417,
+      "imageSha256": "89719d574c6cbcceb9a8fc6ec23f6f7c532316fd7bfe3b7add50753fdb8d33fe"
+    },
+    {
+      "id": "e00A",
+      "name": "胡狼頭神",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        116,
+        39,
+        395,
+        472
+      ],
+      "alphaPixels": 57972,
+      "imageSha256": "3878e547e487c83307c766045047aeefe9de4eacd3701f2a82d5314a190e35be"
+    },
+    {
+      "id": "e008",
+      "name": "寒冰巨人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        73,
+        38,
+        437,
+        473
+      ],
+      "alphaPixels": 109817,
+      "imageSha256": "b80c68e42b02e3d6e30590aba4d77b95e6f4dd8569f1c412a76021d275e29079"
+    },
+    {
+      "id": "nrwm",
+      "name": "紅貝勒斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        92,
+        473,
+        422
+      ],
+      "alphaPixels": 49165,
+      "imageSha256": "d82b1ac5394dce9154cf66386606e8a65968912ff06c7c6aa6a551b4e4c8ec20"
+    },
+    {
+      "id": "O00M",
+      "name": "獸人英雄",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        110,
+        39,
+        402,
+        473
+      ],
+      "alphaPixels": 43428,
+      "imageSha256": "e535be4a3c62b9a0648d30c7a398fce468570b801acb0b4c4d0c91e7649d50e2"
+    },
+    {
+      "id": "unec",
+      "name": "迷幻之王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        86,
+        39,
+        425,
+        470
+      ],
+      "alphaPixels": 70643,
+      "imageSha256": "b2e7ccda10573793062bcaed21cb7467813ac5d0f4ee65dbcecbbe56c6c0fddd"
+    },
+    {
+      "id": "h00U",
+      "name": "七彩夢魘",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        146,
+        40,
+        365,
+        472
+      ],
+      "alphaPixels": 64064,
+      "imageSha256": "ab7d99347ed2069e11cbcb5a2035f60e974fd704d67666c2faee93e5864a6289"
+    },
+    {
+      "id": "O00J",
+      "name": "俄塞里斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        128,
+        39,
+        383,
+        473
+      ],
+      "alphaPixels": 38879,
+      "imageSha256": "97fe67ae7b1f008bd1bd6be704ef0057e069de374e926c28c650f65d10553f63"
+    },
+    {
+      "id": "hkni",
+      "name": "深淵騎士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        165,
+        39,
+        347,
+        473
+      ],
+      "alphaPixels": 34356,
+      "imageSha256": "b2c5a87936e801735ff8498ccf8311d97be7b27024a9f045f902b86d5609209d"
+    },
+    {
+      "id": "ngrd",
+      "name": "綠貝勒斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        92,
+        473,
+        422
+      ],
+      "alphaPixels": 49389,
+      "imageSha256": "0a25d0f1380d55a82498b3962bdb2ed9c1e1571c8164639990cafd4bb36819c7"
+    },
+    {
+      "id": "nbzd",
+      "name": "俄希托斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        98,
+        473,
+        414
+      ],
+      "alphaPixels": 47522,
+      "imageSha256": "674e4909f300f5a00405d8df3ec154e8683f9688ef93ca01cee05f0c301198c6"
+    },
+    {
+      "id": "nbda",
+      "name": "半龍人",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        73,
+        38,
+        439,
+        473
+      ],
+      "alphaPixels": 59633,
+      "imageSha256": "b4fee7546d1296743bcf08ac378a11624c9d9b867a49faeef3439589b7f0da95"
+    },
+    {
+      "id": "nhea",
+      "name": "弓箭手監護人魔物",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        45,
+        464,
+        466
+      ],
+      "alphaPixels": 70033,
+      "imageSha256": "4ca16d1dab3383c163624e75b940f7dd7c32c450c9fbabf3d9f18dd2e015f2bc"
+    },
+    {
+      "id": "nbwm",
+      "name": "灰俄希托斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        98,
+        473,
+        414
+      ],
+      "alphaPixels": 47744,
+      "imageSha256": "dfcbe90b093ab764342aaa379e9660279435cdc93b2893fbdaeaaba50159f02c"
+    },
+    {
+      "id": "Ubal",
+      "name": "黑暗之王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        85,
+        38,
+        421,
+        415
+      ],
+      "alphaPixels": 81697,
+      "imageSha256": "943b6353f9f82ab200ed45f7312c972f3eb55751a79bb1b7ce7f3a7a66993cdc"
+    },
+    {
+      "id": "Uanb",
+      "name": "三頭龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        62,
+        39,
+        449,
+        473
+      ],
+      "alphaPixels": 86096,
+      "imageSha256": "68f73e7f16685bc8f69d6ede257548be1a952f63d2aaf74bc9cfddb20fdccb36"
+    },
+    {
+      "id": "O003",
+      "name": "巴風特",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        69,
+        38,
+        442,
+        473
+      ],
+      "alphaPixels": 67984,
+      "imageSha256": "b094433a4e07cc1a030f38d76261c3ff863237fc1c85abd62666b5d8f0215046"
+    },
+    {
+      "id": "n02U",
+      "name": "狂暴蟻后",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        56,
+        39,
+        455,
+        472
+      ],
+      "alphaPixels": 79558,
+      "imageSha256": "30f476173e483da54ff651b1c1e1dd13f4c1750b22d18a14807708f6bf2cb3b6"
+    },
+    {
+      "id": "O007",
+      "name": "蟻后",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        39,
+        472,
+        472
+      ],
+      "alphaPixels": 65970,
+      "imageSha256": "06ae45b0e083ca8c443817b4cc07fc1b9901c57d1e697abb5472da6911c38e85"
+    },
+    {
+      "id": "ufro",
+      "name": "血腥騎士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        58,
+        42,
+        454,
+        472
+      ],
+      "alphaPixels": 83886,
+      "imageSha256": "ba5d0a0ee25ac4378569f07ffefd053ff6449ba7814af6b48780b5da530e77c4"
+    },
+    {
+      "id": "hphx",
+      "name": "不死鳥",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        41,
+        68,
+        470,
+        443
+      ],
+      "alphaPixels": 118135,
+      "imageSha256": "0b2aa5c9cb797a9b417253c02da29338d0111366d951d517380cb50466cddd3c"
+    },
+    {
+      "id": "N00M",
+      "name": "德古拉伯爵",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        130,
+        38,
+        380,
+        473
+      ],
+      "alphaPixels": 50672,
+      "imageSha256": "04008e590966f2f22ad4452c2a57dad8049798f5f09bf38faec2dd58eb4e915d"
+    },
+    {
+      "id": "Ulic",
+      "name": "蘭特克利斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        42,
+        52,
+        468,
+        459
+      ],
+      "alphaPixels": 55349,
+      "imageSha256": "1c453f758d219685dcb7b02b802e9a5db3905d5438cc41fe6b88e8fca98e917b"
+    },
+    {
+      "id": "O00V",
+      "name": "冰暴騎士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        71,
+        472,
+        440
+      ],
+      "alphaPixels": 66149,
+      "imageSha256": "6678eb6b13217c2c146d287884915966264beb7fa1e43e71f32628a4bb8fe67f"
+    },
+    {
+      "id": "nsqa",
+      "name": "達納托斯的憎恨",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        44,
+        38,
+        467,
+        473
+      ],
+      "alphaPixels": 119530,
+      "imageSha256": "86d051c977f21f34bd4a215d68096349b8eff80ac50e71982884d490592c8cbf"
+    },
+    {
+      "id": "Ucrl",
+      "name": "古埃及王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        112,
+        38,
+        409,
+        473
+      ],
+      "alphaPixels": 65471,
+      "imageSha256": "b8cf0eafb9edb042734e3af087b51e18b1bfc2512c4b9c0995a83cbaad042b81"
+    },
+    {
+      "id": "Uwar",
+      "name": "法老王",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        183,
+        38,
+        328,
+        473
+      ],
+      "alphaPixels": 29627,
+      "imageSha256": "752dafa7fefbbc4eca648af3f4a2ca83d8be9460594730b449796d965a747d2c"
+    },
+    {
+      "id": "O00N",
+      "name": "死靈騎士",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        125,
+        38,
+        386,
+        473
+      ],
+      "alphaPixels": 55985,
+      "imageSha256": "3978cd9658daa562ba81001e91c76692eaf6a7619a7d83bdb98734e0b10f5067"
+    },
+    {
+      "id": "O004",
+      "name": "烏龜將軍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        121,
+        38,
+        389,
+        473
+      ],
+      "alphaPixels": 73828,
+      "imageSha256": "9a2f0405f6e09db4d5d8cfbaa6a1327082341cf67f8220e98bdfbe92229395cd"
+    },
+    {
+      "id": "O00O",
+      "name": "水晶龍",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        45,
+        473,
+        465
+      ],
+      "alphaPixels": 119797,
+      "imageSha256": "6e8f3d2f772b8c0dfaa3a4f0d856c61e3dca73947137be3eeedddc7872c9d2a4"
+    },
+    {
+      "id": "Nfir",
+      "name": "伊夫利特",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        152,
+        40,
+        359,
+        473
+      ],
+      "alphaPixels": 32941,
+      "imageSha256": "2abe0e52afa604331d5b3570a80bad9b4fda0bdc899681b316b10bb56c17abcb"
+    },
+    {
+      "id": "UNMR",
+      "name": "古埃及王﹡夢魘",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        112,
+        38,
+        409,
+        473
+      ],
+      "alphaPixels": 65475,
+      "imageSha256": "5cf33a6d17445addc16c7c2b2ae2019eada60f40860a81dd50eb68edead7c5f2"
+    },
+    {
+      "id": "Nklj",
+      "name": "噩夢小丑皇",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        113,
+        38,
+        398,
+        473
+      ],
+      "alphaPixels": 79474,
+      "imageSha256": "0f660b58ecd163153191cf63d7d3ed0637531b74f350c11a1ce52015b582bb91"
+    },
+    {
+      "id": "Udea",
+      "name": "邪惡老公公",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        76,
+        38,
+        435,
+        473
+      ],
+      "alphaPixels": 67374,
+      "imageSha256": "cc5a411b53fd4793c5574eef23c58a5ba9eeb24a1d2e799543a6d226890e4b83"
+    },
+    {
+      "id": "O00T",
+      "name": "闇●十字刺客 艾勒梅斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        93,
+        38,
+        421,
+        473
+      ],
+      "alphaPixels": 50748,
+      "imageSha256": "5881049c52899506c008c5cefeb2a6761bb83c02ba6ac0571ea073d898e011d9"
+    },
+    {
+      "id": "Harf",
+      "name": "魔劍士 達納托斯的記憶",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        39,
+        77,
+        473,
+        434
+      ],
+      "alphaPixels": 50064,
+      "imageSha256": "e64dab0f11aeb6d443b09010479e384e3328c76e65fa5d5bdd4dc5e1fe69491a"
+    },
+    {
+      "id": "Opgh",
+      "name": "阿特羅斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        62,
+        39,
+        448,
+        471
+      ],
+      "alphaPixels": 80141,
+      "imageSha256": "f8a42d7baccfc0e27540bbeba7a0a2d888447b0807f7cb521afb28d784677b56"
+    },
+    {
+      "id": "URgd",
+      "name": "巴基力 蘭特克利斯",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        42,
+        52,
+        468,
+        459
+      ],
+      "alphaPixels": 55392,
+      "imageSha256": "b83adbaf0338bfaf72d50a191bf0e22aa49f785039a58af3b6d86c688e76a589"
+    },
+    {
+      "id": "UKrk",
+      "name": "魔鬼大烏賊",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        38,
+        48,
+        472,
+        463
+      ],
+      "alphaPixels": 96317,
+      "imageSha256": "b575400cb6ec6796d2d8cab0487678a646b410c265a3b4c28fad725f5a6a612c"
+    },
+    {
+      "id": "Udth",
+      "name": "時間支配者",
+      "fresh": true,
+      "size": [
+        512,
+        512
+      ],
+      "rgbaDecoded": true,
+      "transparentBackground": true,
+      "edgeAlphaMax": 0,
+      "alphaBounds": [
+        55,
+        42,
+        454,
+        462
+      ],
+      "alphaPixels": 101153,
+      "imageSha256": "dc89dbc927940b09ab68cf5039394b6f76671961e26e98fbde65907a1c3add25"
+    }
+  ],
+  "allDecoded": true,
+  "all512": true,
+  "allTransparent": true,
+  "noEdgeClipping": true,
+  "sourceFilesUnmodified": true,
+  "toolchain": {
+    "sample_render.cjs": "2d5cf57aa5a35753e875e357bc2c1e1b9ea3f8b2b31106ab0e93327b88dc02dd",
+    "render_static.py": "dde7ee218b8605a6edb134308641afeb89d661e7ca49915829585bd3623a6518",
+    "raster_rgba.c": "bfd30174d0784447f9fecabd92809a27c7a9af341bdd31aee3af56029c893fd5"
+  },
+  "visualReview": {
+    "status": "passed",
+    "reviewedImageCount": 186,
+    "contactSheets": [
+      "final-contact-01.jpg",
+      "final-contact-02.jpg",
+      "final-contact-03.jpg",
+      "final-contact-04.jpg",
+      "final-contact-05.jpg",
+      "final-contact-06.jpg",
+      "final-contact-07.jpg",
+      "final-contact-08.jpg",
+      "final-contact-09.jpg",
+      "final-contact-10.jpg",
+      "final-contact-11.jpg",
+      "final-contact-12.jpg"
+    ],
+    "checks": [
+      "Each current 12-degree model silhouette, face, body, equipment and fixed attachment inspected.",
+      "All current team-color images reviewed after the final render.",
+      "No image-edge clipping or unintended opaque texture rectangles observed.",
+      "Native uktg faintness confirmed from source additive modes 3/4 and geoset alpha 1."
+    ],
+    "independentReview": {
+      "reviewer": "site_audit",
+      "contactSheets": [
+        "final-contact-11.jpg",
+        "final-contact-12.jpg"
+      ],
+      "imageCount": 26,
+      "status": "passed"
+    },
+    "teamColorLimitations": [
+      "nslv",
+      "nrdk"
+    ]
+  }
+}

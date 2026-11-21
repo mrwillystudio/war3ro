@@ -1,0 +1,8 @@
+{
+  "name": "war3ro-data-refresh-checks",
+  "private": true,
+  "description": "Isolated DOM verification for the existing static website",
+  "devDependencies": {
+    "jsdom": "26.0.0"
+  }
+}
