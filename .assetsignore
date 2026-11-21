@@ -1,0 +1,8 @@
+# Publish only the files used by the website. Repository metadata, audit
+# tools, dependencies, and local build output must never become public assets.
+*
+!index.html
+!atlas-data/
+!atlas-data/**
+!atlas-models/
+!atlas-models/**

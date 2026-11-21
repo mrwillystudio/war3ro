@@ -109,6 +109,8 @@ node tools/catalog/test_catalog_tags.cjs
 
 ## 發布後驗收
 
+根目錄 `.assetsignore` 只允許 `index.html`、`atlas-data/` 與 `atlas-models/` 成為公開資產。`assets.directory` 指向儲存庫根目錄時，Workers 不會自動排除 `.git`；本次曾因 Git pack 超過 25 MiB 而建置失敗。新增網站資產目錄時，須同步更新此清單；不要將 Git 內部資料、稽核工具或依賴上傳為網站資產。
+
 確認 Cloudflare `Workers Builds: war3ro` 對應本次提交成功後，再核對正式站回傳內容：
 
 ```bash
